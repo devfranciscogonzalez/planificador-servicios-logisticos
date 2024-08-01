@@ -71,10 +71,6 @@ Route::middleware('auth:sanctum')->group(function () {
     });
     Route::prefix('services-type')->group(function () {
         Route::get('/', [ServiceTypeController::class, 'index']);
-        // Route::post('/', [ServiceTypeController::class, 'store']);
-        // Route::put('/{id}', [ServiceTypeController::class, 'update']);
-        // Route::delete('/{id}', [ServiceTypeController::class, 'destroy']);
-
     });
 
     Route::prefix('products')->group(function () {
