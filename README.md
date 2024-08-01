@@ -1,2 +1,1 @@
-# tesis
 # planificador-servicios-logisticos

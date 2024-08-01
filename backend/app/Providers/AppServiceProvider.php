@@ -51,7 +51,6 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(PlanningRepositoryInterface::class, PlanningRepository::class);
         $this->app->bind(ScheduleRepositoryInterface::class, ScheduleRepository::class);
         $this->app->bind(ServiceOrderRepositoryInterface::class, ServiceOrderRepository::class);
-        $this->app->bind(AccumulatorRepositoryInterface::class, AccumulatorRepository::class);
     }
 
     /**

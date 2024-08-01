@@ -1,8 +1,9 @@
 import Grid from "@mui/material/Unstable_Grid2";
 import CustomTextField from "../../../../components/common/Input/CustomTextField";
 import CustomSelect from "../../../../components/common/Input/CustomSelect";
-import CustomDropzoneArea from "../../../../components/common/Input/CustomDropzoneArea";
+// import CustomDropzoneArea from "../../../../components/common/Input/CustomDropzoneArea";
 import CustomSwitch from "../../../../components/common/Input/CustomSwitch";
+import CustonImageUpload from "../../../../components/common/Input/CustonImageUpload";
 
 const ProductFormFields = ({ control, businessType }) => {
   const renderTextField = (name, label, type) => (
@@ -21,7 +22,7 @@ const ProductFormFields = ({ control, businessType }) => {
     <>
       {renderTextField("name", "Nombre", "text")}
       {renderTextField("description", "Descripción", "textarea")}
-      <CustomDropzoneArea name="logo" control={control} />
+      <CustonImageUpload name="logo" control={control} />
       <CustomSwitch name="status" label="Habilitado" control={control} />
       <Grid xs={12}>
         <CustomSelect

@@ -6,7 +6,6 @@ use App\Interfaces\RateRepositoryInterface;
 use App\Http\Requests\RateRequest;
 use App\Http\Requests\RateVerifyRequest;
 use Exception;
-use Illuminate\Http\Request;
 
 class RateController extends Controller
 {

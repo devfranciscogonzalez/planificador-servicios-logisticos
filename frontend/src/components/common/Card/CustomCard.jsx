@@ -12,11 +12,11 @@ import {
   IconButton,
   Typography,
 } from "@mui/material";
-import Grid from "@mui/material/Unstable_Grid2"; // Grid version 2
+import Grid from "@mui/material/Unstable_Grid2"; 
 import { grey } from "@mui/material/colors";
 import { useState } from "react";
 import UserAvatar from "../../../features/user/components/UserAvatar/UserAvatar";
-// import StatusBadge from "../../ui/StatusBadge";
+
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
   return <IconButton {...other} />;
@@ -67,10 +67,6 @@ const CustomCard = ({ data }) => {
             )}
             <CardActionArea>
               <CardContent sx={{ display: "flex" }}>
-                {/* <StatusBadge title={item.name} status={true} /> */}
-                {/* <Typography gutterBottom variant="h6" component="div">
-                  {item.name}
-                </Typography> */}
                 <ExpandMore
                   expand={expanded}
                   onClick={handleExpandClick}

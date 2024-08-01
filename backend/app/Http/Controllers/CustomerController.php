@@ -39,16 +39,6 @@ class CustomerController extends Controller
         }
     }
 
-    // public function show($id)
-    // {
-    //     try {
-    //         $customer = $this->customerRepository->getById($id);
-    //         return response()->json($customer);
-    //     } catch (Exception $e) {
-    //         return response()->json(['errors' => 'Error al obtener el Cliente', 'message' => $e->getMessage()], 500);
-    //     }
-    // }
-
     public function update(CustomerRequest $request, $id)
     {
         try {

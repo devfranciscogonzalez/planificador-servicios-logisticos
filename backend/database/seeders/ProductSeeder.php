@@ -27,7 +27,7 @@ class ProductSeeder extends Seeder
                 'business_id' => 1,
                 'user_id' => 1,
             ],
-            // Puedes agregar más productos aquí
+
         ];
         foreach ($products as $product) {
             Product::create($product);

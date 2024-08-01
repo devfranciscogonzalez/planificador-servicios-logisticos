@@ -12,26 +12,15 @@ use Exception;
  */
 class UserController extends Controller
 {
-    /**
-     * @var UserRepositoryInterface Repositorio para interactuar con los datos de usuario.
-     */
+
     private $userRepository;
 
-    /**
-     * Constructor del controlador.
-     *
-     * @param UserRepositoryInterface $userRepository Inyección de dependencia del repositorio de usuarios.
-     */
+
     public function __construct(UserRepositoryInterface $userRepository)
     {
         $this->userRepository = $userRepository;
     }
 
-    /**
-     * Obtiene y muestra todos los usuarios.
-     *
-     * @return \Illuminate\Http\JsonResponse Lista de usuarios en formato JSON.
-     */
     public function index()
     {
         try {
@@ -42,13 +31,6 @@ class UserController extends Controller
         }
     }
 
-    /**
-     * Actualiza la información de un usuario específico.
-     *
-     * @param UpdateUserRequest $request Datos de la solicitud validados.
-     * @param int $id Identificador del usuario a actualizar.
-     * @return \Illuminate\Http\JsonResponse Respuesta JSON con el usuario actualizado.
-     */
     public function update(UpdateUserRequest $request, $id)
     {
         try {
@@ -61,13 +43,6 @@ class UserController extends Controller
         }
     }
 
-    /**
-     * Cambia la contraseña de un usuario.
-     *
-     * @param ChangePasswordRequest $request Datos de la solicitud validados, incluyendo la nueva contraseña.
-     * @param int $id Identificador del usuario cuya contraseña se actualizará.
-     * @return \Illuminate\Http\JsonResponse Respuesta JSON confirmando la actualización.
-     */
     public function changePassword(ChangePasswordRequest $request, $id)
     {
         try {
@@ -79,12 +54,6 @@ class UserController extends Controller
         }
     }
 
-    /**
-     * Elimina un usuario específico.
-     *
-     * @param int $id Identificador del usuario a eliminar.
-     * @return \Illuminate\Http\JsonResponse Respuesta JSON confirmando la eliminación.
-     */
     public function destroy($id)
     {
         try {

@@ -13,8 +13,6 @@ class UserSeeder extends Seeder
 
     public function run()
     {
-        // Primero, asegúrate de que el rol de administrador esté creado.
-
         $adminRoleId = Role::firstOrCreate(['name' => 'Administrador'])->id;
         $jefeRoleId = Role::firstOrCreate(['name' => 'Jefe Comercial'])->id;
         $supervisorRoleId = Role::firstOrCreate(['name' => 'Supervisor'])->id;
@@ -22,25 +20,6 @@ class UserSeeder extends Seeder
         $porteroRoleId = Role::firstOrCreate(['name' => 'Portero'])->id;
         $romanaRoleId = Role::firstOrCreate(['name' => 'Romana'])->id;
 
-        // User::create([
-        //     'name' => 'Administrador',
-        //     "email" => 'admin@admin.com',
-        //     'password' => Hash::make('Franxiskoo20%'),
-        //     'role_id' => $adminRoleId,
-        // ]);
-
-        // User::create([ 
-        //     'name' => 'Jefe Comercial',
-        //     'email' => 'jefe@jefe.com',
-        //     'password' => Hash::make('Franxiskoo20%'),
-        //     'role_id' => $jefeRoleId,
-        // ]);
-        // User::create([
-        //     'name' => 'Francisco',
-        //     'email' => 'adm@adm',
-        //     'password' => Hash::make('asd'),
-        //     'role_id' => $adminRoleId,
-        // ]);
         User::create([
             'name' => 'Administrador',
             'email' => 'admin@camanchaca.cl',

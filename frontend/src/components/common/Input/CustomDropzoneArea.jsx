@@ -44,7 +44,7 @@ const CustomDropzoneArea = ({ name, control }) => {
                 {error.message}
               </FormHelperText>
             ) : (
-              <FormHelperText sx={{ mx: 2 }} className={classes.infoText}>
+              <FormHelperText  className={classes.infoText}>
                 Campo opcional. Tamaño máximo del archivo: 2MB.
               </FormHelperText>
             )}
