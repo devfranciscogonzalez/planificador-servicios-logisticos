@@ -26,7 +26,6 @@ async function makeRequest(method, url, data = null) {
     }
 
     // Verificar si el error es un error de conexión a la base de datos
-    // Verificar si el error es un error de conexión a la base de datos
 
     if (errorMessage !== null) {
       console.log("errors make: " + errorMessage?.errors);

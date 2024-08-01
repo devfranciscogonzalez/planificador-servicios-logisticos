@@ -21,17 +21,4 @@ httpClient.interceptors.request.use(
   }
 );
 
-// const UNAUTHORIZED = 401;
-
-// httpClient.interceptors.response.use(
-//   (response) => response,
-//   (error) => {
-//     if (error.response.status === UNAUTHORIZED) {
-//       // Manejar error de autenticación, como redirigir al login
-//       console.log("error 401 francisco");
-//     }
-//     return Promise.reject(error);
-//   }
-// );
-
 export default httpClient;
