@@ -28,8 +28,6 @@ COPY .docker/vhost.conf /etc/apache2/sites-available/000-default.conf
 
 RUN composer install --no-dev --optimize-autoloader
 
-RUN php artisan storage:link
-
 EXPOSE 80
 
 CMD ["apache2-foreground"]
