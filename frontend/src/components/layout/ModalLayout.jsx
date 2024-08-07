@@ -3,7 +3,7 @@ import { Dialog, DialogContent, DialogTitle, IconButton } from "@mui/material";
 
 const ModalLayout = ({ title, open = false, onClose, children }) => {
   return (
-    <Dialog open={open} onClose={onClose}>
+    <Dialog open={open} onClose={onClose} >
       <DialogTitle>
         {title}
         <IconButton

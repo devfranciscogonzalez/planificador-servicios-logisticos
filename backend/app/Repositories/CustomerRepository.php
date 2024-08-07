@@ -9,11 +9,6 @@ use Illuminate\Http\UploadedFile;
 class CustomerRepository implements CustomerRepositoryInterface
 {
 
-  /**
-   * Crea un nuevo cliente.
-   * @param array $data
-   * @return Customer
-   */
   public function create(array $data)
   {
 
@@ -21,7 +16,7 @@ class CustomerRepository implements CustomerRepositoryInterface
       $path = $data['logo']->store('logos', 'public');
       $data['logo'] = $path;
     } else {
-      $data['logo'] = 'logos/no-logo.png'; // Asegúrate de que esta ruta sea correcta.
+      $data['logo'] = 'logos/no-logo.png'; 
     }
     $customer = Customer::create([
       'name' => $data['name'],
@@ -33,22 +28,11 @@ class CustomerRepository implements CustomerRepositoryInterface
     return $customer;
   }
 
-  /**
-   * Obtiene un cliente por su id.
-   * @param int $id
-   * @return Customer
-   */
-
   public function getById($id)
   {
     return Customer::findOrFail($id);
   }
 
-  /**
-   * Actualiza un cliente.
-   *  @param int $id
-   * @param array $data
-   */
   public function update($id, array $data)
   {
     $customer = Customer::findOrFail($id);
@@ -62,23 +46,12 @@ class CustomerRepository implements CustomerRepositoryInterface
     return $customer;
   }
 
-  /**
-   * Elimina un cliente.
-   * @param int $id
-   * @return Customer
-   */
   public function delete($id)
   {
     $customer = Customer::findOrFail($id);
     $customer->delete();
     return $customer;
   }
-
-  /**
-   * Obtiene todos los clientes.
-   * @param void
-   * @return Collection
-   */
 
   public function getAll()
   {

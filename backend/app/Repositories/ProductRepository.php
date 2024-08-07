@@ -8,11 +8,7 @@ use Illuminate\Http\UploadedFile;
 
 class ProductRepository implements ProductRepositoryInterface
 {
-  /**
-   * Crea un nuevo producto.
-   * @param array $data
-   * @return Product
-   */
+
   public function create(array $data)
   {
     if (isset($data['logo']) && $data['logo'] instanceof UploadedFile) {
@@ -26,22 +22,11 @@ class ProductRepository implements ProductRepositoryInterface
     return $product;
   }
 
-  /**
-   * Obtiene un producto por su id.
-   * @param int $id
-   * @return Product
-   */
   public function getById($id)
   {
     return Product::findOrFail($id);
   }
 
-  /**
-   * Actualiza un producto.
-   * @param int $id
-   * @param array $data
-   * @return Product
-   */
   public function update($id, array $data)
   {
     $product = Product::findOrFail($id);
@@ -57,11 +42,7 @@ class ProductRepository implements ProductRepositoryInterface
     return $product;
   }
 
-  /**
-   * Elimina un producto.
-   * @param int $id
-   * @return Product
-   */
+
   public function delete($id)
   {
     $product = Product::findOrFail($id);
@@ -69,19 +50,13 @@ class ProductRepository implements ProductRepositoryInterface
     return $product;
   }
 
-  /**
-   * Obtiene todos los productos.
-   * @return \Illuminate\Database\Eloquent\Collection
-   */
+
   public function getAll()
   {
     return Product::with('user', 'business')->get();
   }
 
-  /**
-   * Obtiene todos los productos activos.
-   * @return \Illuminate\Database\Eloquent\Collection
-   */
+
   public function getActive()
   {
     return Product::with('business')->where('status', 1)->get();

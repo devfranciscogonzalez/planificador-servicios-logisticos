@@ -23,8 +23,6 @@ class RateRepository implements RateRepositoryInterface
     ])->get();
   }
 
-
-
   public function getById($id)
   {
     return Rate::findOrFail($id);
@@ -66,7 +64,7 @@ class RateRepository implements RateRepositoryInterface
       ->get();
   }
 
-  public function updateStatus($id, $status = 0) // $status tiene un valor predeterminado de 0
+  public function updateStatus($id, $status = 0) 
   {
     $rate = Rate::findOrFail($id);
     $rate->status = $status;

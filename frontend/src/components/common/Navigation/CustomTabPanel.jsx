@@ -11,7 +11,11 @@ const CustomTabPanel = (props) => {
       aria-labelledby={`simple-tab-${index}`}
       {...other}
     >
-      {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
+      {value === index && (
+        <Box mt={2} p={2} overflow={"auto"}>
+          {children}
+        </Box>
+      )}
     </Box>
   );
 };

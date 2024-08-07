@@ -11,7 +11,7 @@ const PaperComponent = ({ children, relativePosition }) => {
         bgcolor: "background",
       }}
     >
-      <Box component="article" mt={4}>
+      <Box component="article">
         {children}
       </Box>
     </Paper>

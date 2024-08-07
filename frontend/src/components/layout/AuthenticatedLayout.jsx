@@ -16,7 +16,7 @@ const AuthenticatedLayout = ({ children }) => {
           overflow: "auto",
         }}
       >
-        <Container maxWidth="lg" sx={{ boxSizing: "border-box" }}>
+        <Container maxWidth="100%" sx={{ boxSizing: "border-box" }}>
           {children}
         </Container>
       </Box>

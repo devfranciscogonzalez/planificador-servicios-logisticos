@@ -10,6 +10,13 @@ const theme = createTheme({
     },
   },
   components: {
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          boxShadow: "none !important",
+        },
+      },
+    },
     MuiTableCell: {
       styleOverrides: {
         root: {

@@ -7,9 +7,6 @@ use App\Http\Requests\ChangePasswordRequest;
 use App\Interfaces\UserRepositoryInterface;
 use Exception;
 
-/**
- * Controlador para la gestión de usuarios.
- */
 class UserController extends Controller
 {
 

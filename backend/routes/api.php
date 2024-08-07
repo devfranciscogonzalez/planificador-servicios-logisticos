@@ -33,25 +33,17 @@ Route::post('login', [AuthController::class, 'login']);
 // Rutas protegidas
 Route::middleware('auth:sanctum')->group(function () {
 
-    // Route::get('users', [UserController::class, 'index']);
-    // Route::post('register', [AuthController::class, 'register'])->middleware('role:Administrador');
-    // Route::get('roles', [RoleController::class, 'index'])->middleware('role:Administrador');
-
-    // Route::put('user/{id}', [UserController::class, 'update'])->middleware('role:Administrador');
-
-    // Route::delete('/user/{id}', [UserController::class, 'destroy'])->middleware('role:Administrador');
-
-    // Route::put('user/{id}/change-password', [UserController::class, 'changePassword'])->middleware('role:Administrador');
-
+    // USUARIO
     Route::get('users', [UserController::class, 'index']);
-    Route::post('register', [AuthController::class, 'register']);
-    Route::get('roles', [RoleController::class, 'index']);
+    Route::put('user/{id}', [UserController::class, 'update'])->middleware('role:Administrador');
+    Route::delete('/user/{id}', [UserController::class, 'destroy'])->middleware('role:Administrador');
+    Route::put('user/{id}/change-password', [UserController::class, 'changePassword'])->middleware('role:Administrador');
 
-    Route::put('user/{id}', [UserController::class, 'update']);
-    Route::delete('/user/{id}', [UserController::class, 'destroy']);
+    Route::post('register', [AuthController::class, 'register'])->middleware('role:Administrador');
+    Route::get('roles', [RoleController::class, 'index'])->middleware('role:Administrador');
 
-    Route::put('user/{id}/change-password', [UserController::class, 'changePassword']);
 
+    // INICIAR O CERRAR SESION
     Route::get('user', [AuthController::class, 'user']);
     Route::post('logout', [AuthController::class, 'logout']);
 
@@ -62,6 +54,7 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::delete('/{id}', [CustomerController::class, 'destroy']); // Eliminar un cliente
         Route::get('/active', [CustomerController::class, 'getActive']); // Obtener un cliente por su id
     });
+
     Route::prefix('services')->group(function () {
         Route::get('/', [ServiceController::class, 'index']);
         Route::post('/', [ServiceController::class, 'store']);
@@ -69,6 +62,7 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::delete('/{id}', [ServiceController::class, 'destroy']);
         Route::get('/by-type/{id}', [ServiceController::class, 'getServicesByType']);
     });
+
     Route::prefix('services-type')->group(function () {
         Route::get('/', [ServiceTypeController::class, 'index']);
     });
@@ -124,3 +118,13 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::get('/', [PlanningController::class, 'index']);
     });
 });
+
+
+// Route::get('users', [UserController::class, 'index']);
+// Route::post('register', [AuthController::class, 'register']);
+// Route::get('roles', [RoleController::class, 'index']);
+
+// Route::put('user/{id}', [UserController::class, 'update']);
+// Route::delete('/user/{id}', [UserController::class, 'destroy']);
+
+// Route::put('user/{id}/change-password', [UserController::class, 'changePassword']);

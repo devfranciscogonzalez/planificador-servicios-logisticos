@@ -92,34 +92,24 @@ class ServiceOrderRepository implements ServiceOrderRepositoryInterface
 
   public function updateDate($id, array $data)
   {
-    // Encontrar la OS original
     $originalServiceOrder = ServiceOrder::findOrFail($id);
 
-    // Convertir ambas fechas a objetos Carbon para comparación precisa
     $originalDate = Carbon::parse($originalServiceOrder->date);
     $newDate = Carbon::parse($data['date']);
 
-    // Verificar si la nueva fecha es igual a la actual
     if ($originalDate->toDateString() === $newDate->toDateString()) {
-      // Lanzar una excepción o manejar como prefieras
       throw new Exception("La fecha proporcionada es la misma que la actual. No se requiere reprogramación.");
     }
 
-    // Clonar la OS original
     $newServiceOrder = $originalServiceOrder->replicate();
-    $newServiceOrder->date = $data['date']; // Establecer la nueva fecha
-    $newServiceOrder->save(); // Guardar la nueva OS
+    $newServiceOrder->date = $data['date'];
+    $newServiceOrder->save();
 
-    // Actualizar la OS original
-    $originalServiceOrder->rescheduled_os_id = $newServiceOrder->id; // Guardar el ID de la nueva OS
-    $originalServiceOrder->save(); // Guardar cambios en la OS original
+    $originalServiceOrder->rescheduled_os_id = $newServiceOrder->id;
+    $originalServiceOrder->save();
 
     return $originalServiceOrder;
   }
-
-
-
-
   public function updateStatus($id, array $data)
   {
     $serviceOrder = ServiceOrder::findOrFail($id);

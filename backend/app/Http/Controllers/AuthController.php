@@ -52,6 +52,7 @@ class AuthController extends Controller
 
         return response()->json(['message' => 'Cerró la sesión exitosamente y el token se eliminó exitosamente']);
     }
+    
     public function user(Request $request)
     {
         try {

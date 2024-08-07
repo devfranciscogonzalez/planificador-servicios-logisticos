@@ -39,7 +39,6 @@ class RegisterRequest extends FormRequest
     public function messages()
     {
         return [
-
             'name.required' => 'El campo nombre es obligatorio.',
             'email.required' => 'El campo email es obligatorio.',
             'email.email' => 'El campo email debe ser una dirección de correo válida.',

@@ -79,7 +79,7 @@ class RateController extends Controller
     public function updateStatus($id)
     {
         try {
-            $rate = $this->rateRepository->updateStatus($id, 0); // Estado establecido a 0
+            $rate = $this->rateRepository->updateStatus($id);
             return response()->json(['rate' => $rate, 'message' => 'Estado de la tarifa actualizado con éxito']);
         } catch (Exception $e) {
             return response()->json(['errors' => 'Error al actualizar el estado de la tarifa', 'message' => $e->getMessage()], 500);

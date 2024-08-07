@@ -12,7 +12,7 @@ const GenericConfirmModal = ({
   cancelButtonText,
   isPending = false,
 }) => (
-  <ModalLayout title={title} open={open} onClose={onClose}>
+  <ModalLayout title={title} open={open} onClose={onClose} >
     <DialogContentText>{message}</DialogContentText>
     <DialogActions sx={{ display: "flex", justifyContent: "center", mt: 2 }}>
       <ActionButtons
