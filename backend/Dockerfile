@@ -12,6 +12,7 @@ RUN apt-get update && apt-get install -y \
     libxml2-dev \
     zip \
     curl \
+    netcat-traditional \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install pdo pdo_mysql mbstring exif pcntl bcmath gd
 
@@ -26,8 +27,6 @@ RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cac
 COPY .docker/vhost.conf /etc/apache2/sites-available/000-default.conf
 
 RUN composer install --no-dev --optimize-autoloader
-
-# RUN rm -r public/storage
 
 RUN php artisan storage:link
 
