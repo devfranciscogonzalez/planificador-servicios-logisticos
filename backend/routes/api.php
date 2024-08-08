@@ -74,6 +74,7 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::delete('/{id}', [ProductController::class, 'destroy']);
         Route::get('/active', [ProductController::class, 'getActive']);
     });
+    
     Route::prefix('businesses')->group(function () {
         Route::get('/', [BusinessController::class, 'index']);
         Route::post('/', [BusinessController::class, 'store']);

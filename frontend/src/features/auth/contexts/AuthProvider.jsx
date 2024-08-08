@@ -3,11 +3,7 @@ import { createContext } from "react";
 import Loading from "../../../components/common/loading/Loading";
 import { authService } from "../services/authService";
 
-/**
- *
- * TODO: implementar manejo de errores
- *
- */
+
 export const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
@@ -17,9 +13,9 @@ export const AuthProvider = ({ children }) => {
     queryKey: ["authUser"],
     queryFn: () => authService.validateToken(),
     enabled: !!localStorage.getItem("token"),
-    retry: false, // Evita que la consulta se reintente en caso de error
-    refetchOnWindowFocus: false, // Evita que la consulta se ejecute al cambiar de pestaña
-    refetchOnMount: false, // Evita que la consulta se ejecute al montar el componente
+    retry: false, 
+    refetchOnWindowFocus: false, 
+    refetchOnMount: false, 
   });
 
   const loginMutation = useMutation({

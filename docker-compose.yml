@@ -1,8 +1,21 @@
 version: '3.8'
 
 services:
+  db:
+    image: mysql:8.0
+    container_name: mysql_db
+    environment:
+      MYSQL_DATABASE: planificador_db
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - 3306:3306
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - app
+
   backend:
-    build: 
+    build:
       context: ./backend
       dockerfile: Dockerfile
     container_name: backend
@@ -12,18 +25,13 @@ services:
       DB_USERNAME: root
       DB_PASSWORD: root
     ports:
-      - 8000:80  
+      - 8000:80
     volumes:
       - ./backend:/var/www/html
     depends_on:
       - db
-    command: >
-      sh -c "
-      while ! nc -z db 3306; do
-        sleep 1;
-      done;
-      php artisan migrate --seed &&
-      apache2-foreground"
+    networks:
+      - app
 
   frontend:
     build:
@@ -36,18 +44,13 @@ services:
       - ./frontend:/app
       - /app/node_modules
     depends_on:
-      - db
+      - backend
+    networks:
+      - app
 
-  db:
-    image: mysql:8.0
-    container_name: mysql_db
-    environment:
-      MYSQL_DATABASE: planificador_db
-      MYSQL_ROOT_PASSWORD: root
-    ports:  
-      - 3306:3306
-    volumes:
-      - db_data:/var/lib/mysql
+networks:
+  app:
+    driver: bridge
 
 volumes:
   db_data:
