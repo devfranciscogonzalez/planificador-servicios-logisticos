@@ -29,8 +29,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::put('user/{id}/change-password', [UserController::class, 'changePassword'])->middleware('role:Administrador');
 
     Route::post('register', [AuthController::class, 'register'])->middleware('role:Administrador');
-    Route::get('roles', [RoleController::class, 'index'])->middleware('role:Administrador.Jefe Comercial');
-
+    Route::get('roles', [RoleController::class, 'index'])->middleware('role:Administrador,Jefe Comercial');
 
     // INICIAR O CERRAR SESION
     Route::get('user', [AuthController::class, 'user']);

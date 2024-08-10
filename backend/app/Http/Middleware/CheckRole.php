@@ -8,15 +8,19 @@ use Illuminate\Http\Request;
 
 class CheckRole
 {
-    public function handle(Request $request, Closure $next, $roles)
+    public function handle(Request $request, Closure $next, ...$roles)
     {
-        $rolesArray = explode('.', $roles);
+        if (!$request->user()) {
+            abort(401, 'Usuario no autenticado.');
+        }
+
         $userRole = $request->user()->role->name ?? null;
-        Log::info('User role: ' . print_r($rolesArray,true));
-        Log::info('User: ' . $userRole);
 
+        if (!$userRole) {
+            abort(403, 'El usuario no tiene un rol asignado.');
+        }
 
-        if (!$userRole || !in_array($userRole, $rolesArray)) {
+        if (!in_array($userRole, $roles)) {
             abort(403, 'Acceso no autorizado, no tiene el rol pertinente.');
         }
 
