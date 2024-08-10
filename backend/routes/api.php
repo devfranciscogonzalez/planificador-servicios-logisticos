@@ -26,10 +26,10 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('users', [UserController::class, 'index']);
     Route::put('user/{id}', [UserController::class, 'update'])->middleware('role:Administrador');
     Route::delete('/user/{id}', [UserController::class, 'destroy'])->middleware('role:Administrador');
-    Route::put('user/{id}/change-password', [UserController::class, 'changePassword'])->middleware('role:Administrador, Jefe Comercial');
+    Route::put('user/{id}/change-password', [UserController::class, 'changePassword'])->middleware('role:Administrador');
 
     Route::post('register', [AuthController::class, 'register'])->middleware('role:Administrador');
-    Route::get('roles', [RoleController::class, 'index'])->middleware('role:Administrador');
+    Route::get('roles', [RoleController::class, 'index'])->middleware('role:Administrador.Jefe Comercial');
 
 
     // INICIAR O CERRAR SESION
