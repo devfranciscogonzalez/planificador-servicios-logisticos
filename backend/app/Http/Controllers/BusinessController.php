@@ -21,7 +21,7 @@ class BusinessController extends Controller
             $businesses = $this->businessRepository->getAll();
             return response()->json($businesses);
         } catch (Exception $e) {
-            return response()->json(['error' => 'Error al obtener los negocios', 'message' => $e->getMessage()], 500);
+            return response()->json(['errors' => 'Error al obtener los negocios', 'message' => $e->getMessage()], 500);
         }
     }
 
@@ -31,7 +31,7 @@ class BusinessController extends Controller
             $business = $this->businessRepository->create($request->validated());
             return response()->json(['business' => $business, 'message' => 'Negocio creado con éxito'], 201);
         } catch (Exception $e) {
-            return response()->json(['error' => 'Error al crear el negocio', 'message' => $e->getMessage()], 500);
+            return response()->json(['errors' => 'Error al crear el negocio', 'message' => $e->getMessage()], 500);
         }
     }
 
@@ -42,7 +42,7 @@ class BusinessController extends Controller
             $business = $this->businessRepository->update($id, $request->validated());
             return response()->json(['business' => $business, 'message' => 'Negocio actualizado con éxito']);
         } catch (Exception $e) {
-            return response()->json(['error' => 'Error al actualizar el negocio', 'message' => $e->getMessage()], 500);
+            return response()->json(['errors' => 'Error al actualizar el negocio', 'message' => $e->getMessage()], 500);
         }
     }
 
@@ -52,7 +52,7 @@ class BusinessController extends Controller
             $this->businessRepository->delete($id);
             return response()->json(['message' => 'Negocio eliminado con éxito']);
         } catch (Exception $e) {
-            return response()->json(['error' => 'Error al eliminar el negocio', 'message' => $e->getMessage()], 500);
+            return response()->json(['errors' => 'Error al eliminar el negocio', 'message' => $e->getMessage()], 500);
         }
     }
 }

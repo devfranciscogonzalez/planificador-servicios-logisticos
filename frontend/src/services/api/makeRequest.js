@@ -17,6 +17,7 @@ async function makeRequest(method, url, data = null) {
     return response.data;
   } catch (error) {
     let errorMessage;
+
     if (error.response) {
       errorMessage = error.response.data;
     } else if (error.request) {
@@ -25,12 +26,9 @@ async function makeRequest(method, url, data = null) {
       errorMessage = "Error al realizar la solicitud";
     }
 
-    // Verificar si el error es un error de conexión a la base de datos
-
     if (errorMessage !== null) {
-      console.log("errors make: " + errorMessage?.errors);
-      console.log("error make: " + errorMessage?.error);
-      console.log("Mesaje make: " + errorMessage?.message);
+      errorMessage?.errors && console.log("errors: " + errorMessage?.errors);
+      errorMessage?.message && console.log("mesaje: " + errorMessage?.message);
     } else {
       console.log(error);
     }

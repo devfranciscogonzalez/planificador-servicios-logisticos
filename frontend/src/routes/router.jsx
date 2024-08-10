@@ -115,7 +115,7 @@ const router = createBrowserRouter([
         path: "app/orders-confirm",
         element: (
           <RoleProtectedElement
-            allowedRoles={[ROLES_USER.ADMINISTRADOR, ROLES_USER.SUPERVISOR]}
+            allowedRoles={[ROLES_USER.ADMINISTRADOR,ROLES_USER.JEFE_COMERCIAL, ROLES_USER.SUPERVISOR]}
           >
             <OrderConfirmPage />
           </RoleProtectedElement>
