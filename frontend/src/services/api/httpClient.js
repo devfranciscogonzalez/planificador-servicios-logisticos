@@ -7,7 +7,6 @@ const httpClient = axios.create({
   withCredentials: true,
 });
 
-// Interceptor para incluir el token en las solicitudes si está presente
 httpClient.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem("token");
