@@ -2,7 +2,7 @@ import makeRequest from "../../../services/api/makeRequest";
 
 export const authService = {
   async login(credentials) {
-    await makeRequest("get", "/sanctum/csrf-cookie");
+    makeRequest("get", "/sanctum/csrf-cookie");
     return makeRequest("post", "/api/login", credentials);
   },
   validateToken() {
