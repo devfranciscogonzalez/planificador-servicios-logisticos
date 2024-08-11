@@ -5,21 +5,6 @@ const DEFAULT_HEADERS = {
   Accept: "application/json",
 };
 
-function getCookie(name) {
-  const value = `; ${document.cookie}`;
-  const parts = value.split(`; ${name}=`);
-  if (parts.length === 2) return parts.pop().split(";").shift();
-}
-
-function getHeaders(data) {
-  const headers = { ...DEFAULT_HEADERS };
-  const csrfToken = getCookie("XSRF-TOKEN");
-  if (csrfToken) {
-    headers["X-XSRF-TOKEN"] = csrfToken;
-  }
-  return data instanceof FormData ? {} : headers;
-}
-
 function handleError(error) {
   if (error.response) {
     return error.response.data;
@@ -34,10 +19,10 @@ async function makeRequest(method, url, data = null) {
     const config = {
       method,
       url,
-      headers: getHeaders(data),
+      headers: data instanceof FormData ? {} : DEFAULT_HEADERS,
       data,
     };
-
+    
     const response = await httpClient(config);
     return response.data;
   } catch (error) {
