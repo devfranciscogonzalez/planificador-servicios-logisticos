@@ -7,7 +7,7 @@ function Loading({ message = "Cargando..." }) {
     justifyContent: "center",
     alignItems: "center",
     minHeight: "100vh",
-    transition: "all 0.3s ease-in-out", // Transición suave
+    transition: "all 0.3s ease-in-out",
   };
 
   return (

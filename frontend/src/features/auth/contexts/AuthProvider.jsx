@@ -1,6 +1,6 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { createContext } from "react";
-import Loading from "../../../components/common/loading/Loading";
+import Loading from "../../../components/common/Loading/Loading";
 import { authService } from "../services/authService";
 
 
