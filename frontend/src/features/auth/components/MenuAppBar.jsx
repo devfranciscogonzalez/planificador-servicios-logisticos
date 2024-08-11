@@ -1,6 +1,5 @@
 import Logout from "@mui/icons-material/Logout";
 import {
-  Avatar,
   Box,
   IconButton,
   ListItemIcon,
