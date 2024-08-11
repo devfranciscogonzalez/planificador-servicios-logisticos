@@ -2,7 +2,7 @@ import { Navigate, Outlet } from "react-router-dom";
 import useAuth from "../features/auth/hooks/useAuth";
 
 const ProtectedRoutes = () => {
-  const { isAuthenticated } = useAuth(); // Este hook debe devolver el estado de autenticación
+  const { isAuthenticated } = useAuth(); 
 
   return isAuthenticated ? <Outlet /> : <Navigate to="/" />;
 };
