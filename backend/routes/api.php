@@ -40,7 +40,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('roles', [RoleController::class, 'index'])->middleware('role:Administrador,Jefe Comercial');
 
     // ATENCION AL CLIENTE 
-    Route::prefix('customers')->middleware('role:Administrador,Jefe Comercial')->group(function () {
+    Route::prefix('customers')->middleware('role:Administrador,Jefe Comercial,Customer Service')->group(function () {
         Route::get('/', [CustomerController::class, 'index']);
         Route::post('/', [CustomerController::class, 'store']);
         Route::put('/{id}', [CustomerController::class, 'update']);
@@ -49,21 +49,21 @@ Route::middleware('auth:sanctum')->group(function () {
     });
 
     // SERVICIOS
-    Route::prefix('services')->middleware('role:Administrador,Jefe Comercial')->group(function () {
-        Route::get('/', [ServiceController::class, 'index'])->middleware('role:Administrador,Jefe Comercial');
-        Route::post('/', [ServiceController::class, 'store'])->middleware('role:Administrador,Jefe Comercial');
-        Route::put('/{id}', [ServiceController::class, 'update'])->middleware('role:Administrador,Jefe Comercial');
-        Route::delete('/{id}', [ServiceController::class, 'destroy'])->middleware('role:Administrador,Jefe Comercial');
-        Route::get('/by-type/{id}', [ServiceController::class, 'getServicesByType'])->middleware('role:Administrador,Jefe Comercial');
+    Route::prefix('services')->middleware('role:Administrador,Jefe Comercial,Customer Service')->group(function () {
+        Route::get('/', [ServiceController::class, 'index']);
+        Route::post('/', [ServiceController::class, 'store']);
+        Route::put('/{id}', [ServiceController::class, 'update']);
+        Route::delete('/{id}', [ServiceController::class, 'destroy']);
+        Route::get('/by-type/{id}', [ServiceController::class, 'getServicesByType']);
     });
 
-    // TIPO DE SERVICIOS
-    Route::prefix('services-type')->middleware('role:Administrador,Jefe Comercial')->group(function () {
-        Route::get('/', [ServiceTypeController::class, 'index'])->middleware('role:Administrador,Jefe Comercial');
+    // TIPOS DE SERVICIOS
+    Route::prefix('services-type')->middleware('role:Administrador,Jefe Comercial,Customer Service')->group(function () {
+        Route::get('/', [ServiceTypeController::class, 'index']);
     });
 
     // PRODUCTOS
-    Route::prefix('products')->middleware('role:Administrador,Jefe Comercial')->group(function () {
+    Route::prefix('products')->middleware('role:Administrador,Jefe Comercial,Customer Service')->group(function () {
         Route::get('/', [ProductController::class, 'index']);
         Route::post('/', [ProductController::class, 'store']);
         Route::put('/{id}', [ProductController::class, 'update']);
@@ -72,7 +72,7 @@ Route::middleware('auth:sanctum')->group(function () {
     });
 
     // NEGOCIOS
-    Route::prefix('businesses')->middleware('role:Administrador,Jefe Comercial')->group(function () {
+    Route::prefix('businesses')->middleware('role:Administrador,Jefe Comercial,Customer Service')->group(function () {
         Route::get('/', [BusinessController::class, 'index']);
         Route::post('/', [BusinessController::class, 'store']);
         Route::put('/{id}', [BusinessController::class, 'update']);
@@ -80,12 +80,12 @@ Route::middleware('auth:sanctum')->group(function () {
     });
 
     // RUTAS
-    Route::prefix('routes')->middleware('role:Administrador,Jefe Comercial')->group(function () {
+    Route::prefix('routes')->middleware('role:Administrador,Jefe Comercial,Customer Service')->group(function () {
         Route::get('/', [RouteController::class, 'index']);
     });
 
     // TARIFAS
-    Route::prefix('rates')->middleware('role:Administrador,Jefe Comercial')->group(function () {
+    Route::prefix('rates')->middleware('role:Administrador,Jefe Comercial,Customer Service')->group(function () {
         Route::get('/', [RateController::class, 'index']);
         Route::post('/', [RateController::class, 'store']);
         Route::put('/{id}', [RateController::class, 'update']);
@@ -96,7 +96,7 @@ Route::middleware('auth:sanctum')->group(function () {
     });
 
     // ORDENES DE SERVICIO
-    Route::prefix('orders')->middleware('role:Administrador,Jefe Comercial')->group(function () {
+    Route::prefix('orders')->middleware('role:Administrador,Jefe Comercial,Supervisor,Customer Service,Portero,Romana')->group(function () {
         Route::get('/', [ServiceOrderController::class, 'index']);
         Route::post('/', [ServiceOrderController::class, 'store']);
         Route::put('/{id}', [ServiceOrderController::class, 'update']);
@@ -112,12 +112,12 @@ Route::middleware('auth:sanctum')->group(function () {
     });
 
     // PLANIFICACION OS
-    Route::prefix('schedule')->middleware('role:Administrador,Jefe Comercial')->group(function () {
+    Route::prefix('schedule')->middleware('role:Administrador,Jefe Comercial,Customer Service')->group(function () {
         Route::get('/', [ScheduleController::class, 'index']);
     });
 
     // PLANIFICACION
-    Route::prefix('planning')->middleware('role:Administrador,Jefe Comercial')->group(function () {
+    Route::prefix('planning')->middleware('role:Administrador,Jefe Comercial,Customer Service')->group(function () {
         Route::get('/', [PlanningController::class, 'index']);
     });
 });
