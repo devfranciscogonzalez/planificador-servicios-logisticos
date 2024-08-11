@@ -7,12 +7,12 @@ const COLORS = {
   AZUL: "azul",
 };
 const Logo = ({ color }) => (
-  <Box px={1}>
-    <Link to="/">
+  <Box sx={{ display: "flex", alignItems: "center" }}>
+    <Link to="/" style={{ height: "50px" }}>
       <img
         src={color === COLORS.AZUL ? logoAzul : logoBlanco}
         alt="Logo Camanchaca"
-        style={{ maxWidth: 150, cursor: "pointer" }}
+        style={{ maxWidth: "150px", cursor: "pointer", height: "50px" }}
       />
     </Link>
   </Box>

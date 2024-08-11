@@ -1,13 +1,10 @@
-import { AppBar, Toolbar, Box } from "@mui/material";
+import { AppBar, Toolbar } from "@mui/material";
 import Logo from "../Logo/Logo";
 
-const NavigationBar = ({ children }) => (
+const NavigationBar = () => (
   <AppBar position="static">
     <Toolbar>
-      <Box flexGrow={1}>
-        <Logo />
-      </Box>
-      {children}
+      <Logo />
     </Toolbar>
   </AppBar>
 );

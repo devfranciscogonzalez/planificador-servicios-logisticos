@@ -57,20 +57,15 @@ const Drawer = styled(MuiDrawer, {
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.leavingScreen,
       }),
-      width: theme.spacing(7),
-      [theme.breakpoints.up("sm")]: {
-        width: theme.spacing(9),
-      },
+      width: "56px",
     }),
   },
 }));
 
 export default function DrawerBar({ toggleDrawer, open }) {
   const location = useLocation();
-  // Obtiene el título basado en la ruta actual, o un título por defecto si la ruta no está definida
   const titles = titlesByRoute[location.pathname] || "Mi Aplicación";
   const { user, logout } = useAuth();
-  // Obtener las rutas de navegación según el rol del usuario
   const roleBasedNavigation = getRoleNavigationItems(user.role);
 
   return (
@@ -92,7 +87,7 @@ export default function DrawerBar({ toggleDrawer, open }) {
             component="h1"
             variant="h6"
             color="inherit"
-            sx={{ flexGrow: 1 }}
+            sx={{ flexGrow: 1, pl: "24px" }}
           >
             {titles}
           </Typography>
@@ -105,21 +100,15 @@ export default function DrawerBar({ toggleDrawer, open }) {
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
+            px: 2,
+            py: "6px",
+            gap: 1,
           }}
         >
           <Logo color="azul" />
-          <Toolbar
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "flex-end",
-              px: [1],
-            }}
-          >
-            <IconButton onClick={toggleDrawer}>
-              <ChevronLeftIcon />
-            </IconButton>
-          </Toolbar>
+          <IconButton onClick={toggleDrawer} sx={{ p: 0 }}>
+            <ChevronLeftIcon />
+          </IconButton>
         </Box>
         <Divider />
         <List component="nav">{roleBasedNavigation}</List>
