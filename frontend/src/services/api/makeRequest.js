@@ -8,12 +8,12 @@ const DEFAULT_HEADERS = {
 function getCookie(name) {
   const value = `; ${document.cookie}`;
   const parts = value.split(`; ${name}=`);
-  if (parts.length === 2) return parts.pop().split(';').shift();
+  if (parts.length === 2) return parts.pop().split(";").shift();
 }
 
 function getHeaders(data) {
   const headers = { ...DEFAULT_HEADERS };
-  headers['X-XSRF-TOKEN'] = getCookie('XSRF-TOKEN');
+  headers["X-XSRF-TOKEN"] = getCookie("XSRF-TOKEN");
   return data instanceof FormData ? {} : headers;
 }
 
@@ -40,7 +40,7 @@ async function makeRequest(method, url, data = null) {
   } catch (error) {
     const errorMessage = handleError(error);
 
-    if (errorMessage && typeof errorMessage === 'object') {
+    if (errorMessage && typeof errorMessage === "object") {
       errorMessage.errors && console.error("Errors:", errorMessage.errors);
       errorMessage.message && console.error("Message:", errorMessage.message);
     } else {
