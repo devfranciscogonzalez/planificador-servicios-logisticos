@@ -1,4 +1,4 @@
-import NavigationBar from "../common/navigation/NavigationBar";
+import NavigationBar from "../common/Navigation/NavigationBar";
 
 import { Link } from "react-router-dom";
 
