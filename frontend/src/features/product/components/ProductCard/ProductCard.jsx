@@ -13,19 +13,18 @@ import {
   Typography,
 } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2"; // Grid version 2
-import { grey } from "@mui/material/colors";
+import { blue } from "@mui/material/colors";
 import { useState } from "react";
 import UserAvatar from "../../../user/components/UserAvatar/UserAvatar";
 import StatusChip from "../../../../components/ui/StatusChip";
-import BussinesChip from "../ProductUI/BusinessChip";
+import BusinessChip from "../ProductUI/BusinessChip";
 
-const ExpandMore = styled((props) => {
-  const { expand, ...other } = props;
-  return <IconButton {...other} />;
+const ExpandMore = styled(IconButton, {
+  shouldForwardProp: (prop) => prop !== 'expand',
 })(({ theme, expand }) => ({
-  transform: !expand ? "rotate(0deg)" : "rotate(180deg)",
-  marginLeft: "auto",
-  transition: theme.transitions.create("transform", {
+  transform: expand ? 'rotate(180deg)' : 'rotate(0deg)',
+  marginLeft: 'auto',
+  transition: theme.transitions.create('transform', {
     duration: theme.transitions.duration.shortest,
   }),
 }));
@@ -57,7 +56,7 @@ const ProductCard = ({ products }) => {
               }
               title={products.user.name}
               subheader={
-                <Box sx={{ color: grey[400] }}>
+                <Box sx={{ color: blue[100] }}>
                   {products.user.email}
                   <br />
                   {products.createdAt}
@@ -84,7 +83,7 @@ const ProductCard = ({ products }) => {
               <Typography gutterBottom variant="h6" component="div">
                 {products.name}
                 <StatusChip enabled={products.status} sx={{ m: 1 }} />
-                <BussinesChip
+                <BusinessChip
                   businessId={products.businessId}
                   businessName={products.businessName}
                 />

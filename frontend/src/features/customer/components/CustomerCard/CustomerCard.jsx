@@ -11,16 +11,16 @@ import {
   IconButton,
   Typography,
 } from "@mui/material";
-import Grid from "@mui/material/Unstable_Grid2"; // Grid version 2
-import { grey } from "@mui/material/colors";
+import Grid from "@mui/material/Unstable_Grid2";
+import { blue } from "@mui/material/colors";
 import { useState } from "react";
 import UserAvatar from "../../../user/components/UserAvatar/UserAvatar";
 import StatusChip from "../../../../components/ui/StatusChip";
-const ExpandMore = styled((props) => {
-  const { expand, ...other } = props;
-  return <IconButton {...other} />;
+
+const ExpandMore = styled(IconButton, {
+  shouldForwardProp: (prop) => prop !== "expand",
 })(({ theme, expand }) => ({
-  transform: !expand ? "rotate(0deg)" : "rotate(180deg)",
+  transform: expand ? "rotate(180deg)" : "rotate(0deg)",
   marginLeft: "auto",
   transition: theme.transitions.create("transform", {
     duration: theme.transitions.duration.shortest,
@@ -54,7 +54,7 @@ const CustomerCard = ({ customers }) => {
               }
               title={customer.user.name}
               subheader={
-                <Box sx={{ color: grey[400] }}>
+                <Box sx={{ color: blue[100] }}>
                   {customer.user.email}
                   <br />
                   {customer.createdAt}
