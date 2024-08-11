@@ -1,21 +1,23 @@
 import httpClient from "./httpClient";
 
 const DEFAULT_HEADERS = {
-  "X-Requested-With": "XMLHttpRequest",
   "Content-Type": "application/json",
   Accept: "application/json",
 };
 
-// function getCookie(name) {
-//   const value = `; ${document.cookie}`;
-//   const parts = value.split(`; ${name}=`);
-//   if (parts.length === 2) return parts.pop().split(";").shift();
-// }
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(";").shift();
+}
 
 function getHeaders(data) {
-  // const headers = { ...DEFAULT_HEADERS };
-  // headers["X-XSRF-TOKEN"] = getCookie("XSRF-TOKEN");
-  return data instanceof FormData ? {} : DEFAULT_HEADERS;
+  const headers = { ...DEFAULT_HEADERS };
+  const csrfToken = getCookie("XSRF-TOKEN");
+  if (csrfToken) {
+    headers["X-XSRF-TOKEN"] = csrfToken;
+  }
+  return data instanceof FormData ? {} : headers;
 }
 
 function handleError(error) {
