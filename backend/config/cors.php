@@ -6,7 +6,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins'  => explode(',', env('CORS_ALLOWED_ORIGINS')),
+    'allowed_origins'  => ['https://planificador-servicios-logisticos.vercel.app'],
 
     'allowed_origins_patterns' => [],
 
