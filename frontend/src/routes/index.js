@@ -1,4 +1,3 @@
-// Exportando componentes de ruta protegidas y públicas
 export { default as ErrorPage } from "../pages/ErrorPage/ErrorPage.jsx";
 export { default as ProtectedRoutes } from "./ProtectedRoutes.jsx";
 export { default as PublicRoutes } from "./PublicRoutes.jsx";
