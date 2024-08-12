@@ -1,7 +1,7 @@
 import NavigationBar from "../common/Navigation/NavigationBar";
 import { Box } from "@mui/material";
 
-export default function DefaultLayout({ children }) {
+const DefaultLayout = ({ children }) => {
   return (
     <Box component="section">
       <Box component="nav">
@@ -10,4 +10,6 @@ export default function DefaultLayout({ children }) {
       <Box component="main">{children}</Box>
     </Box>
   );
-}
+};
+
+export default DefaultLayout;

@@ -4,7 +4,7 @@ import useAuth from "../features/auth/hooks/useAuth";
 const ProtectedRoutes = () => {
   const { isAuthenticated } = useAuth();
 
-  return isAuthenticated ? <Outlet /> : <Navigate to="/dashboard" />;
+  return isAuthenticated ? <Outlet /> : <Navigate to="/" />;
 };
 
 export default ProtectedRoutes;
