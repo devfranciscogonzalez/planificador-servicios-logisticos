@@ -1,19 +1,19 @@
 {
   "routes": [
-    { "src": "/dashboard", "dest": "/" },
-    { "src": "/profile", "dest": "/" },
-    { "src": "/products", "dest": "/" },
-    { "src": "/users", "dest": "/" },
-    { "src": "/customers", "dest": "/" },
-    { "src": "/services", "dest": "/" },
-    { "src": "/rates", "dest": "/" },
-    { "src": "/orders", "dest": "/" },
-    { "src": "/orders-truck", "dest": "/" },
-    { "src": "/orders-confirm", "dest": "/" },
-    { "src": "/orders-input", "dest": "/" },
-    { "src": "/orders-output", "dest": "/" },
-    { "src": "/orders-weight-input", "dest": "/" },
-    { "src": "/orders-weight-output", "dest": "/" },
-    { "src": "/(.*)", "dest": "/" }
+    { "src": "/dashboard", "dest": "/index" },
+    { "src": "/profile", "dest": "/index" },
+    { "src": "/products", "dest": "/index" },
+    { "src": "/users", "dest": "/index" },
+    { "src": "/customers", "dest": "/index" },
+    { "src": "/services", "dest": "/index" },
+    { "src": "/rates", "dest": "/index" },
+    { "src": "/orders", "dest": "/index" },
+    { "src": "/orders-truck", "dest": "/index" },
+    { "src": "/orders-confirm", "dest": "/index" },
+    { "src": "/orders-input", "dest": "/index" },
+    { "src": "/orders-output", "dest": "/index" },
+    { "src": "/orders-weight-input", "dest": "/index" },
+    { "src": "/orders-weight-output", "dest": "/index" },
+    { "src": "/(.*)", "dest": "/index" }
   ]
 }
