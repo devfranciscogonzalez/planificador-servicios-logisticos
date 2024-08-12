@@ -31,10 +31,10 @@ const router = createBrowserRouter([
     element: <ProtectedRoutes />,
     errorElement: <ErrorPage />,
     children: [
-      { path: "app/dashboard", element: <DashboardPage /> },
-      { path: "app/profile", element: <UserProfile /> },
+      { path: "/dashboard", element: <DashboardPage /> },
+      { path: "/profile", element: <UserProfile /> },
       {
-        path: "app/products",
+        path: "/products",
         element: (
           <RoleProtectedElement
             allowedRoles={[ROLES_USER.ADMINISTRADOR, ROLES_USER.JEFE_COMERCIAL]}
@@ -44,7 +44,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "app/users",
+        path: "/users",
         element: (
           <RoleProtectedElement
             allowedRoles={[ROLES_USER.ADMINISTRADOR, ROLES_USER.JEFE_COMERCIAL]}
@@ -54,7 +54,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "app/customers",
+        path: "/customers",
         element: (
           <RoleProtectedElement
             allowedRoles={[ROLES_USER.ADMINISTRADOR, ROLES_USER.JEFE_COMERCIAL]}
@@ -64,7 +64,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "app/services",
+        path: "/services",
         element: (
           <RoleProtectedElement
             allowedRoles={[ROLES_USER.ADMINISTRADOR, ROLES_USER.JEFE_COMERCIAL]}
@@ -74,7 +74,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "app/rates",
+        path: "/rates",
         element: (
           <RoleProtectedElement
             allowedRoles={[ROLES_USER.ADMINISTRADOR, ROLES_USER.JEFE_COMERCIAL]}
@@ -84,7 +84,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "app/orders",
+        path: "/orders",
         element: (
           <RoleProtectedElement
             allowedRoles={[
@@ -98,7 +98,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "app/orders-truck",
+        path: "/orders-truck",
         element: (
           <RoleProtectedElement
             allowedRoles={[
@@ -112,7 +112,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "app/orders-confirm",
+        path: "/orders-confirm",
         element: (
           <RoleProtectedElement
             allowedRoles={[ROLES_USER.ADMINISTRADOR,ROLES_USER.JEFE_COMERCIAL, ROLES_USER.SUPERVISOR]}
@@ -122,7 +122,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "app/orders-input",
+        path: "/orders-input",
         element: (
           <RoleProtectedElement
             allowedRoles={[
@@ -136,7 +136,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "app/orders-output",
+        path: "/orders-output",
         element: (
           <RoleProtectedElement
             allowedRoles={[
@@ -150,7 +150,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "app/orders-weight-input",
+        path: "/orders-weight-input",
         element: (
           <RoleProtectedElement
             allowedRoles={[
@@ -164,7 +164,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "app/orders-weight-output",
+        path: "/orders-weight-output",
         element: (
           <RoleProtectedElement
             allowedRoles={[
