@@ -28,6 +28,10 @@ const router = createBrowserRouter([
     children: [{ index: true, element: <LoginPage /> }],
   },
   {
+    path: "dashboard2",
+    element: <DashboardPage />,
+  },
+  {
     element: <ProtectedRoutes />,
     errorElement: <ErrorPage />,
     children: [
@@ -115,7 +119,11 @@ const router = createBrowserRouter([
         path: "/orders-confirm",
         element: (
           <RoleProtectedElement
-            allowedRoles={[ROLES_USER.ADMINISTRADOR,ROLES_USER.JEFE_COMERCIAL, ROLES_USER.SUPERVISOR]}
+            allowedRoles={[
+              ROLES_USER.ADMINISTRADOR,
+              ROLES_USER.JEFE_COMERCIAL,
+              ROLES_USER.SUPERVISOR,
+            ]}
           >
             <OrderConfirmPage />
           </RoleProtectedElement>
