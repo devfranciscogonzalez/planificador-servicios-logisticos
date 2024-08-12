@@ -1,8 +1,19 @@
 {
-  "rewrites": [
-    {
-      "source": "/app/:path*",
-      "destination": "/index.html"
-    }
+  "routes": [
+    { "src": "/", "dest": "/" },
+    { "src": "/app/dashboard", "dest": "/" },
+    { "src": "/app/profile", "dest": "/" },
+    { "src": "/app/products", "dest": "/" },
+    { "src": "/app/users", "dest": "/" },
+    { "src": "/app/customers", "dest": "/" },
+    { "src": "/app/services", "dest": "/" },
+    { "src": "/app/rates", "dest": "/" },
+    { "src": "/app/orders", "dest": "/" },
+    { "src": "/app/orders-truck", "dest": "/" },
+    { "src": "/app/orders-confirm", "dest": "/" },
+    { "src": "/app/orders-input", "dest": "/" },
+    { "src": "/app/orders-output", "dest": "/" },
+    { "src": "/app/orders-weight-input", "dest": "/" },
+    { "src": "/app/orders-weight-output", "dest": "/" }
   ]
 }
