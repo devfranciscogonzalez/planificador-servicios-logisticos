@@ -1,3 +1,18 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
+  "routes": [
+    { "src": "/dashboard", "dest": "/" },
+    { "src": "/profile", "dest": "/" },
+    { "src": "/products", "dest": "/" },
+    { "src": "/users", "dest": "/" },
+    { "src": "/customers", "dest": "/" },
+    { "src": "/services", "dest": "/" },
+    { "src": "/rates", "dest": "/" },
+    { "src": "/orders", "dest": "/" },
+    { "src": "/orders-truck", "dest": "/" },
+    { "src": "/orders-confirm", "dest": "/" },
+    { "src": "/orders-input", "dest": "/" },
+    { "src": "/orders-output", "dest": "/" },
+    { "src": "/orders-weight-input", "dest": "/" },
+    { "src": "/orders-weight-output", "dest": "/" }
+  ]
 }
