@@ -36,7 +36,7 @@ export const AuthProvider = ({ children }) => {
 
   const value = {
     user,
-    isAuthenticated: user && user.status === 1,
+    isAuthenticated: user && user.status,
     login: loginMutation,
     logout: logoutMutation,
   };
