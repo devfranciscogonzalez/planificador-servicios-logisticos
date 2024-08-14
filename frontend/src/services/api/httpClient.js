@@ -5,7 +5,6 @@ const apiBaseUrl = import.meta.env.VITE_BASE_URL || "http://localhost:8000";
 const httpClient = axios.create({
   baseURL: apiBaseUrl,
   withCredentials: true,
-  withXSRFToken: true,
 });
 
 httpClient.interceptors.request.use(

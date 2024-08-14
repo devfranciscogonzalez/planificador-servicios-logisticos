@@ -12,11 +12,11 @@ import {
   IconButton,
   Typography,
 } from "@mui/material";
-import Grid from "@mui/material/Unstable_Grid2"; // Grid version 2
+import Grid from "@mui/material/Unstable_Grid2";
 import { blue } from "@mui/material/colors";
 import { useState } from "react";
-import UserAvatar from "../../../user/components/UserAvatar/UserAvatar";
 import StatusChip from "../../../../components/ui/StatusChip";
+import UserAvatar from "../../../user/components/UserAvatar/UserAvatar";
 import BusinessChip from "../ProductUI/BusinessChip";
 
 const ExpandMore = styled(IconButton, {

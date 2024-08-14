@@ -1,10 +1,10 @@
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
-import CustomIconButton from "../../../components/common/Button/CustomIconButton";
-import UserAvatar from "../../user/components/UserAvatar/UserAvatar";
-import StatusChip from "../../../components/ui/StatusChip";
-import BusinessChip from "../components/ProductUI/BusinessChip";
 import { Box } from "@mui/material";
+import CustomIconButton from "../../../components/common/Button/CustomIconButton";
+import StatusChip from "../../../components/ui/StatusChip";
+import UserAvatar from "../../user/components/UserAvatar/UserAvatar";
+import BusinessChip from "../components/ProductUI/BusinessChip";
 
 const useProductTableColumn = (products, onEdit, onDelete) => {
   const columns = [
@@ -29,17 +29,13 @@ const useProductTableColumn = (products, onEdit, onDelete) => {
     },
     {
       name: "description",
-      label: "Descripcion",
+      label: "Descripción",
       options: {
         filter: false,
         sort: true,
         customBodyRenderLite: (dataIndex) => {
           const description = products[dataIndex].description;
-          return (
-            <Box style={{ textAlign: "left", textJustify: "inter-word" }}>
-              {description}
-            </Box>
-          );
+          return <Box sx={{ textAlign: "left"}}>{description}</Box>;
         },
       },
     },
