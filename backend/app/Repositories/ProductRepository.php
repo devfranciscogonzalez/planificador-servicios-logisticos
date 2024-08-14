@@ -12,7 +12,7 @@ class ProductRepository implements ProductRepositoryInterface
   public function create(array $data)
   {
     if (isset($data['logo']) && $data['logo'] instanceof UploadedFile) {
-      $path = $data['logo']->store('logos', 'public');
+      $path = $data['logo']->store('logos/products', 'public');
       $data['logo'] = $path;
     } else {
       $data['logo'] = 'logos/no-logo.png';
@@ -32,7 +32,7 @@ class ProductRepository implements ProductRepositoryInterface
     $product = Product::findOrFail($id);
 
     if (isset($data['logo']) && $data['logo'] instanceof UploadedFile) {
-      $path = $data['logo']->store('logos', 'public');
+      $path = $data['logo']->store('logos/products', 'public');
       $data['logo'] = $path;
     } else {
       unset($data['logo']);

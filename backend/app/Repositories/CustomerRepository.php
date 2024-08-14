@@ -13,7 +13,7 @@ class CustomerRepository implements CustomerRepositoryInterface
   {
 
     if (isset($data['logo']) && $data['logo'] instanceof UploadedFile) {
-      $path = $data['logo']->store('logos', 'public');
+      $path = $data['logo']->store('logos/customers', 'public');
       $data['logo'] = $path;
     } else {
       $data['logo'] = 'logos/no-logo.png'; 
@@ -37,7 +37,7 @@ class CustomerRepository implements CustomerRepositoryInterface
   {
     $customer = Customer::findOrFail($id);
     if (isset($data['logo']) && $data['logo'] instanceof UploadedFile) {
-      $path = $data['logo']->store('logos', 'public');
+      $path = $data['logo']->store('logos/customers', 'public');
       $data['logo'] = $path;
     } else {
       unset($data['logo']);

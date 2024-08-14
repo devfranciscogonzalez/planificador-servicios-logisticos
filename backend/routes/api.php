@@ -39,7 +39,7 @@ Route::middleware('auth:sanctum')->group(function () {
     // ROLES
     Route::get('roles', [RoleController::class, 'index'])->middleware('role:Administrador,Jefe Comercial');
 
-    // ATENCION AL CLIENTE 
+    // CLIENTES 
     Route::prefix('customers')->middleware('role:Administrador,Jefe Comercial,Customer Service')->group(function () {
         Route::get('/', [CustomerController::class, 'index']);
         Route::post('/', [CustomerController::class, 'store']);
