@@ -22,9 +22,9 @@ async function makeRequest(method, url, data = null) {
       headers: data instanceof FormData ? {} : DEFAULT_HEADERS,
       data,
     };
-    
     const response = await httpClient(config);
     return response.data;
+    
   } catch (error) {
     const errorMessage = handleError(error);
 

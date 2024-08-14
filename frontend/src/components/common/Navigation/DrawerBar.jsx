@@ -5,64 +5,19 @@ import {
   Divider,
   IconButton,
   List,
-  AppBar as MuiAppBar,
-  Drawer as MuiDrawer,
   Toolbar,
   Typography,
 } from "@mui/material";
-import { styled } from "@mui/material/styles";
 import { useLocation } from "react-router-dom";
 import { titlesByRoute } from "../../../constants/mappingObject";
 import MenuAppBar from "../../../features/auth/components/MenuAppBar";
 import useAuth from "../../../features/auth/hooks/useAuth";
 import { getRoleNavigationItems } from "../../../utils/navigationUtil";
 import Logo from "../Logo/Logo";
-
-const drawerWidth = 220;
-
-const AppBar = styled(MuiAppBar, {
-  shouldForwardProp: (prop) => prop !== "open",
-})(({ theme, open }) => ({
-  zIndex: theme.zIndex.drawer + 1,
-  transition: theme.transitions.create(["width", "margin"], {
-    easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.enteringScreen,
-  }),
-  ...(open && {
-    marginLeft: drawerWidth,
-    width: `calc(100% - ${drawerWidth}px)`,
-    transition: theme.transitions.create(["width", "margin"], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-  }),
-}));
-
-const Drawer = styled(MuiDrawer, {
-  shouldForwardProp: (prop) => prop !== "open",
-})(({ theme, open }) => ({
-  "& .MuiDrawer-paper": {
-    position: "relative",
-    whiteSpace: "nowrap",
-    width: drawerWidth,
-    transition: theme.transitions.create("width", {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-    boxSizing: "border-box",
-    minHeight: "100vh",
-    overflowX: "hidden",
-    ...(!open && {
-      transition: theme.transitions.create("width", {
-        easing: theme.transitions.easing.sharp,
-        duration: theme.transitions.duration.leavingScreen,
-      }),
-      width: "56px",
-    }),
-  },
-}));
+import { AppBar, Drawer } from "./DrawerBar.styles";
 
 export default function DrawerBar({ toggleDrawer, open }) {
+  
   const location = useLocation();
   const titles = titlesByRoute[location.pathname] || "Mi Aplicación";
   const { user, logout } = useAuth();
