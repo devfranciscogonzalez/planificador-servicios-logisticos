@@ -1,4 +1,3 @@
-import styled from "@emotion/styled";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import {
   Box,
@@ -8,28 +7,17 @@ import {
   CardHeader,
   CardMedia,
   Collapse,
-  IconButton,
   Typography,
 } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 import { blue } from "@mui/material/colors";
 import { useState } from "react";
-import UserAvatar from "../../../user/components/UserAvatar/UserAvatar";
 import StatusChip from "../../../../components/ui/StatusChip";
-
-const ExpandMore = styled(IconButton, {
-  shouldForwardProp: (prop) => prop !== "expand",
-})(({ theme, expand }) => ({
-  transform: expand ? "rotate(180deg)" : "rotate(0deg)",
-  marginLeft: "auto",
-  transition: theme.transitions.create("transform", {
-    duration: theme.transitions.duration.shortest,
-  }),
-}));
+import UserAvatar from "../../../user/components/UserAvatar/UserAvatar";
+import ExpandMore from "./CustomerCard.styles";
 
 const CustomerCard = ({ customers }) => {
-  const baseUrlStorage =
-    import.meta.env.VITE_BASE_URL_STORAGE || "http://localhost:8000/storage/";
+  const baseUrlStorage = import.meta.env.VITE_BASE_URL_STORAGE;
 
   const [expanded, setExpanded] = useState({});
 
@@ -44,7 +32,13 @@ const CustomerCard = ({ customers }) => {
     <>
       {customers?.map((customer) => (
         <Grid xs={12} sm={12} md={6} lg={4} key={customer.id}>
-          <Card>
+          <Card
+            sx={{
+              outlineStyle: "solid",
+              outlineColor: "secondary.main",
+              outlineWidth: "2px",
+            }}
+          >
             <CardHeader
               avatar={
                 <UserAvatar
@@ -63,7 +57,6 @@ const CustomerCard = ({ customers }) => {
               sx={{
                 bgcolor: "primary.main",
                 color: "primary.contrastText",
-                position: "relative",
               }}
             />
 
@@ -76,9 +69,8 @@ const CustomerCard = ({ customers }) => {
                 sx={{ objectFit: "contain", objectPosition: "center" }}
               />
             )}
-
             <CardActions disableSpacing>
-              <Typography gutterBottom variant="h6" component="div">
+              <Typography variant="h6" component="div">
                 {customer.name}
                 <StatusChip enabled={customer.status} sx={{ m: 1 }} />
               </Typography>
@@ -86,7 +78,7 @@ const CustomerCard = ({ customers }) => {
                 expand={expanded[customer.id] || false}
                 onClick={() => handleExpandClick(customer.id)}
                 aria-expanded={expanded[customer.id] || false}
-                aria-label="show more"
+                aria-label="Mostrar más información"
               >
                 <ExpandMoreIcon />
               </ExpandMore>
@@ -96,7 +88,7 @@ const CustomerCard = ({ customers }) => {
               timeout="auto"
               unmountOnExit
             >
-              <CardContent>
+              <CardContent sx={{ backgroundColor: "secondary.main" }}>
                 <Typography variant="body2">{customer.description}</Typography>
               </CardContent>
             </Collapse>

@@ -1,4 +1,3 @@
-import styled from "@emotion/styled";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import {
   Box,
@@ -8,8 +7,6 @@ import {
   CardHeader,
   CardMedia,
   Collapse,
-  Divider,
-  IconButton,
   Typography,
 } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
@@ -18,20 +15,10 @@ import { useState } from "react";
 import StatusChip from "../../../../components/ui/StatusChip";
 import UserAvatar from "../../../user/components/UserAvatar/UserAvatar";
 import BusinessChip from "../ProductUI/BusinessChip";
-
-const ExpandMore = styled(IconButton, {
-  shouldForwardProp: (prop) => prop !== 'expand',
-})(({ theme, expand }) => ({
-  transform: expand ? 'rotate(180deg)' : 'rotate(0deg)',
-  marginLeft: 'auto',
-  transition: theme.transitions.create('transform', {
-    duration: theme.transitions.duration.shortest,
-  }),
-}));
+import ExpandMore from "./ProductCard.styles";
 
 const ProductCard = ({ products }) => {
-  const baseUrlStorage =
-    import.meta.env.VITE_BASE_URL_STORAGE || "http://localhost:8000/storage/";
+  const baseUrlStorage = import.meta.env.VITE_BASE_URL_STORAGE;
 
   const [expanded, setExpanded] = useState({});
 
@@ -46,7 +33,13 @@ const ProductCard = ({ products }) => {
     <>
       {products?.map((products) => (
         <Grid xs={12} sm={12} md={6} lg={4} key={products.id}>
-          <Card>
+          <Card
+            sx={{
+              outlineStyle: "solid",
+              outlineColor: "secondary.main",
+              outlineWidth: "2px",
+            }}
+          >
             <CardHeader
               avatar={
                 <UserAvatar
@@ -65,7 +58,6 @@ const ProductCard = ({ products }) => {
               sx={{
                 bgcolor: "primary.main",
                 color: "primary.contrastText",
-                position: "relative",
               }}
             />
 
@@ -80,7 +72,7 @@ const ProductCard = ({ products }) => {
             )}
 
             <CardActions disableSpacing>
-              <Typography gutterBottom variant="h6" component="div">
+              <Typography variant="h6" component="div">
                 {products.name}
                 <StatusChip enabled={products.status} sx={{ m: 1 }} />
                 <BusinessChip
@@ -92,18 +84,17 @@ const ProductCard = ({ products }) => {
                 expand={expanded[products.id] || false}
                 onClick={() => handleExpandClick(products.id)}
                 aria-expanded={expanded[products.id] || false}
-                aria-label="show more"
+                aria-label="Mostrar más información"
               >
                 <ExpandMoreIcon />
               </ExpandMore>
             </CardActions>
-            <Divider />
             <Collapse
               in={expanded[products.id] || false}
               timeout="auto"
               unmountOnExit
             >
-              <CardContent>
+              <CardContent sx={{ backgroundColor: "secondary.main" }}>
                 <Typography variant="body2">{products.description}</Typography>
               </CardContent>
             </Collapse>

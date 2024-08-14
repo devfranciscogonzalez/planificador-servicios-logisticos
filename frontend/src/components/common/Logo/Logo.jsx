@@ -1,7 +1,6 @@
 import Box from "@mui/material/Box";
 import { Link } from "react-router-dom";
-import logoAzul from "../../../assets/image/logo_camanchaca_azul.png";
-import logoBlanco from "../../../assets/image/logo_camanchaca_blanco.png";
+import { logoAzul, logoBlanco } from "../../../assets/images";
 
 const COLORS = {
   AZUL: "azul",
@@ -12,7 +11,7 @@ const Logo = ({ color }) => (
       <img
         src={color === COLORS.AZUL ? logoAzul : logoBlanco}
         alt="Logo Camanchaca"
-        style={{ maxWidth: "150px", cursor: "pointer", height: "50px" }}
+        style={{ width: "150px", height: "50px", cursor: "pointer" }}
       />
     </Link>
   </Box>
