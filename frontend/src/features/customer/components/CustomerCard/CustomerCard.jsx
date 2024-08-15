@@ -12,7 +12,7 @@ import {
 import Grid from "@mui/material/Unstable_Grid2";
 import { blue } from "@mui/material/colors";
 import { useState } from "react";
-import StatusChip from "../../../../components/ui/StatusChip";
+import { StatusChip } from "../../../../components/ui";
 import UserAvatar from "../../../user/components/UserAvatar/UserAvatar";
 import ExpandMore from "./CustomerCard.styles";
 
@@ -69,10 +69,19 @@ const CustomerCard = ({ customers }) => {
                 sx={{ objectFit: "contain", objectPosition: "center" }}
               />
             )}
-            <CardActions disableSpacing>
-              <Typography variant="h6" component="div">
+            <CardActions disableSpacing sx={{ p: 2 }}>
+              <Typography
+                variant="h6"
+                component="div"
+                sx={{
+                  display: "flex",
+                  columnGap: 1,
+                  alignItems: "center",
+                  flexWrap: "wrap",
+                }}
+              >
                 {customer.name}
-                <StatusChip enabled={customer.status} sx={{ m: 1 }} />
+                <StatusChip enabled={customer.status} />
               </Typography>
               <ExpandMore
                 expand={expanded[customer.id] || false}

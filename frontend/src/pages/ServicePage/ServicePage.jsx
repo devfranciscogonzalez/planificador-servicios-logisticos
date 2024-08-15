@@ -12,6 +12,7 @@ import ServiceTable from "../../features/service/components/ServiceTable/Service
 import useService from "../../features/service/hooks/useService";
 import useAsyncAction from "../../hooks/useAsyncAction";
 import useModalState from "../../hooks/useModalState";
+
 const a11yProps = (index) => {
   return {
     id: `service-tab-${index}`,
@@ -41,7 +42,6 @@ const ServicePage = () => {
   return (
     <AuthenticatedLayout>
       <PaperContainer relativePosition={true}>
-        {/* <Box sx={{ borderBottom: 1, borderColor: "divider" }}> */}
         <Tabs
           value={tabValue}
           onChange={handleTabChange}

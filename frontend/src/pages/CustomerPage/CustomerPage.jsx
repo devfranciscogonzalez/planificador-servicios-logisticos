@@ -48,6 +48,7 @@ const CustomerPage = () => {
             value={tabValue}
             onChange={handleTabChange}
             aria-label="customer tabs"
+            variant="scrollable"
           >
             <Tab label="Tarjetas" {...a11yProps(0)} />
             <Tab label="Tabla" {...a11yProps(1)} />

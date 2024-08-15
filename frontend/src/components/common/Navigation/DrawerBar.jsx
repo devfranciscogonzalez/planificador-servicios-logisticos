@@ -16,8 +16,7 @@ import { getRoleNavigationItems } from "../../../utils/navigationUtil";
 import Logo from "../Logo/Logo";
 import { AppBar, Drawer } from "./DrawerBar.styles";
 
-export default function DrawerBar({ toggleDrawer, open }) {
-  
+const DrawerBar = ({ toggleDrawer, open }) => {
   const location = useLocation();
   const titles = titlesByRoute[location.pathname] || "Mi Aplicación";
   const { user, logout } = useAuth();
@@ -25,7 +24,15 @@ export default function DrawerBar({ toggleDrawer, open }) {
 
   return (
     <>
-      <AppBar position="absolute" open={open}>
+      <AppBar
+        position="absolute"
+        open={open}
+        sx={(theme) => ({
+          [theme.breakpoints.down("sm")]: {
+            p: "3px 0",
+          },
+        })}
+      >
         <Toolbar>
           <IconButton
             color="inherit"
@@ -70,4 +77,6 @@ export default function DrawerBar({ toggleDrawer, open }) {
       </Drawer>
     </>
   );
-}
+};
+
+export default DrawerBar;

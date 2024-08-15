@@ -13,10 +13,18 @@ const AuthenticatedLayout = ({ children }) => {
         sx={{
           flexGrow: 1,
           my: 10,
+          boxSizing: "content-box",
           overflow: "auto",
         }}
       >
-        <Container maxWidth="100%" sx={{ boxSizing: "border-box" }}>
+        <Container
+          maxWidth="false"
+          sx={(theme) => ({
+            [theme.breakpoints.down("sm")]: {
+              px: 1,
+            },
+          })}
+        >
           {children}
         </Container>
       </Box>
