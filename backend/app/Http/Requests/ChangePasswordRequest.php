@@ -24,7 +24,7 @@ class ChangePasswordRequest extends FormRequest
     public function rules()
     {
         return [
-            'new_password' => 'required|string|min:6|confirmed',
+            'new_password' => 'required|string|min:4|max:20|confirmed',
         ];
     }
 
@@ -37,7 +37,8 @@ class ChangePasswordRequest extends FormRequest
     {
         return [
             'new_password.required' => 'El campo nueva contraseña es obligatorio.',
-            'new_password.min' => 'La nueva contraseña debe tener al menos 6 caracteres.',
+            'new_password.min' => 'La nueva contraseña debe tener al menos 4 caracteres.',
+            'new_password.max' => 'La nueva contraseña debe tener como máximo 20 caracteres.',
             'new_password.confirmed' => 'La confirmación de la contraseña no coincide.',
         ];
     }

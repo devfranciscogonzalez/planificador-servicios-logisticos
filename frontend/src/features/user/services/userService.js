@@ -2,7 +2,6 @@ import makeRequest from "../../../services/api/makeRequest";
 
 export const userService = {
   register({ name, email, status, password, password_confirmation, role_id }) {
-    status = status ? 1 : 0;
     return makeRequest("post", "/api/register", {
       name,
       email,

@@ -14,7 +14,6 @@ const CustomTextField = ({
 }) => {
   const [charCount, setCharCount] = useState(0);
 
-  // mostrar icono de error o de correcto en el campo de texto
   const renderEndAdornment = (isDirty, error) => {
     return error ? (
       <ErrorOutlineIcon sx={{ color: "error.main" }} />

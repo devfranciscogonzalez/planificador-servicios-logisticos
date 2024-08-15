@@ -1,14 +1,14 @@
 import Grid from "@mui/material/Unstable_Grid2";
-import CustomTextField from "../../../../components/common/Input/CustomTextField";
+import { CustomTextField } from "../../../../components/common";
 
-const renderPasswordField = (name, label, control) => (
+const renderPasswordField = (name, label, maxLength, control) => (
   <Grid xs={12}>
     <CustomTextField
       name={name}
       label={label}
+      maxLength={maxLength}
       control={control}
       type="password"
-      // autoComplete="new-password"
     />
   </Grid>
 );
@@ -16,10 +16,11 @@ const renderPasswordField = (name, label, control) => (
 const UserFormPasswordField = ({ control }) => {
   return (
     <>
-      {renderPasswordField("password", "Contraseña", control)}
+      {renderPasswordField("password", "Contraseña", 20, control)}
       {renderPasswordField(
         "password_confirmation",
         "Confirmar Contraseña",
+        20,
         control
       )}
     </>

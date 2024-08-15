@@ -10,9 +10,8 @@ const getInitials = (name) => {
     .toUpperCase();
 };
 
-// Componente Avatar
 const UserAvatar = ({ name, roleId, sx }) => {
-  const avatarColor = ROLE_COLORS[roleId] || "grey"; // Color por defecto si el rol no está definido
+  const avatarColor = ROLE_COLORS[roleId] || "grey";
   return (
     <Avatar sx={{ ...sx, bgcolor: avatarColor }}>{getInitials(name)}</Avatar>
   );

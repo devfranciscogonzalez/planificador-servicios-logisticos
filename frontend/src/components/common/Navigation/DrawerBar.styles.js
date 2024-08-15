@@ -1,6 +1,5 @@
 import { AppBar as MuiAppBar, Drawer as MuiDrawer } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import zIndex from "@mui/material/styles/zIndex";
 
 const drawerWidth = 220;
 

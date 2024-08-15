@@ -20,6 +20,16 @@ const theme = createTheme({
         },
       },
     },
+    MUIDataTableToolbar: {
+      styleOverrides: {
+        root: {
+          padding: "0 !important",
+        },
+        actions: {
+          gap: "10px",
+        },
+      },
+    },
     MuiTableCell: {
       styleOverrides: {
         root: {

@@ -28,10 +28,10 @@ class RegisterRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
+            'name' => 'required|string|min:3|max:50',,
+            'email' => 'required|string|email|min:8|max:50|unique:users',
             'status' => 'required|boolean',
-            'password' => 'required|string|min:3|confirmed',
+            'password' => 'required|string|min:4|max:20|confirmed',
             'role_id' => 'required|numeric',
         ];
     }
@@ -40,15 +40,23 @@ class RegisterRequest extends FormRequest
     {
         return [
             'name.required' => 'El campo nombre es obligatorio.',
+            'name.string' => 'El campo nombre debe ser una cadena de texto.',
+            'name.min' => 'El campo nombre debe tener al menos 3 caracteres.',
+            'name.max' => 'El campo nombre debe tener como máximo 50 caracteres.',
             'email.required' => 'El campo email es obligatorio.',
+            'email.string' => 'El campo email debe ser una cadena de texto.',
             'email.email' => 'El campo email debe ser una dirección de correo válida.',
+            'email.min' => 'El campo email debe tener al menos 8 caracteres.',
+            'email.max' => 'El campo email debe tener como máximo 50 caracteres.',
             'email.unique' => 'El email ya está registrado.',
             'status.required' => 'El campo estado es obligatorio.',
+            'status.boolean' => 'El campo estado debe ser un valor booleano.',
             'password.required' => 'El campo contraseña es obligatorio.',
-            'password.min' => 'La contraseña debe tener al menos 6 caracteres.',
+            'password.min' => 'La contraseña debe tener al menos 4 caracteres.',
+            'password.max' => 'La contraseña debe tener como máximo 20 caracteres.',
             'password.confirmed' => 'La contraseña no se confirmo correctamente',
             'role_id.required' => 'El campo rol es obligatorio.',
-            'role_id.numeric' => 'El campo rol debe ser un numero.',
+            'role_id.numeric' => 'El campo rol debe ser un número.',
         ];
     }
 

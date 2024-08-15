@@ -48,6 +48,7 @@ const OrderPage = () => {
           value={tabValue}
           onChange={handleTabChange}
           aria-label="service tabs"
+          variant="scrollable"
         >
           <Tab label="Nueva Orden de Servicio" {...a11yProps(0)} />
           <Tab label="Orden de Servicio" {...a11yProps(1)} />

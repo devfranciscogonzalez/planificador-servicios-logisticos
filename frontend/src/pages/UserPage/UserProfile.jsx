@@ -19,7 +19,7 @@ const UserProfile = () => {
           <UserAvatar
             name={user?.name}
             roleId={user?.role_id}
-            sx={{ width: "6rem", height: "6rem", fontSize: "3rem" }}
+            sx={{ width: "4rem", height: "4rem", fontSize: "2.5rem" }}
           />
           <Typography variant="h6" component="h1">
             {user?.name}

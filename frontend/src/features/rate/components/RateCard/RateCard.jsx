@@ -11,7 +11,7 @@ import {
   IconButton,
   Typography,
 } from "@mui/material";
-import Grid from "@mui/material/Unstable_Grid2"; // Grid version 2
+import Grid from "@mui/material/Unstable_Grid2";
 import { grey } from "@mui/material/colors";
 import { useState } from "react";
 import UserAvatar from "../../../user/components/UserAvatar/UserAvatar";
@@ -28,8 +28,7 @@ const ExpandMore = styled((props) => {
 }));
 
 const ProductCard = ({ products }) => {
-  const baseUrlStorage =
-    import.meta.env.VITE_BASE_URL_STORAGE || "http://localhost:8000/storage/";
+  const baseUrlStorage = import.meta.env.VITE_BASE_URL_STORAGE;
 
   const [expanded, setExpanded] = useState({});
 

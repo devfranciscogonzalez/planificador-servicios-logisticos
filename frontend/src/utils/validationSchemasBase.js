@@ -4,20 +4,17 @@ export const EMAIL_VALIDATION = yup
   .string()
   .email("Correo electrónico inválido")
   .matches(/\.com$|\.cl$/, "El correo electrónico debe terminar en .com o .cl")
-  .max(100, "El correo electrónico no debe exceder los 100 caracteres")
+  .min(8, "El correo electrónico debe tener al menos 8 caracteres")
+  .max(50, "El correo electrónico no debe exceder los 50 caracteres")
   .required("Este campo es requerido");
 
 export const PASSWORD_RULES = yup
   .string()
-  .min(8, "La contraseña debe tener al menos 8 caracteres")
+  .min(4, "La contraseña debe tener al menos 4 caracteres")
   .max(20, "La contraseña no debe exceder los 20 caracteres")
   .matches(/[a-z]/, "La contraseña debe contener al menos una letra minúscula")
   .matches(/[A-Z]/, "La contraseña debe contener al menos una letra mayúscula")
-  .matches(/[0-9]/, "La contraseña debe contener al menos un número")
-  .matches(
-    /[@$!%*#?&]/,
-    "La contraseña debe contener al menos un caracter especial"
-  );
+  .matches(/[0-9]/, "La contraseña debe contener al menos un número");
 
 export const NAME_VALIDATION = yup
   .string()
