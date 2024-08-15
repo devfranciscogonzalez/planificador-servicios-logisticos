@@ -9,16 +9,16 @@ const RatePriceForm = ({ control, watch }) => {
       <Grid xs={12}>
         <CustomSelect
           control={control}
-          name={"currency"}
-          label={"Moneda"}
+          name="currency"
+          label="Moneda"
           options={CURRENCIES_RATE}
         />
       </Grid>
       <Grid xs={12}>
         <CustomTextFieldPrice
           control={control}
-          name={"price"}
-          label={"Precio"}
+          name="price"
+          label="Precio"
           currency={watch("currency")}
         />
       </Grid>

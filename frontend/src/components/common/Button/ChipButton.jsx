@@ -4,7 +4,7 @@ import { Chip } from "@mui/material";
 const defaultIcon = <AddCircleIcon />;
 
 const ChipButton = ({
-  label,
+  label = "clickable",
   color = "default",
   variant = "outlined",
   onClick,

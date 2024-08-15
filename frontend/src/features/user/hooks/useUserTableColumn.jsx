@@ -87,6 +87,7 @@ const useUserTableColumn = (users, onEdit, onDelete) => {
             <>
               <CustomIconButton
                 aria-label="edit"
+                arial-disable={isDisabled.toString()}
                 onClick={() => !isDisabled && onEdit(users[dataIndex])}
                 disabled={isDisabled}
               >
@@ -94,6 +95,7 @@ const useUserTableColumn = (users, onEdit, onDelete) => {
               </CustomIconButton>
               <CustomIconButton
                 aria-label="delete"
+                arial-disable={isDisabled.toString()}
                 onClick={() => !isDisabled && onDelete(users[dataIndex].id)}
                 disabled={isDisabled}
               >

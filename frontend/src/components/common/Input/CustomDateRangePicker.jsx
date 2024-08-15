@@ -35,7 +35,7 @@ const CustomDateRangePicker = ({
   };
 
   return (
-    <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale={"es"}>
+    <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale="es">
       <Grid container spacing={2}>
         <Grid xs={6}>
           <Controller

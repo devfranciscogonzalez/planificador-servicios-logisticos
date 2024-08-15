@@ -7,7 +7,7 @@ import useProductTableColumn from "../../hooks/useProductTableColumn";
 
 const ProductTable = ({ products, onAdd, onEdit, onDelete, isSubmitting }) => {
   const renderAddButton = () => {
-    return <ChipButton label={"Agregar Producto"} onClick={onAdd} />;
+    return <ChipButton label="Agregar Producto" onClick={onAdd} />;
   };
   const columns = useProductTableColumn(products, onEdit, onDelete);
 

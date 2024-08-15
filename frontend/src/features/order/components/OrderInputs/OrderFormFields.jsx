@@ -16,7 +16,7 @@ const OrderFormFields = ({
   return (
     <>
       <Grid xs={12}>
-        <CustomDatePicker control={control} name={"date"} label={"Fecha"} />
+        <CustomDatePicker control={control} name="date" label="Fecha" />
       </Grid>
       <Grid xs={12}>
         <CustomSelect

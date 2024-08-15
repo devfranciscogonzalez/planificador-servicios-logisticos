@@ -6,7 +6,7 @@ const OverlayLoader = ({ isLoading }) => {
 
   return (
     <Box
-      component={"div"}
+      component="div"
       style={{
         position: "absolute",
         top: 0,

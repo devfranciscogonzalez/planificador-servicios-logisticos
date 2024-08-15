@@ -11,7 +11,7 @@ const CustomTextFieldDisabled = ({ name, label, control }) => {
           {...field}
           label={label}
           fullWidth
-          helperText={"Correcto"}
+          helperText="Correcto"
           FormHelperTextProps={{
             style: { color: "#0070ba" },
           }}

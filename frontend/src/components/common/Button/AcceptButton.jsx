@@ -17,7 +17,7 @@ const AcceptButton = ({
       type={type}
       fullWidth={fullWidth}
       variant="contained"
-      color={"primary"}
+      color="primary"
       onClick={onClick}
       startIcon={isPending ? <CircularProgress size={24} /> : startIcon}
       disabled={isPending}

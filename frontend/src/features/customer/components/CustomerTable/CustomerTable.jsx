@@ -13,7 +13,7 @@ const CustomerTable = ({
   isSubmitting,
 }) => {
   const renderAddCustomerButton = () => {
-    return <ChipButton label={"Registrar Cliente"} onClick={onAdd} />;
+    return <ChipButton label="Registrar Cliente" onClick={onAdd} />;
   };
   const columns = useCustomerTableColumn(customers, onEdit, onDelete);
   const options = {

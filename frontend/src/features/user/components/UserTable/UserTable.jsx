@@ -7,7 +7,7 @@ import useUserTableColumn from "../../hooks/useUserTableColumn";
 
 const UserTable = ({ users, onAdd, onEdit, onDelete, isSubmitting }) => {
   const renderAddButton = () => {
-    return <ChipButton label={"Registrar Usuario"} onClick={onAdd} />;
+    return <ChipButton label="Registrar Usuario" onClick={onAdd} />;
   };
 
   const columns = useUserTableColumn(users, onEdit, onDelete);
@@ -18,7 +18,7 @@ const UserTable = ({ users, onAdd, onEdit, onDelete, isSubmitting }) => {
   };
 
   return (
-    <Box position="relative" >
+    <Box position="relative">
       <OverlayLoader isLoading={isSubmitting} />
       <MUIDataTable data={users} columns={columns} options={options} />
     </Box>

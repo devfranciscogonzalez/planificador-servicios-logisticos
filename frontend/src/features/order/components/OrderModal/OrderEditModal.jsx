@@ -61,7 +61,7 @@ const OrderEditModal = ({ open, onClose, toEdit, onEdit }) => {
       acceptButtonIcon={<ListAltIcon />}
     >
       <Grid xs={12}>
-        <CustomDatePicker control={control} name={"date"} label={"Fecha"} />
+        <CustomDatePicker control={control} name="date" label="Fecha" />
       </Grid>
     </ActionModal>
   );

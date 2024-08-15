@@ -12,7 +12,7 @@ const today = dayjs();
 
 const CustomDatePicker = ({ control, name, label, disabled }) => {
   return (
-    <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale={"es"}>
+    <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale="es">
       <Controller
         name={name}
         control={control}

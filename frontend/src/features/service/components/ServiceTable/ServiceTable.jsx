@@ -7,7 +7,7 @@ import useServiceTableColumn from "../../hooks/useServiceTableColumn";
 
 const ServiceTable = ({ services, onAdd, onEdit, onDelete, isSubmitting }) => {
   const renderAddButton = () => {
-    return <ChipButton label={"Agregar Servicio"} onClick={onAdd} />;
+    return <ChipButton label="Agregar Servicio" onClick={onAdd} />;
   };
   const columns = useServiceTableColumn(services, onEdit, onDelete);
 
