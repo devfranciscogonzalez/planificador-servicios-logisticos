@@ -4,7 +4,6 @@ import PaperContainer from "../../components/common/Container/PaperContainer";
 import LoadingSkeleton from "../../components/common/Loading/LoadingSkeleton";
 import CustomTabPanel from "../../components/common/Navigation/CustomTabPanel";
 import AuthenticatedLayout from "../../components/layout/AuthenticatedLayout";
-// import RoleDescription from "../../features/user/components/RoleDescription/RoleDescription";
 import UserAccordion from "../../features/user/components/UserAccordion/UserAccordion";
 import UserDeleteModal from "../../features/user/components/UserModal/UserDeleteModal";
 import UserEditModal from "../../features/user/components/UserModal/UserEditModal";
@@ -47,6 +46,7 @@ const UserPage = () => {
           value={tabValue}
           onChange={handleTabChange}
           aria-label="users-tabs"
+          variant="scrollable"
         >
           <Tab label="Lista" {...a11yProps(0)} />
           <Tab label="Roles" {...a11yProps(1)} />

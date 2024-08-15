@@ -47,6 +47,7 @@ const ProductPage = () => {
           value={tabValue}
           onChange={handleTabChange}
           aria-label="products tabs"
+          variant="scrollable"
         >
           <Tab label="Tarjetas" {...a11yProps(0)} />
           <Tab label="Productos" {...a11yProps(1)} />
@@ -57,7 +58,7 @@ const ProductPage = () => {
           {isLoading ? (
             <LoadingSkeleton count={3} xs={12} sm={12} md={6} lg={4} />
           ) : products && products.length > 0 ? (
-            <Box component="article" mt={4}>
+            <Box component="article" mt={4} >
               <Grid container spacing={2}>
                 <ProductCard products={products} />
               </Grid>

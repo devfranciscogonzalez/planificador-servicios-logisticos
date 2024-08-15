@@ -14,7 +14,7 @@ const UserAccordion = () => {
   return (
     <>
       {roles?.map((item) => (
-        <Accordion key={item.id} elevation={2}>
+        <Accordion key={item.id}>
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls={`panel${item.id}a-content`}

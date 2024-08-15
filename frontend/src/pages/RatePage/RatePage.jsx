@@ -39,6 +39,7 @@ const RatePage = () => {
           value={tabValue}
           onChange={handleTabChange}
           aria-label="service tabs"
+          variant="scrollable"
         >
           <Tab label="Nueva Tarifa" {...a11yProps(0)} />
           <Tab label="Tarifas Vigente" {...a11yProps(1)} />

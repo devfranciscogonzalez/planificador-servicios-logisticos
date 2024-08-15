@@ -18,7 +18,7 @@ const UserTable = ({ users, onAdd, onEdit, onDelete, isSubmitting }) => {
   };
 
   return (
-    <Box position="relative">
+    <Box position="relative" >
       <OverlayLoader isLoading={isSubmitting} />
       <MUIDataTable data={users} columns={columns} options={options} />
     </Box>
