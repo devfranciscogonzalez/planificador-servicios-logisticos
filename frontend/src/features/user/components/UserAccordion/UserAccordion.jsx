@@ -22,11 +22,11 @@ const UserAccordion = () => {
             sx={{
               backgroundColor: ROLE_COLORS
                 ? alpha(ROLE_COLORS[item.id], 0.1)
-                : "default",
+                : "background.default",
             }}
           >
             <Typography
-              component={"div"}
+              component="div"
               sx={{
                 display: "flex",
                 alignItems: "center",
@@ -42,7 +42,7 @@ const UserAccordion = () => {
           <AccordionDetails
             sx={{
               backgroundColor: ROLE_COLORS
-                ? alpha(ROLE_COLORS[item.id], 0.1)
+                ? alpha(ROLE_COLORS[item.id], 0.2)
                 : "default",
             }}
           >

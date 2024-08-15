@@ -103,7 +103,7 @@ const ProductCard = ({ products }) => {
               timeout="auto"
               unmountOnExit
             >
-              <CardContent sx={{ backgroundColor: "secondary.main" }}>
+              <CardContent sx={{ backgroundColor: "background.default" }}>
                 <Typography variant="body2">{products.description}</Typography>
               </CardContent>
             </Collapse>

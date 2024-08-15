@@ -22,28 +22,31 @@ const LoginForm = ({ onSubmit, isPending }) => {
       component="form"
       onSubmit={handleSubmit(onSubmit)}
       noValidate
-      sx={{ mt: 1 }}
+      sx={{
+        width: "100%",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        gap: 3,
+        mt: 2,
+      }}
     >
       <CustomTextField
         name="email"
         label="Correo"
         type="email"
         control={control}
-        sx={{ mt: 2 }}
+        maxLength={50}
       />
       <CustomTextField
         name="password"
         label="Contraseña"
         type="password"
         autoComplete="current-password"
+        maxLength={20}
         control={control}
-        sx={{ mt: 2 }}
       />
-      <AcceptButton
-        label="Ingresar"
-        isPending={isPending}
-        sx={{ mt: 3, mb: 2 }}
-      >
+      <AcceptButton label="Ingresar" isPending={isPending}>
         Ingresar
       </AcceptButton>
     </Box>

@@ -18,6 +18,8 @@ const ChipButton = ({
       onClick={onClick}
       icon={icon}
       sx={{
+        marginLeft: "6px",
+        borderRadius: "4px",
         "& .MuiChip-icon": {
           opacity: "0.9",
         },

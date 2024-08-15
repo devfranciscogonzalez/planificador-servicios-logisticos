@@ -24,11 +24,7 @@ const CustomerTable = ({
   return (
     <Box position="relative">
       <OverlayLoader isLoading={isSubmitting} />
-      <MUIDataTable
-        data={customers}
-        columns={columns}
-        options={options}
-      />
+      <MUIDataTable data={customers} columns={columns} options={options} />
     </Box>
   );
 };

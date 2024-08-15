@@ -12,28 +12,28 @@ import {
   Typography,
 } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2/Grid2";
+import dayjs from "dayjs";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import AcceptButton from "../../../../components/common/Button/AcceptButton";
 import OverlayLoader from "../../../../components/common/Loading/OverlayLoader";
 import useGenericMutation from "../../../../hooks/useGenericMutation";
-import { orderService } from "../../services/orderService";
-import { validationSchemasOrder } from "../../utils/validationSchemasOrder";
-import useRateCode from "../../../rate/hooks/useRateCode";
-import { ORDER_SNACKBAR } from "../../constants/orderSnackbar";
-import OrderCodeRate from "./OrderCodeRate";
-import dayjs from "dayjs";
 import useAuth from "../../../auth/hooks/useAuth";
 import useCustomer from "../../../customer/hooks/useCustomer";
 import useBusinessType from "../../../product/hooks/useBusinessType";
 import useProduct from "../../../product/hooks/useProduct";
+import useRateCode from "../../../rate/hooks/useRateCode";
 import useRoutes from "../../../rate/hooks/useRoutes";
 import useService from "../../../service/hooks/useService";
 import useServiceType from "../../../service/hooks/useServiceType";
+import { ORDER_SNACKBAR } from "../../constants/orderSnackbar";
 import usePlanning from "../../hooks/usePlanning";
 import useSchedule from "../../hooks/useSchedule";
+import { orderService } from "../../services/orderService";
+import { validationSchemasOrder } from "../../utils/validationSchemasOrder";
 import OrderFormFields from "../OrderInputs/OrderFormFields";
 import CheckOrder from "./CheckOrder";
+import OrderCodeRate from "./OrderCodeRate";
 
 const CreateOrder = ({ onAdded }) => {
   const { user } = useAuth();
@@ -90,19 +90,16 @@ const CreateOrder = ({ onAdded }) => {
     errorMessage: ORDER_SNACKBAR.ORDER_REGISTER_ERROR.message,
     onSuccessCallback: () => {
       onAdded?.();
-      reset(DEFAULT_VALUES_ORDER); // Restablece el formulario a sus valores por defecto
-      setActiveStep(0); // Vuelve al primer paso del formulario
+      reset(DEFAULT_VALUES_ORDER);
+      setActiveStep(0);
     },
   });
 
   const onSubmit = (data) => {
-    // Formatea las fechas antes de enviar los datos
     const formattedData = {
       ...data,
       date: data.date ? dayjs(data.date).format("YYYY-MM-DD HH:mm:ss") : null,
     };
-
-    // Luego llama a la mutación con los datos formateados
     addMutation.mutate(formattedData);
   };
 
@@ -120,9 +117,9 @@ const CreateOrder = ({ onAdded }) => {
 
   const isNextButtonDisabled = (step) => {
     if (step === 0) {
-      return !selectedCode; // Deshabilita si no hay código en el primer paso
+      return !selectedCode;
     }
-    return false; // Para otros pasos, el botón está siempre habilitado (ajustar según sea necesario)
+    return false;
   };
 
   const getStepContent = (step) => {
@@ -163,8 +160,12 @@ const CreateOrder = ({ onAdded }) => {
   };
 
   return (
-    <Grid container spacing={2}>
-      <Paper variant="outlined" sx={{ p: "1.5rem" }}>
+    <Grid
+      container
+      spacing={2}
+      sx={{ justifyContent: "center", alignItems: "center" }}
+    >
+      <Paper sx={{ p: { xs: 1, sm: 2 } }}>
         <OverlayLoader isLoading={addMutation.isPending} />
         <Typography component="h1" variant="subtitle1" align="center">
           Formulario de Creación de OS
@@ -178,7 +179,6 @@ const CreateOrder = ({ onAdded }) => {
         </Stepper>
 
         {activeStep === steps.length ? (
-          // Caso 1: Todos los pasos completados
           <>
             <Typography variant="subtitle1">
               Todos los pasos completados
@@ -202,7 +202,6 @@ const CreateOrder = ({ onAdded }) => {
             </Box>
           </>
         ) : (
-          // Caso 2: Pasos en proceso
           <>
             {getStepContent(activeStep)}
             <Box
@@ -234,7 +233,6 @@ const CreateOrder = ({ onAdded }) => {
                 </Button>
               )}
               {activeStep === steps.length - 1 ? (
-                // Caso 3: Último paso - Confirmar Tarifa
                 <AcceptButton
                   variant="contained"
                   onClick={handleSubmit(onSubmit)}
@@ -244,7 +242,6 @@ const CreateOrder = ({ onAdded }) => {
                   Confirmar Tarifa
                 </AcceptButton>
               ) : (
-                // Botón para avanzar al siguiente paso
                 <Button
                   variant="contained"
                   onClick={handleNext}

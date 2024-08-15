@@ -1,9 +1,9 @@
+import AssignmentTurnedInIcon from "@mui/icons-material/AssignmentTurnedIn";
 import { Box, Chip } from "@mui/material";
 import MUIDataTable from "mui-datatables";
 import OverlayLoader from "../../../../components/common/Loading/OverlayLoader";
 import { orderTableOption } from "../../constants/orderTableOption";
 import useOrderTableColumnEnd from "../../hooks/useOrderTableColumnEnd";
-import AssignmentTurnedInIcon from "@mui/icons-material/AssignmentTurnedIn";
 const OrderTableEnd = ({ orders, onDelete, isSubmitting }) => {
   const filteredOrders = orders.filter((order) => order.statusEnd === 1);
 

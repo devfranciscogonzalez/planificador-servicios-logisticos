@@ -28,8 +28,7 @@ const ExpandMore = styled((props) => {
 }));
 
 const ProductCard = ({ products }) => {
-  const baseUrlStorage =
-    import.meta.env.VITE_BASE_URL_STORAGE || "http://localhost:8000/storage/";
+  const baseUrlStorage = import.meta.env.VITE_BASE_URL_STORAGE;
 
   const [expanded, setExpanded] = useState({});
 

@@ -156,8 +156,15 @@ const CreateRate = ({ onAdded }) => {
   };
 
   return (
-    <Grid container spacing={2}>
-      <Paper sx={{ p: "1.5rem" }}>
+    <Grid
+      container
+      spacing={2}
+      sx={{
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <Paper sx={{ p: { xs: 1, sm: 2 } }}>
         <OverlayLoader isLoading={addMutation.isPending} />
         <Typography component="h1" variant="subtitle1" align="center">
           Formulario de Creación de Tarifa
