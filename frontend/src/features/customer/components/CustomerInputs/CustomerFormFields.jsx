@@ -1,7 +1,9 @@
 import Grid from "@mui/material/Unstable_Grid2";
-import CustomSwitch from "../../../../components/common/Input/CustomSwitch";
-import CustomTextField from "../../../../components/common/Input/CustomTextField";
-import CustonImageUpload from "../../../../components/common/Input/CustonImageUpload";
+import {
+  CustomSwitch,
+  CustomTextField,
+  CustonImageUpload,
+} from "../../../../components/common";
 
 const CustomerFormFields = ({ control }) => {
   const renderTextField = (name, label, type) => (

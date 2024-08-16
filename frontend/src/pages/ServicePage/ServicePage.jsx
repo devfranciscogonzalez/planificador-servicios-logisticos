@@ -1,8 +1,10 @@
 import { Divider, Tab, Tabs } from "@mui/material";
 import { useState } from "react";
-import PaperContainer from "../../components/common/Container/PaperContainer";
-import LoadingSkeleton from "../../components/common/Loading/LoadingSkeleton";
-import CustomTabPanel from "../../components/common/Navigation/CustomTabPanel";
+import {
+  CustomTabPanel,
+  LoadingSkeleton,
+  PaperContainer,
+} from "../../components/common";
 import AuthenticatedLayout from "../../components/layout/AuthenticatedLayout";
 import ServiceAccordion from "../../features/service/components/ServiceAccordion/ServiceAccordion";
 import ServiceAddModal from "../../features/service/components/ServiceModal/ServiceAddModal";

@@ -1,5 +1,5 @@
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
-import CustomIconButton from "../../../components/common/Button/CustomIconButton";
+import { CustomIconButton } from "../../../components/common";
 import ServiceTypeChip from "../../service/components/ServiceUI/ServiceTypeChip";
 import TruckChip from "../components/OrderUI/TruckChip";
 

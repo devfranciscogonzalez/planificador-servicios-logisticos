@@ -1,5 +1,4 @@
-import PaperContainer from "../../components/common/Container/PaperContainer";
-import LoadingSkeleton from "../../components/common/Loading/LoadingSkeleton";
+import { LoadingSkeleton, PaperContainer } from "../../components/common";
 import AuthenticatedLayout from "../../components/layout/AuthenticatedLayout";
 import OrderAddStatusModal from "../../features/order/components/OrderModal/OrderAddStatusModal";
 import OrderConfirm from "../../features/order/components/OrderTable/OrderConfirm";

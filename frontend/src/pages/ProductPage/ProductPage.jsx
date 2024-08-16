@@ -1,9 +1,7 @@
 import { Box, Divider, Tab, Tabs, Typography } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 import { useState } from "react";
-import PaperContainer from "../../components/common/Container/PaperContainer";
-import LoadingSkeleton from "../../components/common/Loading/LoadingSkeleton";
-import CustomTabPanel from "../../components/common/Navigation/CustomTabPanel";
+import { CustomTabPanel, LoadingSkeleton, PaperContainer } from "../../components/common";
 import AuthenticatedLayout from "../../components/layout/AuthenticatedLayout";
 import BusinessAccordion from "../../features/product/components/BusinessAccordion/BusinessAccordion";
 import ProductCard from "../../features/product/components/ProductCard/ProductCard";

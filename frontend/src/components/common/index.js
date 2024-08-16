@@ -4,7 +4,7 @@ export { default as CustomerAccordion } from "./Accordion/CustomerAccordion";
 export { default as AcceptButton } from "./Button/AcceptButton";
 export { default as ActionButton } from "./Button/ActionButton";
 export { default as CancelButton } from "./Button/CancelButton";
-export { default as ChipButton } from "./Button/ChipButton";
+export { default as CustomTableButton } from "./Button/CustomTableButton";
 export { default as CloseButton } from "./Button/CustomIconButton";
 export { default as StatusButtonGroup } from "./Button/StatusButtonGroup";
 // Container

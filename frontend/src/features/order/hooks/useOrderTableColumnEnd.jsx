@@ -1,11 +1,11 @@
-import CustomIconButton from "../../../components/common/Button/CustomIconButton";
+import DeleteIcon from "@mui/icons-material/Delete";
+import { CustomIconButton } from "../../../components/common";
 import StatusChip from "../../../components/ui/StatusChip";
 import BusinessChip from "../../product/components/ProductUI/BusinessChip";
 import ServiceTypeChip from "../../service/components/ServiceUI/ServiceTypeChip";
 import UserAvatar from "../../user/components/UserAvatar/UserAvatar";
 import TruckChip from "../components/OrderUI/TruckChip";
 import WeightChip from "../components/OrderUI/WeightChip";
-import DeleteIcon from "@mui/icons-material/Delete";
 
 const useOrderTableColumnEnd = (filteredOrders, onDelete) => {
   const columns = [

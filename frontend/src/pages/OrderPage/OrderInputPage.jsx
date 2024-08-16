@@ -1,11 +1,10 @@
-import PaperContainer from "../../components/common/Container/PaperContainer";
-import LoadingSkeleton from "../../components/common/Loading/LoadingSkeleton";
+import { LoadingSkeleton, PaperContainer } from "../../components/common";
 import AuthenticatedLayout from "../../components/layout/AuthenticatedLayout";
+import OrderInputModal from "../../features/order/components/OrderModal/OrderInputModal";
 import OrderInput from "../../features/order/components/OrderTable/OrderInput";
 import useOrder from "../../features/order/hooks/useOrder";
 import useAsyncAction from "../../hooks/useAsyncAction";
 import useModalState from "../../hooks/useModalState";
-import OrderInputModal from "../../features/order/components/OrderModal/OrderInputModal";
 
 const OrderInputPage = () => {
   const { orders, isLoading } = useOrder();

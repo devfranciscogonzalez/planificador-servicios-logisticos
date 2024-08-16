@@ -1,9 +1,9 @@
+import RecommendIcon from "@mui/icons-material/Recommend";
 import { Box, Chip } from "@mui/material";
 import MUIDataTable from "mui-datatables";
-import OverlayLoader from "../../../../components/common/Loading/OverlayLoader";
+import { OverlayLoader } from "../../../../components/common";
 import { orderTableOption } from "../../constants/orderTableOption";
 import useOrderConfirmTableColumn from "../../hooks/useOrderConfirmTableColumn";
-import RecommendIcon from "@mui/icons-material/Recommend";
 
 const OrderConfirm = ({ orders, onEdit, isSubmitting }) => {
   const filteredOrders = orders.filter(

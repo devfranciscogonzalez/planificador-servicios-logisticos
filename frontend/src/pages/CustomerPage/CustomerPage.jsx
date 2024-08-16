@@ -1,9 +1,7 @@
 import { Box, Tab, Tabs, Typography } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 import { useState } from "react";
-import PaperContainer from "../../components/common/Container/PaperContainer";
-import LoadingSkeleton from "../../components/common/Loading/LoadingSkeleton";
-import CustomTabPanel from "../../components/common/Navigation/CustomTabPanel";
+import { CustomTabPanel, LoadingSkeleton, PaperContainer } from "../../components/common";
 import AuthenticatedLayout from "../../components/layout/AuthenticatedLayout";
 import CustomerCard from "../../features/customer/components/CustomerCard/CustomerCard";
 import CustomerAddModal from "../../features/customer/components/CustomerModal/CustomerAddModal";

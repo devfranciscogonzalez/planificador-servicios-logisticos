@@ -24,13 +24,13 @@ const UserFormField = ({ control, roles }) => {
       {renderTextField("email", "Correo", "email", 50)}
       <Grid xs={12}>
         <CustomSelect
-          control={control}
           name="role_id"
           label="Rol"
           options={(roles ?? []).map((r) => ({
             value: r.id,
             label: r.name,
           }))}
+          control={control}
         />
       </Grid>
       <CustomSwitch name="status" label="Habilitado" control={control} />

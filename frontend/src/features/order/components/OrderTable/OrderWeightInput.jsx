@@ -2,7 +2,7 @@ import ArrowCircleDownIcon from "@mui/icons-material/ArrowCircleDown";
 import { Box, Chip } from "@mui/material";
 import dayjs from "dayjs";
 import MUIDataTable from "mui-datatables";
-import OverlayLoader from "../../../../components/common/Loading/OverlayLoader";
+import { OverlayLoader } from "../../../../components/common";
 import { orderTableOption } from "../../constants/orderTableOption";
 import useOrderWeightInputTableColumn from "../../hooks/useOrderWeightInputTableColumn";
 

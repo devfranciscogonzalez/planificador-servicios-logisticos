@@ -1,7 +1,7 @@
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import { Box } from "@mui/material";
-import CustomIconButton from "../../../components/common/Button/CustomIconButton";
+import { CustomIconButton } from "../../../components/common";
 import StatusChip from "../../../components/ui/StatusChip";
 import UserAvatar from "../../user/components/UserAvatar/UserAvatar";
 
@@ -34,7 +34,7 @@ const customerTableColumn = (customers, onEdit, onDelete) => {
         sort: true,
         customBodyRenderLite: (dataIndex) => {
           const description = customers[dataIndex].description;
-          return <Box sx={{ textAlign: "left"}}>{description}</Box>;
+          return <Box sx={{ textAlign: "left" }}>{description}</Box>;
         },
       },
     },

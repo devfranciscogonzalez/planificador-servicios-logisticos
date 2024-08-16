@@ -7,6 +7,7 @@ const renderPasswordField = (name, label, maxLength, control) => (
       name={name}
       label={label}
       maxLength={maxLength}
+      isAutoComplete={false}
       control={control}
       type="password"
     />

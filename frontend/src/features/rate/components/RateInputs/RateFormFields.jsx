@@ -1,7 +1,5 @@
 import Grid from "@mui/material/Unstable_Grid2";
-import CustomDateRangePicker from "../../../../components/common/Input/CustomDateRangePicker";
-import CustomSelect from "../../../../components/common/Input/CustomSelect";
-import CustomTextFieldNumber from "../../../../components/common/Input/CustomTextFieldNumber";
+import { CustomDateRangePicker, CustomSelect, CustomTextFieldNumber } from "../../../../components/common";
 import { CURRENCIES_RATE } from "../../constants/rateCurrency";
 
 const RateFormFields = ({ control, watch, verifiedRates }) => {

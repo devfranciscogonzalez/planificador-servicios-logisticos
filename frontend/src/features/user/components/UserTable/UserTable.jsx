@@ -1,13 +1,15 @@
 import { Box } from "@mui/material";
 import MUIDataTable from "mui-datatables";
-import ChipButton from "../../../../components/common/Button/ChipButton";
-import OverlayLoader from "../../../../components/common/Loading/OverlayLoader";
+import {
+  CustomTableButton,
+  OverlayLoader,
+} from "../../../../components/common";
 import { userTableStaticOption } from "../../constants/userTableOption";
 import useUserTableColumn from "../../hooks/useUserTableColumn";
 
 const UserTable = ({ users, onAdd, onEdit, onDelete, isSubmitting }) => {
   const renderAddButton = () => {
-    return <ChipButton label="Registrar Usuario" onClick={onAdd} />;
+    return <CustomTableButton label="Registrar Usuario" onClick={onAdd} />;
   };
 
   const columns = useUserTableColumn(users, onEdit, onDelete);

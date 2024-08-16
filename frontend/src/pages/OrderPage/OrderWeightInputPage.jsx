@@ -1,11 +1,10 @@
-import PaperContainer from "../../components/common/Container/PaperContainer";
-import LoadingSkeleton from "../../components/common/Loading/LoadingSkeleton";
+import { LoadingSkeleton, PaperContainer } from "../../components/common";
 import AuthenticatedLayout from "../../components/layout/AuthenticatedLayout";
+import OrderWeightInputModal from "../../features/order/components/OrderModal/OrderWeightInputModal";
 import OrderWeightInput from "../../features/order/components/OrderTable/OrderWeightInput";
 import useOrder from "../../features/order/hooks/useOrder";
 import useAsyncAction from "../../hooks/useAsyncAction";
 import useModalState from "../../hooks/useModalState";
-import OrderWeightInputModal from "../../features/order/components/OrderModal/OrderWeightInputModal";
 
 const OrderWeightInputPage = () => {
   const { orders, isLoading } = useOrder();

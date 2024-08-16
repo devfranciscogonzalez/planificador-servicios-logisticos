@@ -1,22 +1,21 @@
 import AddCircleIcon from "@mui/icons-material/AddCircle";
-import { Chip } from "@mui/material";
+import Button from "@mui/material/Button";
 
-const defaultIcon = <AddCircleIcon />;
+const defaultIcon = <AddCircleIcon aria-hidden="false" focusable="true" />;
 
-const ChipButton = ({
-  label = "clickable",
+const CustomTableButton = ({
+  label = "Button",
   color = "default",
   variant = "outlined",
   onClick,
   icon = defaultIcon,
 }) => {
   return (
-    <Chip
-      label={label}
+    <Button
       color={color}
       variant={variant}
       onClick={onClick}
-      icon={icon}
+      startIcon={icon}
       sx={{
         marginLeft: "6px",
         borderRadius: "4px",
@@ -30,8 +29,10 @@ const ChipButton = ({
           },
         },
       }}
-    />
+    >
+      {label}
+    </Button>
   );
 };
 
-export default ChipButton;
+export default CustomTableButton;

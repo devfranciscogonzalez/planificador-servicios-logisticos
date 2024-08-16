@@ -1,13 +1,15 @@
 import { Box } from "@mui/material";
 import MUIDataTable from "mui-datatables";
-import ChipButton from "../../../../components/common/Button/ChipButton";
-import OverlayLoader from "../../../../components/common/Loading/OverlayLoader";
+import {
+  CustomTableButton,
+  OverlayLoader,
+} from "../../../../components/common";
 import { serviceTableStaticOption } from "../../constants/serviceTableOption";
 import useServiceTableColumn from "../../hooks/useServiceTableColumn";
 
 const ServiceTable = ({ services, onAdd, onEdit, onDelete, isSubmitting }) => {
   const renderAddButton = () => {
-    return <ChipButton label="Agregar Servicio" onClick={onAdd} />;
+    return <CustomTableButton label="Agregar Servicio" onClick={onAdd} />;
   };
   const columns = useServiceTableColumn(services, onEdit, onDelete);
 

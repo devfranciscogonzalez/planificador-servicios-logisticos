@@ -1,10 +1,10 @@
+import ArrowCircleRightRoundedIcon from "@mui/icons-material/ArrowCircleRightRounded";
 import { Box, Chip } from "@mui/material";
+import dayjs from "dayjs";
 import MUIDataTable from "mui-datatables";
-import OverlayLoader from "../../../../components/common/Loading/OverlayLoader";
+import { OverlayLoader } from "../../../../components/common";
 import { orderTableOption } from "../../constants/orderTableOption";
 import useOrderInputTableColumn from "../../hooks/useOrderInputTableColumn";
-import ArrowCircleRightRoundedIcon from "@mui/icons-material/ArrowCircleRightRounded";
-import dayjs from "dayjs";
 
 const OrderInput = ({ orders, onEdit, isSubmitting }) => {
   const today = dayjs().format("DD/MM/YYYY");
@@ -13,7 +13,7 @@ const OrderInput = ({ orders, onEdit, isSubmitting }) => {
     (order) =>
       order.entry === null && order.date === today && order.truckPlate !== null
   );
-  
+
   const columns = useOrderInputTableColumn(filteredOrders, onEdit);
 
   const options = {

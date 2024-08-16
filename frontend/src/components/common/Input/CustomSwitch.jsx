@@ -21,6 +21,7 @@ const CustomSwitch = ({ name, label, control, ...rest }) => {
               <FormControlLabel
                 control={
                   <Switch
+                    id={name}
                     checked={field.value}
                     onChange={(e) => field.onChange(e.target.checked)}
                     color="success"

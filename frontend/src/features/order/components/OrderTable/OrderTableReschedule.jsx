@@ -1,9 +1,9 @@
+import EventRepeatIcon from "@mui/icons-material/EventRepeat";
 import { Box, Chip } from "@mui/material";
 import MUIDataTable from "mui-datatables";
-import OverlayLoader from "../../../../components/common/Loading/OverlayLoader";
+import { OverlayLoader } from "../../../../components/common";
 import { orderTableOption } from "../../constants/orderTableOption";
 import useOrderTableColumnReschedule from "../../hooks/useOrderTableColumnReschedule";
-import EventRepeatIcon from "@mui/icons-material/EventRepeat";
 
 const OrderTableReschedule = ({ orders, isSubmitting }) => {
   const filteredOrders = orders.filter(

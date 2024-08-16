@@ -1,9 +1,10 @@
 import Grid from "@mui/material/Unstable_Grid2";
-import CustomTextField from "../../../../components/common/Input/CustomTextField";
-import CustomSelect from "../../../../components/common/Input/CustomSelect";
-// import CustomDropzoneArea from "../../../../components/common/Input/CustomDropzoneArea";
-import CustomSwitch from "../../../../components/common/Input/CustomSwitch";
-import CustonImageUpload from "../../../../components/common/Input/CustonImageUpload";
+import {
+  CustomSelect,
+  CustomSwitch,
+  CustomTextField,
+  CustonImageUpload,
+} from "../../../../components/common";
 
 const ProductFormFields = ({ control, businessType }) => {
   const renderTextField = (name, label, type) => (

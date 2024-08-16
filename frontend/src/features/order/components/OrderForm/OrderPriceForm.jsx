@@ -1,6 +1,8 @@
 import Grid from "@mui/material/Unstable_Grid2/Grid2";
-import CustomTextFieldPrice from "../../../../components/common/Input/CustomTextFieldPrice";
-import CustomSelect from "../../../../components/common/Input/CustomSelect";
+import {
+  CustomSelect,
+  CustomTextFieldPrice,
+} from "../../../../components/common";
 import { CURRENCIES_RATE } from "../../constants/rateCurrency";
 
 const RatePriceForm = ({ control, watch }) => {

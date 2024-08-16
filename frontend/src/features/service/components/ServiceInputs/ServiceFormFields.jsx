@@ -1,6 +1,5 @@
 import Grid from "@mui/material/Unstable_Grid2";
-import CustomTextField from "../../../../components/common/Input/CustomTextField";
-import CustomSelect from "../../../../components/common/Input/CustomSelect";
+import { CustomSelect, CustomTextField } from "../../../../components/common";
 
 const CustomerFormFields = ({ control, serviceType }) => {
   const renderTextField = (name, label, type) => (

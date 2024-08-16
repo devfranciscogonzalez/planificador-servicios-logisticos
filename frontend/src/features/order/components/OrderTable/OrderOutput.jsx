@@ -1,10 +1,10 @@
+import ArrowCircleLeftRoundedIcon from "@mui/icons-material/ArrowCircleLeftRounded";
 import { Box, Chip } from "@mui/material";
+import dayjs from "dayjs";
 import MUIDataTable from "mui-datatables";
-import OverlayLoader from "../../../../components/common/Loading/OverlayLoader";
+import { OverlayLoader } from "../../../../components/common";
 import { orderTableOption } from "../../constants/orderTableOption";
 import useOrderOutputTableColumn from "../../hooks/useOrderOutputTableColumn";
-import ArrowCircleLeftRoundedIcon from "@mui/icons-material/ArrowCircleLeftRounded";
-import dayjs from "dayjs";
 
 const OrderOutput = ({ orders, onEdit, isSubmitting }) => {
   const today = dayjs().format("DD/MM/YYYY");

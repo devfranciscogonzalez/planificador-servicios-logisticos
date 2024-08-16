@@ -1,9 +1,8 @@
 import { Box, Divider, Typography } from "@mui/material";
-import useService from "../../../service/hooks/useService";
-// import useUser from "../../../user/hooks/useUser";
 import dayjs from "dayjs";
+import { OverlayLoader } from "../../../../components/common";
+import useService from "../../../service/hooks/useService";
 import useUser from "../../../user/hooks/useUser";
-import OverlayLoader from "../../../../components/common/Loading/OverlayLoader";
 
 const CheckOrder = ({
   watch,

@@ -1,7 +1,7 @@
 import AssignmentTurnedInIcon from "@mui/icons-material/AssignmentTurnedIn";
 import { Box, Chip } from "@mui/material";
 import MUIDataTable from "mui-datatables";
-import OverlayLoader from "../../../../components/common/Loading/OverlayLoader";
+import { OverlayLoader } from "../../../../components/common";
 import { orderTableOption } from "../../constants/orderTableOption";
 import useOrderTableColumnEnd from "../../hooks/useOrderTableColumnEnd";
 const OrderTableEnd = ({ orders, onDelete, isSubmitting }) => {

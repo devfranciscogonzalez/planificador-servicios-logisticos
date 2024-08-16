@@ -1,7 +1,7 @@
-import RateList from "../RateList/RateList";
-import RateFormFields from "../RateInputs/RateFormFields";
 import { Box } from "@mui/material";
-import OverlayLoader from "../../../../components/common/Loading/OverlayLoader";
+import { OverlayLoader } from "../../../../components/common";
+import RateFormFields from "../RateInputs/RateFormFields";
+import RateList from "../RateList/RateList";
 
 const RateVerify = ({ control, watch, verifiedRates, isVerifying }) => {
   return (
