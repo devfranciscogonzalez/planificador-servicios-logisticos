@@ -1,32 +1,23 @@
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import Button from "@mui/material/Button";
 
-const defaultIcon = <AddCircleIcon aria-hidden="false" focusable="true" />;
+const defaultIcon = <AddCircleIcon />;
 
-const CustomTableButton = ({
-  label = "Button",
-  color = "default",
-  variant = "outlined",
-  onClick,
-  icon = defaultIcon,
-}) => {
+const CustomTableButton = ({ label = "Button", onClick }) => {
   return (
     <Button
-      color={color}
-      variant={variant}
+      size="small"
+      variant="outlined"
       onClick={onClick}
-      startIcon={icon}
+      startIcon={defaultIcon}
       sx={{
         marginLeft: "6px",
         borderRadius: "4px",
-        "& .MuiChip-icon": {
-          opacity: "0.9",
-        },
+        borderColor: "grey.700",
+        color: "grey.700",
         "&:hover": {
           color: "primary.main",
-          "& .MuiChip-icon": {
-            color: "primary.main",
-          },
+          borderColor: "primary.main",
         },
       }}
     >

@@ -5,7 +5,6 @@ import TextField from "@mui/material/TextField";
 import { Controller } from "react-hook-form";
 
 const CustomTextFieldNumber = ({ name, label, currency, control, ...rest }) => {
-  // mostrar icono de error o de correcto en el campo de texto
   const renderEndAdornment = (isDirty, error) => {
     return error ? (
       <ErrorOutlineIcon sx={{ color: "error.main" }} />

@@ -1,7 +1,7 @@
 import Grid from "@mui/material/Unstable_Grid2/Grid2";
 import {
   CustomSelect,
-  CustomTextFieldPrice,
+  CustomTextFieldNumber,
 } from "../../../../components/common";
 import { CURRENCIES_RATE } from "../../constants/rateCurrency";
 
@@ -17,7 +17,7 @@ const RatePriceForm = ({ control, watch }) => {
         />
       </Grid>
       <Grid xs={12}>
-        <CustomTextFieldPrice
+        <CustomTextFieldNumber
           control={control}
           name="price"
           label="Precio"

@@ -12,10 +12,9 @@ import {
   Typography,
 } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
-import { grey } from "@mui/material/colors";
 import { useState } from "react";
-import UserAvatar from "../../../user/components/UserAvatar/UserAvatar";
 import StatusChip from "../../../../components/ui/StatusChip";
+import UserAvatar from "../../../user/components/UserAvatar/UserAvatar";
 const ExpandMore = styled((props) => {
   const { ...other } = props;
   return <IconButton {...other} />;
@@ -53,7 +52,7 @@ const ProductCard = ({ products }) => {
               }
               title={products.user.name}
               subheader={
-                <Box sx={{ color: grey[400] }}>
+                <Box sx={{ color: "grey.700" }}>
                   {products.user.email}
                   <br />
                   {products.createdAt}

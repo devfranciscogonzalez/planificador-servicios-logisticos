@@ -3,7 +3,7 @@ import {
   CustomSelect,
   CustomSwitch,
   CustomTextField,
-  CustonImageUpload,
+  CustomImageUpload,
 } from "../../../../components/common";
 
 const ProductFormFields = ({ control, businessType }) => {
@@ -23,7 +23,7 @@ const ProductFormFields = ({ control, businessType }) => {
     <>
       {renderTextField("name", "Nombre", "text")}
       {renderTextField("description", "Descripción", "textarea")}
-      <CustonImageUpload name="logo" control={control} />
+      <CustomImageUpload name="logo" control={control} />
       <CustomSwitch name="status" label="Habilitado" control={control} />
       <Grid xs={12}>
         <CustomSelect

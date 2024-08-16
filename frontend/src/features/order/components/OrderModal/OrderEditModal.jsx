@@ -4,7 +4,7 @@ import Grid from "@mui/material/Unstable_Grid2";
 import dayjs from "dayjs";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { CustomDatePicker } from "../../../../components/commo";
+import { CustomDatePicker } from "../../../../components/common";
 import ActionModal from "../../../../components/modal/ActionModal";
 import useGenericMutation from "../../../../hooks/useGenericMutation";
 import { ORDER_SNACKBAR } from "../../constants/orderSnackbar";

@@ -2,7 +2,7 @@ import Grid from "@mui/material/Unstable_Grid2";
 import {
   CustomSwitch,
   CustomTextField,
-  CustonImageUpload,
+  CustomImageUpload,
 } from "../../../../components/common";
 
 const CustomerFormFields = ({ control }) => {
@@ -22,7 +22,7 @@ const CustomerFormFields = ({ control }) => {
     <>
       {renderTextField("name", "Nombre", "text")}
       {renderTextField("description", "Descripción", "textarea")}
-      <CustonImageUpload name="logo" control={control} />
+      <CustomImageUpload name="logo" control={control} />
       <CustomSwitch name="status" label="Habilitado" control={control} />
     </>
   );
