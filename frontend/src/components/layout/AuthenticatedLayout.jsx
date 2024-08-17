@@ -18,7 +18,7 @@ const AuthenticatedLayout = ({ children }) => {
         }}
       >
         <Container
-          maxWidth="false"
+          maxWidth={false}
           sx={(theme) => ({
             [theme.breakpoints.down("sm")]: {
               px: 1,

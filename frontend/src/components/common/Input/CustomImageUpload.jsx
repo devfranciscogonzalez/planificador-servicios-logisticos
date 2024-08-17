@@ -69,19 +69,20 @@ const CustomImageUpload = ({ name, control }) => {
               />
             </StyledButton>
             {fileName && (
-              <Box fullWidth>
+              <Box>
                 <FormHelperText
                   sx={{ display: "flex", alignItems: "center", gap: "8px" }}
                 >
                   Archivo seleccionado: {fileName}
-                  <CustomIconButton aria-label="delete">
-                    <DeleteIcon
-                      onClick={() => {
-                        setFileName("");
-                        setSelectedImage(null);
-                        onChange(null);
-                      }}
-                    />
+                  <CustomIconButton
+                    aria-label="delete"
+                    onClick={() => {
+                      setFileName("");
+                      setSelectedImage(null);
+                      onChange(null);
+                    }}
+                  >
+                    <DeleteIcon />
                   </CustomIconButton>
                 </FormHelperText>
                 <ImagePreview src={selectedImage} alt="Vista previa" />

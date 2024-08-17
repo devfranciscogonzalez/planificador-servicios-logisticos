@@ -7,22 +7,28 @@ import {
 } from "../../../../components/common";
 
 const ProductFormFields = ({ control, businessType }) => {
-  const renderTextField = (name, label, type) => (
-    <Grid xs={12}>
-      <CustomTextField
-        name={name}
-        label={label}
-        type={type}
-        control={control}
-        multiline
-      />
-    </Grid>
-  );
-
   return (
     <>
-      {renderTextField("name", "Nombre", "text")}
-      {renderTextField("description", "Descripción", "textarea")}
+      <Grid xs={12}>
+        <CustomTextField
+          name="name"
+          label="Nombre"
+          maxLength={50}
+          type="text"
+          control={control}
+        />
+      </Grid>
+      <Grid xs={12}>
+        <CustomTextField
+          name="description"
+          label="Descripción"
+          maxLength={500}
+          type="textarea"
+          control={control}
+          rows={3}
+          multiline
+        />
+      </Grid>
       <CustomImageUpload name="logo" control={control} />
       <CustomSwitch name="status" label="Habilitado" control={control} />
       <Grid xs={12}>

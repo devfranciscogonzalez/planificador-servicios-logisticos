@@ -20,10 +20,11 @@ export const NAME_VALIDATION = yup
   .string()
   .required("Este campo es requerido")
   .min(3, "El nombre debe tener al menos 3 caracteres")
-  .max(50, "El nombre no debe exceder los 50 caracteres");
+  .max(50, "El nombre no debe exceder los 50 caracteres")
+  .matches(/^[a-zA-Z\s]+$/, "El nombre solo debe contener letras");
 
 export const DESCRIPTION_VALIDATION = yup
   .string()
   .required("Este campo es requerido")
-  .min(9, "La descripción debe tener al menos 10 caracteres")
-  .max(200, "La descripción no debe exceder los 200 caracteres");
+  .min(10, "La descripción debe tener al menos 10 caracteres")
+  .max(500, "La descripción no debe exceder los 500 caracteres");

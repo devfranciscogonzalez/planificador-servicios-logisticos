@@ -9,6 +9,7 @@ const CustomTableButton = ({ label = "Button", onClick }) => {
       size="small"
       variant="outlined"
       onClick={onClick}
+      aria-label={label}
       startIcon={defaultIcon}
       sx={{
         marginLeft: "6px",

@@ -71,8 +71,10 @@ const OrderAddStatusModal = ({ open, onClose, toAdd, onAdd }) => {
         <CustomTextField
           name="comment"
           label="Comentario (opcional)"
+          maxLength={500}
           control={control}
           type="textarea"
+          rows={3}
           multiline
         />
       </Grid>

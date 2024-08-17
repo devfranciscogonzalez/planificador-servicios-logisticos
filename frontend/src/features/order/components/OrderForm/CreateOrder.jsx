@@ -233,7 +233,6 @@ const CreateOrder = ({ onAdded }) => {
               )}
               {activeStep === steps.length - 1 ? (
                 <AcceptButton
-                  variant="contained"
                   onClick={handleSubmit(onSubmit)}
                   isPending={addMutation.isPending}
                   fullWidth={false}

@@ -20,21 +20,19 @@ const CustomerEditModal = ({ open, onClose, toEdit, onEdit }) => {
     user_id: user?.id || "",
   };
 
-  // formulario react-hook-form
   const { handleSubmit, reset, control } = useForm({
     resolver: yupResolver(validationSchemasCustomer),
     mode: "onChange",
     defaultValues: DEFAULT_VALUES_EDIT_CUSTOMER,
   });
 
-  // cargar datos del usuario a editar
   useEffect(() => {
     if (toEdit) {
       reset({
         name: toEdit.name,
         description: toEdit.description,
         status: Boolean(toEdit.status),
-        logo: undefined,
+        logo: "",
         user_id: user?.id || "",
       });
     }
@@ -50,7 +48,6 @@ const CustomerEditModal = ({ open, onClose, toEdit, onEdit }) => {
     },
   });
 
-  // enviar datos del formulario para editar usuario
   const onSubmit = (data) => {
     customerUpdateMutation.mutate(data);
   };

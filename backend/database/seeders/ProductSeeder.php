@@ -59,7 +59,7 @@ class ProductSeeder extends Seeder
                 'user_id' => 1,
             ],
             [
-                'name' => 'CHAPA_GALVANIZADA',
+                'name' => 'CHAPA GALVANIZADA',
                 'description' => 'La chapa galvanizada es una lámina de acero recubierta con zinc, utilizada en la construcción por su resistencia a la corrosión.',
                 'status' => true,
                 'logo' => 'logos/products/CHAPA_GALVANIZADA.webp',
@@ -91,7 +91,7 @@ class ProductSeeder extends Seeder
                 'user_id' => 1,
             ],
             [
-                'name' => 'JUREL_CONGELADO',
+                'name' => 'JUREL CONGELADO',
                 'description' => 'El jurel congelado es un pescado popular en la cocina, apreciado por su sabor y facilidad de preparación.',
                 'status' => true,
                 'logo' => 'logos/products/JUREL_CONGELADO.webp',
@@ -115,7 +115,7 @@ class ProductSeeder extends Seeder
                 'user_id' => 1,
             ],
             [
-                'name' => 'PIEDRA_CALIZA',
+                'name' => 'PIEDRA CALIZA',
                 'description' => 'La piedra caliza es un material natural utilizado en la construcción y fabricación de cemento, apreciada por su durabilidad.',
                 'status' => true,
                 'logo' => 'logos/products/PIEDRA_CALIZA.webp',
