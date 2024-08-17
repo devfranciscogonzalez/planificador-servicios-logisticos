@@ -1,5 +1,5 @@
 import AssignmentTurnedInIcon from "@mui/icons-material/AssignmentTurnedIn";
-import CustomIconButton from "../../../components/common/Button/CustomIconButton";
+import { CustomIconButton } from "../../../components/common";
 import ServiceTypeChip from "../../service/components/ServiceUI/ServiceTypeChip";
 import UserAvatar from "../../user/components/UserAvatar/UserAvatar";
 import TruckChip from "../components/OrderUI/TruckChip";

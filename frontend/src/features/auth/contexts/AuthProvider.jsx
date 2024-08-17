@@ -1,8 +1,7 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { createContext } from "react";
-import Loading from "../../../components/common/Loading/Loading";
+import { Loading } from "../../../components/common";
 import { authService } from "../services/authService";
-
 
 export const AuthContext = createContext(null);
 
@@ -13,9 +12,9 @@ export const AuthProvider = ({ children }) => {
     queryKey: ["authUser"],
     queryFn: () => authService.validateToken(),
     enabled: !!localStorage.getItem("token"),
-    retry: false, 
-    refetchOnWindowFocus: false, 
-    refetchOnMount: false, 
+    retry: false,
+    refetchOnWindowFocus: false,
+    refetchOnMount: false,
   });
 
   const loginMutation = useMutation({

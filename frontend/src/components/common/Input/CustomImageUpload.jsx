@@ -21,8 +21,13 @@ const VisuallyHiddenInput = styled("input")({
 });
 
 const StyledButton = styled(Button)(({ theme }) => ({
-  borderColor: theme.palette.grey[500],
-  color: theme.palette.grey[500],
+  borderColor: theme.palette.grey[700],
+  color: theme.palette.grey[700],
+  "&:hover": {
+    color: theme.palette.primary.main,
+    borderColor: theme.palette.primary.main,
+    borderWidth: 2,
+  },
 }));
 
 const ImagePreview = styled("img")({
@@ -31,7 +36,7 @@ const ImagePreview = styled("img")({
   marginTop: "8px",
 });
 
-const CustonImageUpload = ({ name, control }) => {
+const CustomImageUpload = ({ name, control }) => {
   const [fileName, setFileName] = useState("");
   const [selectedImage, setSelectedImage] = useState(null);
 
@@ -64,19 +69,20 @@ const CustonImageUpload = ({ name, control }) => {
               />
             </StyledButton>
             {fileName && (
-              <Box fullWidth>
+              <Box>
                 <FormHelperText
                   sx={{ display: "flex", alignItems: "center", gap: "8px" }}
                 >
                   Archivo seleccionado: {fileName}
-                  <CustomIconButton aria-label="delete">
-                    <DeleteIcon
-                      onClick={() => {
-                        setFileName("");
-                        setSelectedImage(null);
-                        onChange(null);
-                      }}
-                    />
+                  <CustomIconButton
+                    aria-label="delete"
+                    onClick={() => {
+                      setFileName("");
+                      setSelectedImage(null);
+                      onChange(null);
+                    }}
+                  >
+                    <DeleteIcon />
                   </CustomIconButton>
                 </FormHelperText>
                 <ImagePreview src={selectedImage} alt="Vista previa" />
@@ -98,4 +104,4 @@ const CustonImageUpload = ({ name, control }) => {
   );
 };
 
-export default CustonImageUpload;
+export default CustomImageUpload;

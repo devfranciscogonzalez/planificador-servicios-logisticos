@@ -1,8 +1,7 @@
+import { TextField } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 import { useEffect, useState } from "react";
-// import StatusButtonGroup from "../../../../components/common/Button/StatusButtonGroup";
-import { TextField } from "@mui/material";
-import CustomSelect from "../../../../components/common/Input/CustomSelect";
+import { CustomSelect } from "../../../../components/common";
 import useServiceByType from "../../../service/hooks/useServiceByType";
 
 const RateFormFieldsVerify = ({

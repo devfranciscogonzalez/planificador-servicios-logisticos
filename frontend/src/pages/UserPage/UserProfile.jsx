@@ -1,5 +1,5 @@
 import { Stack, Typography } from "@mui/material";
-import PaperContainer from "../../components/common/Container/PaperContainer";
+import { PaperContainer } from "../../components/common";
 import AuthenticatedLayout from "../../components/layout/AuthenticatedLayout";
 import useAuth from "../../features/auth/hooks/useAuth";
 import UserAvatar from "../../features/user/components/UserAvatar/UserAvatar";

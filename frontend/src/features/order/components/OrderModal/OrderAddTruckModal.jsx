@@ -1,15 +1,17 @@
 import { yupResolver } from "@hookform/resolvers/yup";
+import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import Grid from "@mui/material/Unstable_Grid2";
 import { useForm } from "react-hook-form";
-import CustomTextField from "../../../../components/common/Input/CustomTextField";
+import {
+  CustomTextField,
+  CustomTextFieldDisabled,
+} from "../../../../components/common";
 import ActionModal from "../../../../components/modal/ActionModal";
 import useGenericMutation from "../../../../hooks/useGenericMutation";
+import useAuth from "../../../auth/hooks/useAuth";
 import { ORDER_SNACKBAR } from "../../constants/orderSnackbar";
 import { orderService } from "../../services/orderService";
 import { validationSchemasOrderTruck } from "../../utils/validationSchemasOrder";
-import CustomTextFieldDisabled from "../../../../components/common/Input/CustomTextFieldDisabled";
-import useAuth from "../../../auth/hooks/useAuth";
-import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 
 const OrderAddTruckModal = ({ open, onClose, toAdd, onAdd }) => {
   const { user } = useAuth();

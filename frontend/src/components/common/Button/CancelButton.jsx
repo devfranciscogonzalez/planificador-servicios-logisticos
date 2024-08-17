@@ -16,10 +16,10 @@ const CancelButton = ({
       type={type}
       variant="outlined"
       color="primary"
-      fullWidth
       onClick={onClick}
       startIcon={startIcon}
       disabled={isPending}
+      fullWidth
       sx={{ ...sx }}
     >
       {label}

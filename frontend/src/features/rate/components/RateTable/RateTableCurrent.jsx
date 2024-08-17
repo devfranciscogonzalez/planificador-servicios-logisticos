@@ -1,6 +1,6 @@
 import { Box, Chip } from "@mui/material";
 import MUIDataTable from "mui-datatables";
-import OverlayLoader from "../../../../components/common/Loading/OverlayLoader";
+import { OverlayLoader } from "../../../../components/common";
 import { rateTableStaticOption } from "../../constants/rateTableOption";
 import useRateTableColumn from "../../hooks/useRateTableColumn";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";

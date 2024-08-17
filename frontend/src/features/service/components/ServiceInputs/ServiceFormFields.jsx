@@ -1,24 +1,29 @@
 import Grid from "@mui/material/Unstable_Grid2";
-import CustomTextField from "../../../../components/common/Input/CustomTextField";
-import CustomSelect from "../../../../components/common/Input/CustomSelect";
+import { CustomSelect, CustomTextField } from "../../../../components/common";
 
-const CustomerFormFields = ({ control, serviceType }) => {
-  const renderTextField = (name, label, type) => (
-    <Grid xs={12}>
-      <CustomTextField
-        name={name}
-        label={label}
-        type={type}
-        control={control}
-        multiline
-      />
-    </Grid>
-  );
-
+const ServiceFormFields = ({ control, serviceType }) => {
   return (
     <>
-      {renderTextField("name", "Nombre", "text")}
-      {renderTextField("description", "Descripción", "textarea")}
+      <Grid xs={12}>
+        <CustomTextField
+          name="name"
+          label="Nombre"
+          maxLength={50}
+          type="text"
+          control={control}
+        />
+      </Grid>
+      <Grid xs={12}>
+        <CustomTextField
+          name="description"
+          label="Descripción"
+          maxLength={500}
+          type="textarea"
+          control={control}
+          rows={3}
+          multiline
+        />
+      </Grid>
       <Grid xs={12}>
         <CustomSelect
           control={control}
@@ -34,4 +39,4 @@ const CustomerFormFields = ({ control, serviceType }) => {
   );
 };
 
-export default CustomerFormFields;
+export default ServiceFormFields;

@@ -11,8 +11,7 @@ import {
   IconButton,
   Typography,
 } from "@mui/material";
-import Grid from "@mui/material/Unstable_Grid2"; // Grid version 2
-import { grey } from "@mui/material/colors";
+import Grid from "@mui/material/Unstable_Grid2";
 import { useState } from "react";
 import UserAvatar from "../../../user/components/UserAvatar/UserAvatar";
 import StatusChip from "../../../../components/ui/StatusChip";
@@ -53,7 +52,7 @@ const ProductCard = ({ products }) => {
               }
               title={products.user.name}
               subheader={
-                <Box sx={{ color: grey[400] }}>
+                <Box sx={{ color: "grey.700" }}>
                   {products.user.email}
                   <br />
                   {products.createdAt}

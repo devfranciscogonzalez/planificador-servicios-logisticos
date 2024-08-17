@@ -1,10 +1,11 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import RecommendIcon from "@mui/icons-material/Recommend";
-
 import Grid from "@mui/material/Unstable_Grid2";
 import { useForm } from "react-hook-form";
-import StatusButtonGroup from "../../../../components/common/Button/StatusButtonGroup";
-import CustomTextField from "../../../../components/common/Input/CustomTextField";
+import {
+  CustomTextField,
+  StatusButtonGroup,
+} from "../../../../components/common";
 import ActionModal from "../../../../components/modal/ActionModal";
 import useGenericMutation from "../../../../hooks/useGenericMutation";
 import useAuth from "../../../auth/hooks/useAuth";
@@ -70,8 +71,10 @@ const OrderAddStatusModal = ({ open, onClose, toAdd, onAdd }) => {
         <CustomTextField
           name="comment"
           label="Comentario (opcional)"
+          maxLength={500}
           control={control}
           type="textarea"
+          rows={3}
           multiline
         />
       </Grid>

@@ -1,8 +1,7 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Box } from "@mui/material";
 import { useForm } from "react-hook-form";
-import AcceptButton from "../../../components/common/Button/AcceptButton";
-import CustomTextField from "../../../components/common/Input/CustomTextField";
+import { AcceptButton, CustomTextField } from "../../../components/common";
 import { loginValidationSchema } from "../utils/validationSchemasLogin";
 
 const DEFAULT_VALUES_LOGIN = {

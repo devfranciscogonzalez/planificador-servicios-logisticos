@@ -26,7 +26,7 @@ const ServiceAccordion = () => {
             }}
           >
             <Typography
-              component={"div"}
+              component="div"
               sx={{
                 display: "flex",
                 alignItems: "center",

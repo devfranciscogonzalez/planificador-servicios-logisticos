@@ -13,7 +13,7 @@ const StatusButtonGroup = ({ name, labelOne, labelTwo, control }) => {
         <ButtonGroup
           disableElevation
           variant="contained"
-          aria-label="Status buttons"
+          aria-label="status buttons"
           fullWidth
         >
           <Button

@@ -1,9 +1,9 @@
+import ListAltIcon from "@mui/icons-material/ListAlt";
 import { Box, Chip } from "@mui/material";
 import MUIDataTable from "mui-datatables";
-import OverlayLoader from "../../../../components/common/Loading/OverlayLoader";
+import { OverlayLoader } from "../../../../components/common";
 import { orderTableOption } from "../../constants/orderTableOption";
 import useOrderTableColumn from "../../hooks/useOrderTableColumn";
-import ListAltIcon from "@mui/icons-material/ListAlt";
 
 const OrderTable = ({ orders, onEdit, onMoveEnd, isSubmitting }) => {
   const filteredOrders = orders.filter(

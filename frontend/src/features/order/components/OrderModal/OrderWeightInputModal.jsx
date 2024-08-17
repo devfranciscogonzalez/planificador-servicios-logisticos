@@ -2,7 +2,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import Grid from "@mui/material/Unstable_Grid2";
 import { useForm } from "react-hook-form";
-import CustomTextFieldPrice from "../../../../components/common/Input/CustomTextFieldNumber";
+import { CustomTextFieldNumber } from "../../../../components/common";
 import ActionModal from "../../../../components/modal/ActionModal";
 import useGenericMutation from "../../../../hooks/useGenericMutation";
 import { ORDER_SNACKBAR } from "../../constants/orderSnackbar";
@@ -50,7 +50,7 @@ const OrderWeightInputModal = ({ open, onClose, toAdd, onAdd }) => {
       acceptButtonIcon={<CheckCircleIcon />}
     >
       <Grid xs={12}>
-        <CustomTextFieldPrice
+        <CustomTextFieldNumber
           name="weight_entry"
           label="Peso del Camión (kg)"
           currency="kg"

@@ -1,6 +1,6 @@
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
-import CustomIconButton from "../../../components/common/Button/CustomIconButton";
+import { CustomIconButton } from "../../../components/common";
 import StatusChip from "../../../components/ui/StatusChip";
 import UserAvatar from "../components/UserAvatar/UserAvatar";
 import RoleChip from "../components/UserUI/RoleChip";
@@ -87,6 +87,7 @@ const useUserTableColumn = (users, onEdit, onDelete) => {
             <>
               <CustomIconButton
                 aria-label="edit"
+                arial-disable={isDisabled.toString()}
                 onClick={() => !isDisabled && onEdit(users[dataIndex])}
                 disabled={isDisabled}
               >
@@ -94,6 +95,7 @@ const useUserTableColumn = (users, onEdit, onDelete) => {
               </CustomIconButton>
               <CustomIconButton
                 aria-label="delete"
+                arial-disable={isDisabled.toString()}
                 onClick={() => !isDisabled && onDelete(users[dataIndex].id)}
                 disabled={isDisabled}
               >

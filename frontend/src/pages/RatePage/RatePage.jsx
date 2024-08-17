@@ -1,8 +1,6 @@
 import { Divider, Tab, Tabs } from "@mui/material";
 import { useState } from "react";
-import PaperContainer from "../../components/common/Container/PaperContainer";
-import LoadingSkeleton from "../../components/common/Loading/LoadingSkeleton";
-import CustomTabPanel from "../../components/common/Navigation/CustomTabPanel";
+import { CustomTabPanel, LoadingSkeleton, PaperContainer } from "../../components/common";
 import AuthenticatedLayout from "../../components/layout/AuthenticatedLayout";
 import CreateRate from "../../features/rate/components/RateForm/CreateRate";
 import RateEditStatusModal from "../../features/rate/components/RateModal/RateEditStatusModal";

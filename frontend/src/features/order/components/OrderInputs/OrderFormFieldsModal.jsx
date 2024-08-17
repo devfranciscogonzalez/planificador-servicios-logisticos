@@ -1,8 +1,10 @@
 import Grid from "@mui/material/Unstable_Grid2";
 import { useEffect } from "react";
-import StatusButtonGroup from "../../../../components/common/Button/StatusButtonGroup";
-import CustomDateRangePicker from "../../../../components/common/Input/CustomDateRangePicker";
-import CustomSelect from "../../../../components/common/Input/CustomSelect";
+import {
+  CustomDateRangePicker,
+  CustomSelect,
+  StatusButtonGroup,
+} from "../../../../components/common";
 import useServiceByType from "../../../service/hooks/useServiceByType";
 
 const RateFormFields = ({

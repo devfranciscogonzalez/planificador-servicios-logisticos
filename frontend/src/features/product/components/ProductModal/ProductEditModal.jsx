@@ -31,14 +31,13 @@ const ProductEditModal = ({ open, onClose, toEdit, onUpdated }) => {
 
   const { businessType } = useBusinessType();
 
-  // cargar datos del usuario a editar
   useEffect(() => {
     if (toEdit) {
       reset({
         name: toEdit.name,
         description: toEdit.description,
         status: Boolean(toEdit.status),
-        logo: "undefined",
+        logo: "",
         business_id: toEdit.businessId,
         user_id: user?.id || "",
       });
@@ -55,7 +54,6 @@ const ProductEditModal = ({ open, onClose, toEdit, onUpdated }) => {
     },
   });
 
-  // enviar datos del formulario para editar usuario
   const onSubmit = (data) => {
     customerUpdateMutation.mutate(data);
   };

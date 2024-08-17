@@ -1,5 +1,5 @@
 import AutorenewIcon from "@mui/icons-material/Autorenew";
-import CustomIconButton from "../../../components/common/Button/CustomIconButton";
+import { CustomIconButton } from "../../../components/common";
 import ServiceTypeChip from "../../service/components/ServiceUI/ServiceTypeChip";
 import UserAvatar from "../../user/components/UserAvatar/UserAvatar";
 import PriceChip from "../components/RateUI/PriceChip";

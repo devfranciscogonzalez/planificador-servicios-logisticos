@@ -5,7 +5,7 @@ import Grid from "@mui/material/Unstable_Grid2";
 import { useMutation } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import ActionButton from "../../../../components/common/Button/ActionButton";
+import { ActionButton } from "../../../../components/common";
 import ModalLayout from "../../../../components/layout/ModalLayout";
 import { useSnackbar } from "../../../../hooks/useSnackbar";
 import UserFormField from "../../components/UserInput/UserFormField";

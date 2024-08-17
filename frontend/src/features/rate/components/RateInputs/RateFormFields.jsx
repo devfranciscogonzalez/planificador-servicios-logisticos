@@ -1,7 +1,5 @@
 import Grid from "@mui/material/Unstable_Grid2";
-import CustomDateRangePicker from "../../../../components/common/Input/CustomDateRangePicker";
-import CustomSelect from "../../../../components/common/Input/CustomSelect";
-import CustomTextFieldNumber from "../../../../components/common/Input/CustomTextFieldNumber";
+import { CustomDateRangePicker, CustomSelect, CustomTextFieldNumber } from "../../../../components/common";
 import { CURRENCIES_RATE } from "../../constants/rateCurrency";
 
 const RateFormFields = ({ control, watch, verifiedRates }) => {
@@ -24,8 +22,8 @@ const RateFormFields = ({ control, watch, verifiedRates }) => {
       <Grid xs={12}>
         <CustomSelect
           control={control}
-          name={"currency"}
-          label={"Moneda"}
+          name="currency"
+          label="Moneda"
           options={CURRENCIES_RATE}
           disabled={!endDate}
         />
@@ -33,8 +31,8 @@ const RateFormFields = ({ control, watch, verifiedRates }) => {
       <Grid xs={12}>
         <CustomTextFieldNumber
           control={control}
-          name={"price"}
-          label={"Precio"}
+          name="price"
+          label="Precio"
           currency={watch("currency")}
           disabled={!endDate}
         />

@@ -15,8 +15,7 @@ import Grid from "@mui/material/Unstable_Grid2/Grid2";
 import dayjs from "dayjs";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import AcceptButton from "../../../../components/common/Button/AcceptButton";
-import OverlayLoader from "../../../../components/common/Loading/OverlayLoader";
+import { AcceptButton, OverlayLoader } from "../../../../components/common";
 import useGenericMutation from "../../../../hooks/useGenericMutation";
 import useAuth from "../../../auth/hooks/useAuth";
 import useCustomer from "../../../customer/hooks/useCustomer";
@@ -234,7 +233,6 @@ const CreateOrder = ({ onAdded }) => {
               )}
               {activeStep === steps.length - 1 ? (
                 <AcceptButton
-                  variant="contained"
                   onClick={handleSubmit(onSubmit)}
                   isPending={addMutation.isPending}
                   fullWidth={false}

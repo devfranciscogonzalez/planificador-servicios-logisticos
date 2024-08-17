@@ -1,6 +1,6 @@
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
-import CustomIconButton from "../../../components/common/Button/CustomIconButton";
+import { CustomIconButton } from "../../../components/common";
 import UserAvatar from "../../user/components/UserAvatar/UserAvatar";
 import ServiceTypeChip from "../components/ServiceUI/ServiceTypeChip";
 

@@ -1,7 +1,9 @@
 import { Box } from "@mui/material";
 import MUIDataTable from "mui-datatables";
-import ChipButton from "../../../../components/common/Button/ChipButton";
-import OverlayLoader from "../../../../components/common/Loading/OverlayLoader";
+import {
+  CustomTableButton,
+  OverlayLoader,
+} from "../../../../components/common";
 import { customerTableStaticOption } from "../../constants/customerTableOption";
 import useCustomerTableColumn from "../../hooks/useCustomerTableColumn";
 
@@ -13,7 +15,7 @@ const CustomerTable = ({
   isSubmitting,
 }) => {
   const renderAddCustomerButton = () => {
-    return <ChipButton label={"Registrar Cliente"} onClick={onAdd} />;
+    return <CustomTableButton label="Registrar Cliente" onClick={onAdd} />;
   };
   const columns = useCustomerTableColumn(customers, onEdit, onDelete);
   const options = {

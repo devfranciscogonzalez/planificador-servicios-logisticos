@@ -7,9 +7,10 @@ import { Controller } from "react-hook-form";
 const CustomTextField = ({
   name,
   label,
-  type,
-  control,
   maxLength = 255,
+  isAutoComplete = true,
+  control,
+  type,
   ...rest
 }) => {
   const [charCount, setCharCount] = useState(0);
@@ -44,7 +45,7 @@ const CustomTextField = ({
           type={type}
           fullWidth
           error={!!error}
-          autoComplete={name}
+          autoComplete={isAutoComplete ? name : "off"}
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
