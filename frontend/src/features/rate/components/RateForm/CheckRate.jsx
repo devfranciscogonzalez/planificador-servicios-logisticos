@@ -3,7 +3,7 @@ import dayjs from "dayjs";
 import { OverlayLoader } from "../../../../components/common";
 import useService from "../../../service/hooks/useService";
 import useUser from "../../../user/hooks/useUser";
-import { formatPrice } from "../../../../utils/formatPrice.JS";
+import { formatPrice } from "../../../../utils/formatPrice";
 
 const CheckRate = ({ watch, customers, serviceType, products, routes }) => {
   
