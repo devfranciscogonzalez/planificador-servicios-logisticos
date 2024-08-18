@@ -17,54 +17,54 @@ class UserSeeder extends Seeder
         $jefeRoleId = Role::firstOrCreate(['name' => 'Jefe Comercial'])->id;
         $supervisorRoleId = Role::firstOrCreate(['name' => 'Supervisor'])->id;
         $customerRoleId = Role::firstOrCreate(['name' => 'Customer Service'])->id;
-        $porteroRoleId = Role::firstOrCreate(['name' => 'Portero'])->id;
+        $porterRoleId = Role::firstOrCreate(['name' => 'Portero'])->id;
         $romanaRoleId = Role::firstOrCreate(['name' => 'Romana'])->id;
 
         User::create([
             'name' => 'Administrador',
             'email' => 'admin@camanchaca.cl',
             'status' => 1,
-            'password' => Hash::make('asdasd'),
+            'password' => Hash::make('Admin1234'),
             'role_id' => $adminRoleId,
         ]);
-
+        
         User::create([
             'name' => 'Jefe Comercial',
             'email' => 'jefe.comercial@camanchaca.cl',
             'status' => 1,
-            'password' => Hash::make('asdasd'),
+            'password' => Hash::make('Jefe1234'),
             'role_id' => $jefeRoleId,
         ]);
-
+        
         User::create([
             'name' => 'Supervisor',
             'email' => 'supervisor@camanchaca.cl',
             'status' => 1,
-            'password' => Hash::make('asdasd'),
+            'password' => Hash::make('Supervisor1234'),
             'role_id' => $supervisorRoleId,
         ]);
-
+        
         User::create([
             'name' => 'Customer Service',
             'email' => 'customer.service@camanchaca.cl',
             'status' => 1,
-            'password' => Hash::make('asdasd'),
+            'password' => Hash::make('Customer1234'),
             'role_id' => $customerRoleId,
         ]);
-
+        
         User::create([
             'name' => 'Portero',
             'email' => 'portero@camanchaca.cl',
             'status' => 1,
-            'password' => Hash::make('asdasd'),
-            'role_id' => $porteroRoleId,
+            'password' => Hash::make('Portero1234'),
+            'role_id' => $porterRoleId,
         ]);
-
+        
         User::create([
             'name' => 'Romana',
             'email' => 'romana@camanchaca.cl',
             'status' => 1,
-            'password' => Hash::make('asdasd'),
+            'password' => Hash::make('Romana1234'),
             'role_id' => $romanaRoleId,
         ]);
     }
