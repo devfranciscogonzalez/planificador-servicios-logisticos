@@ -3,13 +3,14 @@ import dayjs from "dayjs";
 import { OverlayLoader } from "../../../../components/common";
 import useService from "../../../service/hooks/useService";
 import useUser from "../../../user/hooks/useUser";
+import { formatPrice } from "../../../../utils/formatPrice.JS";
 
 const CheckRate = ({ watch, customers, serviceType, products, routes }) => {
   
   const { services, isLoading: isLoadingService } = useService();
   const { users, isLoading: isLoadingUsers } = useUser();
   
-  const formData = watch(); // Obtiene todos los valores a la vez
+  const formData = watch(); 
 
   const findSelected = (items, id) =>
     items?.find((item) => item.id === id)?.name || "No seleccionado";
@@ -61,7 +62,7 @@ const CheckRate = ({ watch, customers, serviceType, products, routes }) => {
       />
       <InfoLine
         label="Precio"
-        value={formData.price ? formData.price : "No seleccionado"}
+        value={formData.price ? formatPrice(formData.price) : "No seleccionado"}
       />
       <InfoLine label="Moneda" value={formData.currency} />
 

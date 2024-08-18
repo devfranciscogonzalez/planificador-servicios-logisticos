@@ -57,8 +57,7 @@ const CreateOrder = ({ onAdded }) => {
     product_id: "",
     business_id: "",
     route_id: "",
-    container: "",
-    status: 0,
+    status: false,
     user_id: user?.id || "",
   };
 
@@ -124,7 +123,7 @@ const CreateOrder = ({ onAdded }) => {
   const getStepContent = (step) => {
     switch (step) {
       case 0:
-        return <OrderCodeRate control={control} setValue={setValue} />;
+        return <OrderCodeRate control={control} />;
       case 1:
         return (
           <OrderFormFields

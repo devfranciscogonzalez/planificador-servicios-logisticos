@@ -28,23 +28,28 @@ class ServiceRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string|max:255',
-            'description' => 'required|string|max:255',
-            'service_type_id' => 'required|numeric',
-            'user_id' => 'required|numeric',
+            'name' => 'required|string|min:3|max:50',
+            'description' => 'required|string|min:10|max:500',
+            'service_type_id' => 'required|exists:service_types,id',
+            'user_id' => 'required|exists:users,id',
         ];
     }
 
     public function messages()
     {
         return [
-
             'name.required' => 'El campo nombre es obligatorio.',
+            'name.string' => 'El campo nombre debe ser una cadena de texto.',
+            'name.min' => 'El campo nombre debe tener al menos 3 caracteres.',
+            'name.max' => 'El campo nombre debe tener como máximo 50 caracteres.',
             'description.required' => 'El campo descripción es obligatorio.',
+            'description.string' => 'El campo descripción debe ser una cadena de texto.',
+            'description.min' => 'El campo descripción debe tener al menos 10 caracteres.',
+            'description.max' => 'El campo descripción debe tener como máximo 500 caracteres.',
             'service_type_id.required' => 'El campo tipo de servicio es obligatorio.',
-            'service_type_id.numeric' => 'El campo  tipo de servicio debe ser un numero.',
+            'service_type_id.exists' => 'El tipo de servicio seleccionado no es válido.',
             'user_id.required' => 'El campo usuario es obligatorio.',
-            'user_id.numeric' => 'El campo usuario debe ser un numero.',
+            'user_id.exists' => 'El usuario seleccionado no es válido.',
         ];
     }
 

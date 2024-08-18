@@ -37,7 +37,7 @@ class RateRequest extends FormRequest
             'start_date' => 'required|date',
             'end_date' => 'required|date|after_or_equal:start_date',
             'status' => 'required|boolean',
-            'price' => 'required|numeric',
+            'price' => 'required|numeric|min:1000',
             'currency' => 'required|string|max:3',
             'user_id' => 'required|exists:users,id'
         ];

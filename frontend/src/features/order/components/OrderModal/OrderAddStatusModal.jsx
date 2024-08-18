@@ -17,13 +17,13 @@ const OrderAddStatusModal = ({ open, onClose, toAdd, onAdd }) => {
   const { user } = useAuth();
 
   const DEFAULT_VALUES_STATUS = {
-    status: 0,
+    status: null,
     comment: "",
-    container: null,
+    container: "",
     supervisor_name: user?.name || "",
   };
 
-  const { handleSubmit, reset, control, watch } = useForm({
+  const { handleSubmit, reset, control } = useForm({
     mode: "onChange",
     resolver: yupResolver(validationSchemaStatus),
     defaultValues: DEFAULT_VALUES_STATUS,
@@ -34,7 +34,7 @@ const OrderAddStatusModal = ({ open, onClose, toAdd, onAdd }) => {
     successMessage: ORDER_SNACKBAR.ORDER_EDIT_SUCCESS.message,
     errorMessage: ORDER_SNACKBAR.ORDER_EDIT_ERROR.message,
     onSuccessCallback: () => {
-      onClose?.();
+      handleClose?.();
       onAdd?.();
     },
   });
@@ -47,7 +47,6 @@ const OrderAddStatusModal = ({ open, onClose, toAdd, onAdd }) => {
   const onSubmit = (data) => {
     addMutation.mutate(data);
   };
-  console.log(watch());
 
   return (
     <ActionModal

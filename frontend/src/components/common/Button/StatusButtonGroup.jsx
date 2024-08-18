@@ -9,7 +9,7 @@ const StatusButtonGroup = ({ name, labelOne, labelTwo, control }) => {
     <Controller
       name={name}
       control={control}
-      render={({ field }) => (
+      render={({ field  }) => (
         <ButtonGroup
           disableElevation
           variant="contained"

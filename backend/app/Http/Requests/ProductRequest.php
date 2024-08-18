@@ -32,8 +32,8 @@ class ProductRequest extends FormRequest
             'description' => 'required|string|min:10|max:500',
             'status' => 'required|boolean',
             'logo' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
-            'business_id' => 'required|numeric',
-            'user_id' => 'required|numeric',
+            'business_id' => 'required|exists:businesses,id',
+            'user_id' => 'required|exists:users,id',
         ];
     }
 
@@ -49,13 +49,14 @@ class ProductRequest extends FormRequest
             'description.min' => 'El campo descripción debe tener al menos 10 caracteres.',
             'description.max' => 'El campo descripción debe tener como máximo 500 caracteres.',
             'status.required' => 'El campo estado es obligatorio.',
+            'status.boolean' => 'El campo estado debe ser un valor booleano.',
             'logo.image' => 'El campo logo debe ser una imagen.',
             'logo.mimes' => 'El campo logo debe ser un archivo de tipo: jpeg, png, jpg.',
             'logo.max' => 'El campo logo debe tener un tamaño máximo de 2MB.',
-            'user_id.required' => 'El campo usuario es obligatorio.',
             'business_id.required' => 'El campo negocio es obligatorio.',
-            'business_id.numeric' => 'El campo negocio debe ser un numero.',
-            'user_id.numeric' => 'El campo usuario debe ser un numero.',
+            'business_id.exists' => 'El negocio seleccionado no es válido.',
+            'user_id.required' => 'El campo usuario es obligatorio.',
+            'user_id.exists' => 'El usuario seleccionado no es válido.',
         ];
     }
 

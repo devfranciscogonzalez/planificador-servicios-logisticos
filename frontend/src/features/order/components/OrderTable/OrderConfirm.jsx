@@ -13,9 +13,7 @@ const OrderConfirm = ({ orders, onEdit, isSubmitting }) => {
       order.weightEntry !== null &&
       order.statusEnd === null
   );
-
   const columns = useOrderConfirmTableColumn(filteredOrders, onEdit);
-
   const options = {
     ...orderTableOption,
   };

@@ -66,7 +66,7 @@ const CreateRate = ({ onAdded }) => {
     errorMessage: RATE_SNACKBAR.RATE_REGISTER_ERROR.message,
     onSuccessCallback: () => {
       onAdded?.();
-      reset(DEFAULT_VALUES_RATE);
+      reset();
       setActiveStep(0);
     },
   });

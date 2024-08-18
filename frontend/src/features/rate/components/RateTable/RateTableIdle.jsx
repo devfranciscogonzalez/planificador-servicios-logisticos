@@ -6,12 +6,11 @@ import { rateTableStaticOption } from "../../constants/rateTableOption";
 import useRateTableColumnIdle from "../../hooks/useRateTableColumnIdle";
 
 const RateTableIdle = ({ rates, isSubmitting }) => {
-  const columns = useRateTableColumnIdle(rates);
-
   const options = {
     ...rateTableStaticOption,
   };
-  const idleRates = rates.filter((rate) => rate.status === 0);
+  const idleRates = rates.filter((rate) => !rate.status);
+  const columns = useRateTableColumnIdle(idleRates);
 
   return (
     <Box position="relative">

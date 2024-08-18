@@ -26,11 +26,8 @@ const a11yProps = (index) => {
 
 const OrderPage = () => {
   const { orders, isLoading } = useOrder();
-
   const [tabValue, setTabValue] = useState(0);
-
   const [moveEnd, setMoveEnd] = useState(false);
-
   const {
     isEditOpen,
     isDeleteOpen,
