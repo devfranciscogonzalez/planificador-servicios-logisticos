@@ -33,7 +33,7 @@ const ServiceAddModal = ({ open, onClose, onAdded }) => {
     successMessage: SERVICE_SNACKBAR.SERVICE_REGISTER_SUCCESS.message,
     errorMessage: SERVICE_SNACKBAR.SERVICE_REGISTER_ERROR.message,
     onSuccessCallback: () => {
-      onClose?.();
+      handleClose?.();
       onAdded?.();
     },
   });
@@ -42,7 +42,6 @@ const ServiceAddModal = ({ open, onClose, onAdded }) => {
     addServiceMutation.mutate(data);
   };
 
-  // Reset campos del formulario al cerrar el modal
   const handleClose = () => {
     reset();
     onClose();

@@ -30,5 +30,6 @@ export const validationSchemasProduct = yup.object().shape({
         );
       }
     ),
-  user_id: yup.string().required("El ID del usuario es requerido"),
+  business_id: yup.string().required("El negocio es requerido"),
+  user_id: yup.string().required("El usuario es requerido"),
 });

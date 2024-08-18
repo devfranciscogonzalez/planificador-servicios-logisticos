@@ -25,7 +25,7 @@ return new class extends Migration
             $table->date('end_date');
             $table->foreignId('route_id')->constrained('routes')->onDelete('cascade');
             $table->boolean('status');
-            $table->decimal('price', 10, 2);
+            $table->decimal('price', 15, 2);
             $table->string('currency', 3)->default('CLP');
             $table->foreignId('user_id')->constrained("users")->onDelete('cascade');
             $table->timestamps();

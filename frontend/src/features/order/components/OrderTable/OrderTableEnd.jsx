@@ -4,11 +4,10 @@ import MUIDataTable from "mui-datatables";
 import { OverlayLoader } from "../../../../components/common";
 import { orderTableOption } from "../../constants/orderTableOption";
 import useOrderTableColumnEnd from "../../hooks/useOrderTableColumnEnd";
+
 const OrderTableEnd = ({ orders, onDelete, isSubmitting }) => {
-  const filteredOrders = orders.filter((order) => order.statusEnd === 1);
-
+  const filteredOrders = orders.filter((order) => order.statusEnd);
   const columns = useOrderTableColumnEnd(filteredOrders, onDelete);
-
   const options = {
     ...orderTableOption,
   };

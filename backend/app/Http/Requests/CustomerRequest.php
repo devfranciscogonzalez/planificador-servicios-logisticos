@@ -32,7 +32,7 @@ class CustomerRequest extends FormRequest
             'description' => 'required|string|min:10|max:500',
             'status' => 'required|boolean',
             'logo' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
-            'user_id' => 'required|numeric',
+            'user_id' => 'required|exists:users,id',
         ];
     }
 
@@ -46,11 +46,12 @@ class CustomerRequest extends FormRequest
             'name.max' => 'El campo nombre debe tener como máximo 50 caracteres.',
             'description.required' => 'El campo descripción es obligatorio.',
             'status.required' => 'El campo estado es obligatorio.',
+            'status.boolean' => 'El campo estado debe ser un valor booleano.',
             'logo.image' => 'El campo logo debe ser una imagen.',
             'logo.mimes' => 'El campo logo debe ser un archivo de tipo: jpeg, png, jpg.',
             'logo.max' => 'El campo logo debe tener un tamaño máximo de 2MB.',
             'user_id.required' => 'El campo usuario es obligatorio.',
-            'user_id.numeric' => 'El campo usuario debe ser un numero.',
+            'user_id.exists' => 'El usuario seleccionado no es válido.',
         ];
     }
 

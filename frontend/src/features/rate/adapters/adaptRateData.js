@@ -1,4 +1,5 @@
-import { formatDate } from "../../../utils/dateUtil"; //
+import { formatDate } from "../../../utils/dateUtil";
+import { formatPrice } from "../../../utils/formatPrice";
 
 export const adaptRateData = (rate) => {
   return {
@@ -9,7 +10,7 @@ export const adaptRateData = (rate) => {
     productId: rate.product_id,
     routeId: rate.route_id,
     status: rate.status,
-    price: rate.price,
+    price: formatPrice(rate.price),
     currency: rate.currency,
     createdAt: formatDate(rate.created_at),
     updatedAt: formatDate(rate.updated_at),

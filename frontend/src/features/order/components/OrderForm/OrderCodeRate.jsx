@@ -8,7 +8,7 @@ const OrderCodeRate = ({ control }) => {
   const { rates } = useRate();
   const options =
     rates
-      ?.filter((rate) => rate.status === 1)
+      ?.filter((rate) => rate.status)
       .map((rate) => rate.code.toString()) || [];
 
   return (

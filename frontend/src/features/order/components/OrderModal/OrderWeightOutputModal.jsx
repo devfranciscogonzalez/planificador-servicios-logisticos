@@ -7,16 +7,15 @@ import ActionModal from "../../../../components/modal/ActionModal";
 import useGenericMutation from "../../../../hooks/useGenericMutation";
 import { ORDER_SNACKBAR } from "../../constants/orderSnackbar";
 import { orderService } from "../../services/orderService";
-import { validationSchemasOrder } from "../../utils/validationSchemasOrder";
+import { validationSchemaWeightOutput } from "../../utils/validationSchemasOrder";
 
 const OrderWeightOutputModal = ({ open, onClose, toAdd, onAdd }) => {
   const DEFAULT_VALUES_WEIGHT_EXIT = {
     weight_exit: "",
   };
-
   const { handleSubmit, reset, control } = useForm({
     mode: "onChange",
-    resolver: yupResolver(validationSchemasOrder),
+    resolver: yupResolver(validationSchemaWeightOutput),
     defaultValues: DEFAULT_VALUES_WEIGHT_EXIT,
   });
   const addMutation = useGenericMutation({

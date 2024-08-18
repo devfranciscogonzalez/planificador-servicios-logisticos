@@ -9,9 +9,9 @@ const RateTableCurrent = ({ rates, onEdit, isSubmitting }) => {
   const options = {
     ...rateTableStaticOption,
   };
-  const currentRates = rates.filter((rate) => rate.status === 1);
-
+  const currentRates = rates.filter((rate) => rate.status);
   const columns = useRateTableColumn(currentRates, onEdit);
+  
   return (
     <Box position="relative">
       <OverlayLoader isLoading={isSubmitting} />

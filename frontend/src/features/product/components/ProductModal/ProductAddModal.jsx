@@ -44,11 +44,11 @@ const ProductAddModal = ({ open, onClose, onAdded }) => {
     addProductMutation.mutate(data);
   };
 
-  // Reset campos del formulario al cerrar el modal
   const handleClose = () => {
     reset();
     onClose();
   };
+  
   return (
     <ActionModal
       open={open}

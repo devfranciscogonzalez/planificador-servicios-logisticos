@@ -1,96 +1,63 @@
 import * as yup from "yup";
 
-/**
- *
- * !SCHEME REAL
- *
- */
-
-// import {
-//   DESCRIPTION_VALIDATION,
-//   NAME_VALIDATION,
-// } from "../../../utils/validationSchemasBase";
-
-// export const validationSchemasCustomer = yup.object().shape({
-//   name: NAME_VALIDATION,
-//   description: DESCRIPTION_VALIDATION,
-//   status: yup.boolean(),
-//   logo: yup.mixed()
-//     .required("El logo es requerido")
-//     .test(
-//       "fileSize",
-//       "El archivo es demasiado grande",
-//       (value) => value && value.size <= 2097152 // 2MB
-//     )
-//     .test(
-//       "fileFormat",
-//       "Formato no soportado",
-//       (value) =>
-//         value && ["image/jpg", "image/jpeg", "image/png"].includes(value.type)
-//     ),
-//   user_id: yup.string().required("El ID del usuario es requerido"),
-// });
-
-/**
- *
- * !SCHEME DESARROLLO
- *
- */
-
 export const validationSchemasOrder = yup.object().shape({
-  // date: yup.string().required("La fecha es requerida"),
-  // code: yup.string().required("El código es requerido"),
-  // rate_id: yup.string().required("El ID de la tarifa es requerido"),
-  // planning_id: yup.string().required("El ID de la planificación es requerido"),
-  // schedule_id: yup.string().required("El ID del horario es requerido"),
-  // client_id: yup.string().required("El ID del cliente es requerido"),
-  // service_type_id: yup
-  //   .string()
-  //   .required("El ID del tipo de servicio es requerido"),
-  // service_id: yup.string().required("El ID del servicio es requerido"),
-  // product_id: yup.string().required("El ID del producto es requerido"),
-  // business_id: yup.string().required("El ID del negocio es requerido"),
-  // route_id: yup.string().required("El ID de la ruta es requerido"),
-  // container: yup.string().required("El contenedor es requerido"),
-  // truck_plate: yup.string().required("La placa del camión es requerida"),
-  // entry: yup.string().required("La entrada es requerida"),
-  // exit: yup.string().required("La salida es requerida"),
-  // status: yup.number(),
-  // status_date: yup.string().required("La fecha del estado es requerida"),
-  // comment: yup.string().required("El comentario es requerido"),
+  date: yup.string().required("La fecha es requerida"),
+  code: yup.string().required("El código es requerido"),
+  rate_id: yup.string().required("El la tarifa es requerido"),
+  customer_id: yup.string().required("El cliente es requerido"),
+  planning_id: yup.string().required("El la planificación es requerido"),
+  schedule_id: yup.string().required("El horario es requerido"),
+  service_type_id: yup.string().required("El tipo de servicio es requerido"),
+  service_id: yup.string().required("El servicio es requerido"),
+  product_id: yup.string().required("El producto es requerido"),
+  business_id: yup.string().required("El negocio es requerido"),
+  route_id: yup.string().required("El la ruta es requerido"),
+  status: yup.boolean().required("El estado es requerido"),
+  user_id: yup.string().required("El usuario es requerido"),
 });
 
 export const validationSchemasOrderTruck = yup.object().shape({
-  // tus otras validaciones...
   truck_plate: yup
     .string()
     .matches(
       /^[A-Z0-9]{2}-[A-Z0-9]{2}-[A-Z0-9]{2}$/,
       "Formato de patente inválido"
     ),
+  customer_service_name: yup
+    .string()
+    .required("El nombre del Customer Service es requerido"),
 });
 
-export const validationSchemaWeight = yup.object().shape({
+export const validationSchemaWeightEntry = yup.object().shape({
   weight_entry: yup
     .number()
-    .transform((value, originalValue) => {
-      return originalValue === "" ? undefined : value;
-    })
+    .min(0, "El peso no puede ser negativo")
+    .max(500000, "El peso no puede ser mayor a 500000 kg")
+    .required("El peso es requerido"),
+});
+
+export const validationSchemaWeightOutput = yup.object().shape({
+  weight_exit: yup
+    .number()
     .min(0, "El peso no puede ser negativo")
     .max(500000, "El peso no puede ser mayor a 500000 kg")
     .required("El peso es requerido"),
 });
 
 export const validationSchemaStatus = yup.object().shape({
-  status: yup.number().required("El estado es requerido"),
+  status: yup.boolean().required("El estado es requerido"),
   comment: yup
     .string()
-    .max(255, "El comentario no puede tener más de 255 caracteres"),
+    .nullable()
+    .max(500, "El comentario no puede tener más de 255 caracteres"),
   container: yup
     .string()
     .nullable()
+    .transform((value, originalValue) => {
+      return originalValue === "" ? null : value;
+    })
     .matches(
       /^[A-Z0-9]{8}$/,
-      "Formato de contenedor inválido. Ej: ABCD1234567"
+      "Formato de contenedor inválido. Ej: ABCD1234"
     ),
 });

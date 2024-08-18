@@ -13,7 +13,7 @@ const OrderEndModal = ({ open, onClose, toMove, onMove }) => {
       onMove?.();
     },
   });
-  console.log(toMove);
+  
   return (
     <>
       <GenericConfirmModal

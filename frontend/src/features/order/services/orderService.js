@@ -20,7 +20,6 @@ export const orderService = {
     status,
     status_end,
     status_date,
-    comment,
     user_id,
   }) {
     return makeRequest("post", "/api/orders", {
@@ -39,10 +38,9 @@ export const orderService = {
       truck_plate,
       entry,
       exit,
-      status,
+      status: status ? 1 : 0,
       status_end,
       status_date,
-      comment,
       user_id,
     });
   },

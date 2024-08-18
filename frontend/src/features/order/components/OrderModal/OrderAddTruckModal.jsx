@@ -21,7 +21,7 @@ const OrderAddTruckModal = ({ open, onClose, toAdd, onAdd }) => {
     customer_service_name: user?.name || "",
   };
 
-  const { handleSubmit, reset, control, watch } = useForm({
+  const { handleSubmit, reset, control } = useForm({
     mode: "onChange",
     resolver: yupResolver(validationSchemasOrderTruck),
     defaultValues: DEFAULT_VALUES_TRUCK,
@@ -32,7 +32,7 @@ const OrderAddTruckModal = ({ open, onClose, toAdd, onAdd }) => {
     successMessage: ORDER_SNACKBAR.ORDER_EDIT_SUCCESS.message,
     errorMessage: ORDER_SNACKBAR.ORDER_EDIT_ERROR.message,
     onSuccessCallback: () => {
-      onClose?.();
+      handleClose?.();
       onAdd?.();
     },
   });
@@ -45,7 +45,7 @@ const OrderAddTruckModal = ({ open, onClose, toAdd, onAdd }) => {
   const onSubmit = (data) => {
     addMutation.mutate(data);
   };
-  console.log(watch());
+
   return (
     <ActionModal
       open={open}
