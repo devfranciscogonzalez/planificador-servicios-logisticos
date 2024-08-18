@@ -29,13 +29,10 @@ async function makeRequest(method, url, data = null) {
     const errorMessage = handleError(error);
 
     if (errorMessage && typeof errorMessage === "object") {
-      errorMessage.errors && console.error("Errors:", errorMessage.errors);
-      errorMessage.message && console.error("Message:", errorMessage.message);
+      throw new Error(errorMessage.message || "Error desconocido");
     } else {
-      console.error("Error:", errorMessage);
+      throw new Error(errorMessage);
     }
-
-    throw errorMessage;
   }
 }
 
