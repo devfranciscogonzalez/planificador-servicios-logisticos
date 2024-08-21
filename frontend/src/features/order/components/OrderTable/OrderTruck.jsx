@@ -22,7 +22,7 @@ const OrderTruck = ({ orders, onEdit, isSubmitting }) => {
       <MUIDataTable
         title={
           <Chip
-            label="Registrar Patente de Camión"
+            label="Ingresar Patente de Camión"
             color="primary"
             icon={<LocalShippingIcon />}
           />

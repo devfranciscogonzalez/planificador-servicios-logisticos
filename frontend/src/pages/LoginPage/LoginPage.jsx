@@ -5,7 +5,7 @@ import CustomSnackbar from "../../components/snackbar/CustomSnackbar";
 import LoginForm from "../../features/auth/components/LoginForm";
 import useAuth from "../../features/auth/hooks/useAuth";
 import { useSnackbar } from "../../hooks/useSnackbar";
-import UserInfoAlert from "../../features/user/components/UserInfoAlert/UserInfoAlert";
+// import UserInfoAlert from "../../features/user/components/UserInfoAlert/UserInfoAlert";
 
 const LoginPage = () => {
   const { login } = useAuth();
@@ -32,7 +32,7 @@ const LoginPage = () => {
           gap: 1,
         }}
       >
-        <UserInfoAlert />
+        {/* <UserInfoAlert /> */}
         <Box
           sx={{
             display: "flex",

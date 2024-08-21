@@ -30,7 +30,7 @@ const navigationByRole = {
     { name: "Tarifas", path: "/app/rates", icon: <ShoppingCartIcon /> },
     { name: "Orden de Servicio", path: "/app/orders", icon: <ListAltIcon /> },
     {
-      name: "Registrar Patente",
+      name: "Ingresar Patente",
       path: "/app/orders-truck",
       icon: <LocalShippingIcon />,
     },
@@ -102,7 +102,7 @@ const navigationByRole = {
     { name: "Home", path: "/app/home", icon: <HomeIcon /> },
     { name: "Orden de Servicio", path: "/app/orders", icon: <ListAltIcon /> },
     {
-      name: "Registrar Patente",
+      name: "Ingresar Patente",
       path: "/app/orders-truck",
       icon: <LocalShippingIcon />,
     },

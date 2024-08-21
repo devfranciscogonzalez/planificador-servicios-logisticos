@@ -19,14 +19,6 @@ class UserSeeder extends Seeder
         $customerRoleId = Role::firstOrCreate(['name' => 'Customer Service'])->id;
         $porterRoleId = Role::firstOrCreate(['name' => 'Portero'])->id;
         $romanaRoleId = Role::firstOrCreate(['name' => 'Romana'])->id;
-
-        User::create([
-            'name' => 'Administrador',
-            'email' => 'admin@camanchaca.cl',
-            'status' => 1,
-            'password' => Hash::make('Admin1234'),
-            'role_id' => $adminRoleId,
-        ]);
         
         User::create([
             'name' => 'Jefe Comercial',
@@ -66,6 +58,15 @@ class UserSeeder extends Seeder
             'status' => 1,
             'password' => Hash::make('Romana1234'),
             'role_id' => $romanaRoleId,
+        ]);
+
+        
+        User::create([
+            'name' => 'Administrador',
+            'email' => 'admin@camanchaca.cl',
+            'status' => 1,
+            'password' => Hash::make('Admin1234'),
+            'role_id' => $adminRoleId,
         ]);
     }
 }

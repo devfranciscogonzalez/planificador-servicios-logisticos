@@ -50,10 +50,10 @@ const OrderAddTruckModal = ({ open, onClose, toAdd, onAdd }) => {
     <ActionModal
       open={open}
       onClose={handleClose}
-      title="Registrar Patente"
+      title="Ingresar Patente"
       onSubmit={handleSubmit(onSubmit)}
       isPending={addMutation.isPending}
-      submitLabel="Registrar"
+      submitLabel="Ingresar"
       acceptButtonIcon={<LocalShippingIcon />}
     >
       <Grid xs={12}>
