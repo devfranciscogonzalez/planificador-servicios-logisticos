@@ -1,5 +1,5 @@
-import MinimizeIcon from "@mui/icons-material/Minimize";
 import MaximizeIcon from "@mui/icons-material/Maximize";
+import MinimizeIcon from "@mui/icons-material/Minimize";
 import {
   Alert,
   AlertTitle,
@@ -16,31 +16,7 @@ import {
   getFromLocalStorage,
   setToLocalStorage,
 } from "../../../../utils/storage";
-
-const roles = [
-  {
-    role: "Administrador",
-    email: "admin@camanchaca.cl",
-    password: "Admin1234",
-  },
-  {
-    role: "Jefe Comercial",
-    email: "jefe.comercial@camanchaca.cl",
-    password: "Jefe1234",
-  },
-  {
-    role: "Supervisor",
-    email: "supervisor@camanchaca.cl",
-    password: "Supervisor1234",
-  },
-  {
-    role: "Customer Service",
-    email: "customer.service@camanchaca.cl",
-    password: "Customer1234",
-  },
-  { role: "Portero", email: "portero@camanchaca.cl", password: "Portero1234" },
-  { role: "Romana", email: "romana@camanchaca.cl", password: "Romana1234" },
-];
+import { ACCOUNTS } from "../../constants/userAccounts";
 
 const UserInfoAlert = () => {
   const [open, setOpen] = useState(() =>
@@ -91,11 +67,11 @@ const UserInfoAlert = () => {
         </Typography>
         {open && (
           <List dense={true}>
-            {roles.map((role, index) => (
+            {ACCOUNTS.map((account, index) => (
               <div key={index}>
                 <ListItem sx={{ p: 0 }}>
                   <ListItemText
-                    primary={role.role}
+                    primary={account.role}
                     secondary={
                       <>
                         <Typography
@@ -103,7 +79,7 @@ const UserInfoAlert = () => {
                           variant="body2"
                           color="text.secondary"
                         >
-                          Email: {role.email}
+                          Email: {account.email}
                         </Typography>
                         <br />
                         <Typography
@@ -111,7 +87,7 @@ const UserInfoAlert = () => {
                           variant="body2"
                           color="text.secondary"
                         >
-                          Contraseña: {role.password}
+                          Contraseña: {account.password}
                         </Typography>
                       </>
                     }

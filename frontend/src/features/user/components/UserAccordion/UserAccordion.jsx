@@ -42,7 +42,7 @@ const UserAccordion = () => {
           <AccordionDetails
             sx={{
               backgroundColor: ROLE_COLORS
-                ? alpha(ROLE_COLORS[item.id], 0.2)
+                ? alpha(ROLE_COLORS[item.id], 0.1)
                 : "default",
             }}
           >

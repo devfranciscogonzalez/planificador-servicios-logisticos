@@ -46,7 +46,7 @@ const OrderWeightInputModal = ({ open, onClose, toAdd, onAdd }) => {
       title="Registrar Peso de Ingreso"
       onSubmit={handleSubmit(onSubmit)}
       isPending={addMutation.isPending}
-      submitLabel="Agregar"
+      submitLabel="Registrar"
       acceptButtonIcon={<CheckCircleIcon />}
     >
       <Grid xs={12}>

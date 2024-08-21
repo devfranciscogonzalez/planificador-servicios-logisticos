@@ -2,7 +2,7 @@ import ArrowCircleDownIcon from "@mui/icons-material/ArrowCircleDown";
 import ArrowCircleLeftRoundedIcon from "@mui/icons-material/ArrowCircleLeftRounded";
 import ArrowCircleRightRoundedIcon from "@mui/icons-material/ArrowCircleRightRounded";
 import ArrowCircleUpIcon from "@mui/icons-material/ArrowCircleUp";
-import DashboardIcon from "@mui/icons-material/Dashboard";
+import HomeIcon from "@mui/icons-material/Home";
 import ListAltIcon from "@mui/icons-material/ListAlt";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import PeopleIcon from "@mui/icons-material/People";
@@ -18,7 +18,7 @@ import { ROLES_USER } from "../features/user/constants/userRoles";
 
 const navigationByRole = {
   [ROLES_USER.ADMINISTRADOR]: [
-    { name: "Dashboard", path: "/app/dashboard", icon: <DashboardIcon /> },
+    { name: "Home", path: "/app/home", icon: <HomeIcon /> },
     { name: "Usuarios", path: "/app/users", icon: <PeopleIcon /> },
     {
       name: "Productos",
@@ -61,7 +61,7 @@ const navigationByRole = {
     },
   ],
   [ROLES_USER.JEFE_COMERCIAL]: [
-    { name: "Dashboard", path: "/app/dashboard", icon: <DashboardIcon /> },
+    { name: "Home", path: "/app/home", icon: <HomeIcon /> },
     { name: "Usuarios", path: "/app/users", icon: <PeopleIcon /> },
     {
       name: "Productos",
@@ -99,7 +99,7 @@ const navigationByRole = {
     },
   ],
   [ROLES_USER.CUSTOMER_SERVICE]: [
-    { name: "Dashboard", path: "/app/dashboard", icon: <DashboardIcon /> },
+    { name: "Home", path: "/app/home", icon: <HomeIcon /> },
     { name: "Orden de Servicio", path: "/app/orders", icon: <ListAltIcon /> },
     {
       name: "Registrar Patente",
@@ -108,7 +108,7 @@ const navigationByRole = {
     },
   ],
   [ROLES_USER.ROMANA]: [
-    { name: "Dashboard", path: "/app/dashboard", icon: <DashboardIcon /> },
+    { name: "Home", path: "/app/home", icon: <HomeIcon /> },
     {
       name: "OS Ingreso Peso",
       path: "/app/orders-weight-input",
@@ -121,7 +121,7 @@ const navigationByRole = {
     },
   ],
   [ROLES_USER.PORTERO]: [
-    { name: "Dashboard", path: "/app/dashboard", icon: <DashboardIcon /> },
+    { name: "Home", path: "/app/home", icon: <HomeIcon /> },
     {
       name: "OS Ingreso",
       path: "/app/orders-input",
@@ -134,7 +134,7 @@ const navigationByRole = {
     },
   ],
   [ROLES_USER.SUPERVISOR]: [
-    { name: "Dashboard", path: "/app/dashboard", icon: <DashboardIcon /> },
+    { name: "Home", path: "/app/home", icon: <HomeIcon /> },
     {
       name: "OS Confirmación",
       path: "/app/orders-confirm",

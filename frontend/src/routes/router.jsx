@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import { ROLES_USER } from "../features/user/constants/userRoles";
 import {
   CustomerPage,
-  DashboardPage,
+  HomePage,
   ErrorPage,
   LoginPage,
   OrderConfirmPage,
@@ -32,7 +32,7 @@ const router = createBrowserRouter([
     element: <ProtectedRoutes />,
     errorElement: <ErrorPage />,
     children: [
-      { path: "dashboard", element: <DashboardPage /> },
+      { path: "home", element: <HomePage /> },
       { path: "profile", element: <UserProfile /> },
       {
         path: "products",

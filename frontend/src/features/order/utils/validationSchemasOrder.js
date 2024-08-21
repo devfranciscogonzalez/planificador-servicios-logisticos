@@ -21,7 +21,7 @@ export const validationSchemasOrderTruck = yup.object().shape({
     .string()
     .matches(
       /^[A-Z0-9]{2}-[A-Z0-9]{2}-[A-Z0-9]{2}$/,
-      "Formato de patente inválido"
+      "Formato de patente inválido (XX-XX-XX)"
     ),
   customer_service_name: yup
     .string()
