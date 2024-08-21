@@ -34,7 +34,7 @@ export const ROLEFEATURES = {
     "Registrar, actualizar y eliminar clientes, visualizar los diferentes clientes y su estado (habilitado o deshabilitado).",
     "Agregar una nueva tarifa, visualizar y cambiar el estado a tarifa inactiva de las tarifas vigentes, visualizar las tarifas inactivas.",
     "Crear nueva orden de servicio en base a una tarifa vigente, visualizar las órdenes de servicio vigentes, reprogramarlas o marcarlas como finalizadas, y visualizar las órdenes de servicio reprogramadas y finalizadas.",
-    "Registrar patente de camión.",
+    "Ingresar patente de camión.",
     "Registrar ingreso al recinto del camión.",
     "Registrar peso de ingreso del camión.",
     "Confirmar servicio, ingresar contenedor o ingresar comentario.",
@@ -43,7 +43,7 @@ export const ROLEFEATURES = {
   ],
   "Customer Service": [
     "Crear nueva orden de servicio en base a una tarifa vigente, visualizar las órdenes de servicio vigentes, reprogramarlas o marcarlas como finalizadas, y visualizar las órdenes de servicio reprogramadas y finalizadas.",
-    "Registrar patente de camión.",
+    "Ingresar patente de camión.",
   ],
   Portero: [
     "Registrar ingreso al recinto del camión.",
@@ -64,7 +64,7 @@ export const ROLEFEATURES = {
     "Registrar, actualizar y eliminar clientes, visualizar los diferentes clientes y su estado (habilitado o deshabilitado).",
     "Agregar una nueva tarifa, visualizar y cambiar el estado a tarifa inactiva de las tarifas vigentes, visualizar las tarifas inactivas.",
     "Crear nueva orden de servicio en base a una tarifa vigente, visualizar las órdenes de servicio vigentes, reprogramarlas o marcarlas como finalizadas, y visualizar las órdenes de servicio reprogramadas y finalizadas.",
-    "Registrar patente de camión.",
+    "Ingresar patente de camión.",
     "Registrar ingreso al recinto del camión.",
     "Registrar peso de ingreso del camión.",
     "Confirmar servicio, ingresar contenedor o ingresar comentario.",

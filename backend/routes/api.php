@@ -29,7 +29,7 @@ Route::middleware('auth:sanctum')->group(function () {
 
 
     // USUARIOS
-    Route::prefix('users')->middleware('role:Administrador,Jefe Comercial')->group(function () {
+    Route::prefix('users')->middleware('role:Administrador,Jefe Comercial,Customer Service')->group(function () {
         Route::get('/', [UserController::class, 'index']);
         Route::put('/{id}', [UserController::class, 'update']);
         Route::delete('/{id}', [UserController::class, 'destroy']);
@@ -37,7 +37,7 @@ Route::middleware('auth:sanctum')->group(function () {
     });
 
     // ROLES
-    Route::get('roles', [RoleController::class, 'index'])->middleware('role:Administrador,Jefe Comercial');
+    Route::get('roles', [RoleController::class, 'index'])->middleware('role:Administrador,Jefe Comercial,Customer Service,Supervisor,Portero,Romana');
 
     // CLIENTES 
     Route::prefix('customers')->middleware('role:Administrador,Jefe Comercial,Customer Service')->group(function () {
