@@ -1,19 +1,20 @@
 import { createContext, useState, useEffect } from "react";
+import { getFromLocalStorage, setToLocalStorage } from "../utils/storage";
 
 export const DrawerContext = createContext(null);
 
 export const DrawerProvider = ({ children }) => {
-  const [drawerOpen, setDrawerOpen] = useState(() => {
-    const savedState = window.localStorage.getItem("drawerOpen");
-    return savedState !== null ? JSON.parse(savedState) : true;
-  });
+
+  const [drawerOpen, setDrawerOpen] = useState(
+    getFromLocalStorage("drawerOpen", false)
+  );
 
   const toggleDrawer = () => {
     setDrawerOpen((prev) => !prev);
   };
 
   useEffect(() => {
-    window.localStorage.setItem("drawerOpen", JSON.stringify(drawerOpen));
+    setToLocalStorage("drawerOpen", drawerOpen);
   }, [drawerOpen]);
 
   return (

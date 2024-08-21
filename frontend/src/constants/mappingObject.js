@@ -1,5 +1,5 @@
 export const titlesByRoute = {
-  "/app/dashboard": "Dashboard",
+  "/app/home": "Home",
   "/app/users": "Usuarios",
   "/app/products": "Productos",
   "/app/services": "Servicios",

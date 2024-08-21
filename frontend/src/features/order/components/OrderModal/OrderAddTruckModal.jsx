@@ -53,7 +53,7 @@ const OrderAddTruckModal = ({ open, onClose, toAdd, onAdd }) => {
       title="Registrar Patente"
       onSubmit={handleSubmit(onSubmit)}
       isPending={addMutation.isPending}
-      submitLabel="Agregar"
+      submitLabel="Registrar"
       acceptButtonIcon={<LocalShippingIcon />}
     >
       <Grid xs={12}>

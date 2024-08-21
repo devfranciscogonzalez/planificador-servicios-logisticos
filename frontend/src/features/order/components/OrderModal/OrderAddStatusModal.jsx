@@ -55,7 +55,7 @@ const OrderAddStatusModal = ({ open, onClose, toAdd, onAdd }) => {
       title="Estado Orden de Servicio"
       onSubmit={handleSubmit(onSubmit)}
       isPending={addMutation.isPending}
-      submitLabel="Agregar"
+      submitLabel="Modificar"
       acceptButtonIcon={<RecommendIcon />}
     >
       <Grid xs={12}>
