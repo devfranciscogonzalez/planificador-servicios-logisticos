@@ -3,6 +3,7 @@ import EditIcon from "@mui/icons-material/Edit";
 import { CustomIconButton } from "../../../components/common";
 import UserAvatar from "../../user/components/UserAvatar/UserAvatar";
 import ServiceTypeChip from "../components/ServiceUI/ServiceTypeChip";
+import { Box } from "@mui/material";
 
 const useServiceTableColumn = (services, onEdit, onDelete) => {
   const columns = [
@@ -31,6 +32,10 @@ const useServiceTableColumn = (services, onEdit, onDelete) => {
       options: {
         filter: false,
         sort: true,
+        customBodyRenderLite: (dataIndex) => {
+          const description = services[dataIndex].description;
+          return <Box sx={{ textAlign: "left" }}>{description}</Box>;
+        },
       },
     },
     {
