@@ -15,12 +15,30 @@ class RoleSeeder extends Seeder
     public function run()
     {
         $roles = [
-            ['name' => 'Jefe Comercial', 'description' => 'Encargado de liderar y supervisar las actividades comerciales de la empresa. Responsable de la estrategia de ventas y el crecimiento del negocio.'],
-            ['name' => 'Customer Service', 'description' => 'Responsable de atender las consultas y problemas de los clientes. Su objetivo es garantizar la satisfacción del cliente y mantener una buena relación con ellos.'],
-            ['name' => 'Portero', 'description' => 'Encargado de la seguridad y el control de acceso a las instalaciones de la empresa. Su función incluye verificar la identidad de las personas y prevenir el acceso no autorizado.'],
-            ['name' => 'Romana', 'description' => 'Operador de la balanza o báscula industrial (conocida como romana) en la empresa. Responsable de pesar los productos o mercancías y registrar los datos.'],
-            ['name' => 'Supervisor', 'description' => 'Es responsable de dirigir y coordinar las actividades de los empleados, asegurando la calidad y eficiencia del trabajo. Supervisa el rendimiento, ofrece retroalimentación y orientación, y gestiona los recursos para alcanzar objetivos específicos.'],
-            ['name' => 'Administrador', 'description' => 'Responsable de la gestión y el funcionamiento diario de la empresa. Sus tareas incluyen la planificación, la organización y la supervisión de todas las actividades de la empresa.']
+            [
+                'name' => 'Jefe Comercial',
+                'description' => 'Lidera la gestión comercial de la empresa, supervisando usuarios, productos, servicios, clientes y tarifas. Asegura la correcta ejecución de órdenes de servicio y coordina el flujo logístico desde la recepción hasta la salida de mercancías.'
+            ],
+            [
+                'name' => 'Customer Service',
+                'description' => 'Gestiona las órdenes de servicio y facilita el proceso de recepción de camiones. Actúa como enlace principal con los clientes, garantizando la eficiencia en la operación y la satisfacción del cliente.'
+            ],
+            [
+                'name' => 'Supervisor',
+                'description' => 'Coordina la ejecución de las órdenes de servicio, asegurando la correcta recepción y documentación de mercancías. Supervisa el rendimiento y la calidad del trabajo en todas las etapas del proceso.'
+            ],
+            [
+                'name' => 'Portero',
+                'description' => 'Controla el acceso de los camiones a las instalaciones, garantizando la seguridad y el correcto registro de las entradas y salidas de vehículos.'
+            ],
+            [
+                'name' => 'Romana',
+                'description' => 'Responsable de pesar los camiones en su ingreso y salida de la empresa, registrando los datos de manera precisa para asegurar la correcta gestión de las mercancías.'
+            ],
+            [
+                'name' => 'Administrador',
+                'description' => 'Gestiona integralmente los sistemas de TI de la empresa, incluyendo la administración de usuarios, productos, servicios, clientes y tarifas en la plataforma. Asegura el correcto funcionamiento y optimización de las soluciones tecnológicas, facilitando la operatividad y eficiencia de la empresa.'
+            ],
         ];
 
         foreach ($roles as $role) {

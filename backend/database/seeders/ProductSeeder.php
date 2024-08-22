@@ -23,7 +23,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Es un hilo de acero que puede tener varios grosores dependiendo del uso que vaya a recibir. Se utiliza en la construcción, en la industria y en la artesanía.',
                 'status' => true,
                 'logo' => 'logos/products/ALAMBRE.webp',
-                'business_id' => 1,
+                'business_id' => 2,
                 'user_id' => 1,
             ],
             [
@@ -32,7 +32,7 @@ class ProductSeeder extends Seeder
                 'status' => true,
                 'logo' => 'logos/products/ATUN.webp',
                 'business_id' => 1,
-                'user_id' => 1,
+                'user_id' => 2,
             ],
             [
                 'name' => 'AVENA',
@@ -40,14 +40,14 @@ class ProductSeeder extends Seeder
                 'status' => true,
                 'logo' => 'logos/products/AVENA.webp',
                 'business_id' => 1,
-                'user_id' => 1,
+                'user_id' => 2,
             ],
             [
                 'name' => 'AZUFRE',
                 'description' => 'Es un elemento químico esencial constituyente de los aminoácidos cisteina y metionina​ y, por consiguiente, necesario para la síntesis de proteínas presentes en todos los organismos vivos. Se usa principalmente como fertilizante, pero también en la fabricación de pólvora, laxantes, fósforos e insecticidas.',
                 'status' => true,
                 'logo' => 'logos/products/AZUFRE.webp',
-                'business_id' => 1,
+                'business_id' => 5,
                 'user_id' => 1,
             ],
             [
@@ -56,14 +56,14 @@ class ProductSeeder extends Seeder
                 'status' => true,
                 'logo' => 'logos/products/CARTON.webp',
                 'business_id' => 1,
-                'user_id' => 1,
+                'user_id' => 2,
             ],
             [
                 'name' => 'CHAPA GALVANIZADA',
                 'description' => 'La chapa galvanizada es una lámina de acero recubierta con zinc, utilizada en la construcción por su resistencia a la corrosión.',
                 'status' => true,
                 'logo' => 'logos/products/CHAPA_GALVANIZADA.webp',
-                'business_id' => 1,
+                'business_id' => 2,
                 'user_id' => 1,
             ],
             [
@@ -71,7 +71,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Los clavos son elementos esenciales en la carpintería y la construcción, disponibles en diversos tamaños y formas.',
                 'status' => true,
                 'logo' => 'logos/products/CLAVOS.webp',
-                'business_id' => 1,
+                'business_id' => 2,
                 'user_id' => 1,
             ],
             [
@@ -79,15 +79,15 @@ class ProductSeeder extends Seeder
                 'description' => 'Ecoplac es un material ecológico utilizado en construcción, conocido por su resistencia y sostenibilidad.',
                 'status' => true,
                 'logo' => 'logos/products/ECOPLAC.webp',
-                'business_id' => 1,
-                'user_id' => 1,
+                'business_id' => 3,
+                'user_id' => 2,
             ],
             [
                 'name' => 'FERTILIZANTE',
                 'description' => 'El fertilizante es un producto utilizado para enriquecer el suelo y mejorar el crecimiento de las plantas.',
                 'status' => true,
                 'logo' => 'logos/products/FERTILIZANTE.webp',
-                'business_id' => 1,
+                'business_id' => 5,
                 'user_id' => 1,
             ],
             [
@@ -104,14 +104,14 @@ class ProductSeeder extends Seeder
                 'status' => true,
                 'logo' => 'logos/products/MEJILLONES.webp',
                 'business_id' => 1,
-                'user_id' => 1,
+                'user_id' => 2,
             ],
             [
                 'name' => 'PALLET',
                 'description' => 'Los pallets son estructuras de madera o plástico utilizadas en la logística para facilitar el transporte y almacenamiento de mercancías.',
                 'status' => true,
                 'logo' => 'logos/products/PALLET.webp',
-                'business_id' => 1,
+                'business_id' => 3,
                 'user_id' => 1,
             ],
             [
@@ -135,7 +135,7 @@ class ProductSeeder extends Seeder
                 'description' => 'La trimetilamina es un compuesto químico que se utiliza en la industria para la producción de varios productos químicos.',
                 'status' => true,
                 'logo' => 'logos/products/TRIMETHYLAMINE.webp',
-                'business_id' => 1,
+                'business_id' => 5,
                 'user_id' => 1,
             ],
             [
@@ -143,8 +143,8 @@ class ProductSeeder extends Seeder
                 'description' => 'La urea es un compuesto químico utilizado en fertilizantes y en la industria química para diversas aplicaciones.',
                 'status' => true,
                 'logo' => 'logos/products/UREA.webp',
-                'business_id' => 1,
-                'user_id' => 1,
+                'business_id' => 5,
+                'user_id' => 2,
             ],
             [
                 'name' => 'VINO',
@@ -160,7 +160,7 @@ class ProductSeeder extends Seeder
                 'status' => true,
                 'logo' => 'logos/products/YESO.webp',
                 'business_id' => 1,
-                'user_id' => 1,
+                'user_id' => 2,
             ],
         ];
 

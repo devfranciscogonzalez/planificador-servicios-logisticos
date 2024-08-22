@@ -29,19 +29,19 @@ class UserSeeder extends Seeder
         ]);
         
         User::create([
-            'name' => 'Supervisor',
-            'email' => 'supervisor@camanchaca.cl',
-            'status' => 1,
-            'password' => Hash::make('Supervisor1234'),
-            'role_id' => $supervisorRoleId,
-        ]);
-        
-        User::create([
             'name' => 'Customer Service',
             'email' => 'customer.service@camanchaca.cl',
             'status' => 1,
             'password' => Hash::make('Customer1234'),
             'role_id' => $customerRoleId,
+        ]);
+
+        User::create([
+            'name' => 'Supervisor',
+            'email' => 'supervisor@camanchaca.cl',
+            'status' => 1,
+            'password' => Hash::make('Supervisor1234'),
+            'role_id' => $supervisorRoleId,
         ]);
         
         User::create([

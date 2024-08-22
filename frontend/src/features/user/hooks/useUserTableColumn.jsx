@@ -82,7 +82,7 @@ const useUserTableColumn = (users, onEdit, onDelete) => {
         sort: false,
         empty: true,
         customBodyRenderLite: (dataIndex) => {
-          const isDisabled = dataIndex === 0;
+          const isDisabled = dataIndex === 5;
           return (
             <>
               <CustomIconButton
