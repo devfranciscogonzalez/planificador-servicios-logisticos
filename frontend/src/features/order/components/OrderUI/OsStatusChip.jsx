@@ -1,6 +1,6 @@
-import { Chip } from "@mui/material";
-import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
 import ThumbDownOffAltIcon from "@mui/icons-material/ThumbDownOffAlt";
+import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
+import { Chip } from "@mui/material";
 
 const OsStatusChip = ({ enabled, sx }) => {
   const chipColor = enabled ? "success" : "default";

@@ -1,13 +1,13 @@
 import ArchiveIcon from "@mui/icons-material/Archive";
 import EventRepeatIcon from "@mui/icons-material/EventRepeat";
 import { CustomIconButton } from "../../../components/common";
-import StatusChip from "../../../components/ui/StatusChip";
 import BusinessChip from "../../product/components/ProductUI/BusinessChip";
 import ServiceTypeChip from "../../service/components/ServiceUI/ServiceTypeChip";
 import UserAvatar from "../../user/components/UserAvatar/UserAvatar";
 import ContainerChip from "../components/OrderUI/ContainerChip";
 import TruckChip from "../components/OrderUI/TruckChip";
 import WeightChip from "../components/OrderUI/WeightChip";
+import OsStatusChip from "../components/OrderUI/OsStatusChip";
 
 const useOrderTableColumn = (filteredOrders, onEdit, onMoveEnd) => {
   const columns = [
@@ -113,18 +113,6 @@ const useOrderTableColumn = (filteredOrders, onEdit, onMoveEnd) => {
       },
     },
     {
-      name: "status",
-      label: "Estado",
-      options: {
-        filter: false,
-        sort: true,
-        customBodyRenderLite: (dataIndex) => {
-          const filteredOrderstatus = filteredOrders[dataIndex].status;
-          return <StatusChip enabled={filteredOrderstatus} />;
-        },
-      },
-    },
-    {
       name: "createdAt",
       label: "Fecha de Creación",
       options: {
@@ -185,6 +173,18 @@ const useOrderTableColumn = (filteredOrders, onEdit, onMoveEnd) => {
         customBodyRenderLite: (dataIndex) => {
           const order = filteredOrders[dataIndex];
           return <ContainerChip container={order.container} />;
+        },
+      },
+    },
+    {
+      name: "status",
+      label: "Estado",
+      options: {
+        filter: false,
+        sort: true,
+        customBodyRenderLite: (dataIndex) => {
+          const filteredOrderstatus = filteredOrders[dataIndex].status;
+          return <OsStatusChip enabled={filteredOrderstatus} />;
         },
       },
     },
