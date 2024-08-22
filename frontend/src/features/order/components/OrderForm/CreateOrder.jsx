@@ -142,14 +142,14 @@ const CreateOrder = ({ onAdded }) => {
         return (
           <CheckOrder
             watch={watch}
+            planning={planning}
+            schedule={schedule}
             customers={customers}
             serviceType={serviceType}
             services={services}
             products={products}
-            routes={routes}
-            planning={planning}
-            schedule={schedule}
             businessType={businessType}
+            routes={routes}
           />
         );
       default:

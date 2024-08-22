@@ -1,18 +1,19 @@
 import { Box, Divider, Typography } from "@mui/material";
 import dayjs from "dayjs";
 import { OverlayLoader } from "../../../../components/common";
-import useService from "../../../service/hooks/useService";
 import useUser from "../../../user/hooks/useUser";
 
 const CheckOrder = ({
   watch,
+  planning,
+  schedule,
   customers,
   serviceType,
+  services,
   products,
   businessType,
   routes,
 }) => {
-  const { services, isLoading: isLoadingService } = useService();
   const { users, isLoading: isLoadingUsers } = useUser();
 
   const formData = watch();
@@ -38,9 +39,17 @@ const CheckOrder = ({
 
   return (
     <Box position="relative" p={1}>
-      <OverlayLoader isLoading={isLoadingService || isLoadingUsers} />
+      <OverlayLoader isLoading={isLoadingUsers} />
       <InfoLine label="Codigo Tarifa" value={formData.code} />
       <InfoLine label="Fecha" value={formatFecha(formData.date)} />
+      <InfoLine
+        label="Planificación"
+        value={findSelected(planning, formData.planning_id)}
+      />
+      <InfoLine
+        label="Horario"
+        value={findSelected(schedule, formData.schedule_id)}
+      />
       <InfoLine
         label="Cliente"
         value={findSelected(customers, formData.customer_id)}
@@ -63,16 +72,6 @@ const CheckOrder = ({
       />
 
       <InfoLine label="Ruta" value={findSelected(routes, formData.route_id)} />
-
-      <InfoLine
-        label="Estado"
-        value={formData.status ? "Activo" : "Inactivo"}
-      />
-      <InfoLine
-        label="Comentario"
-        value={formData.comment ? formData.comment : "No completado"}
-      />
-
       <Divider />
       <Box sx={{ backgroundColor: "primary.main", color: "white", p: 1 }}>
         <InfoLine
