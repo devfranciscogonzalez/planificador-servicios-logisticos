@@ -100,6 +100,14 @@ const navigationByRole = {
   ],
   [ROLES_USER.CUSTOMER_SERVICE]: [
     { name: "Home", path: "/app/home", icon: <HomeIcon /> },
+    {
+      name: "Productos",
+      path: "/app/products",
+      icon: <ProductionQuantityLimitsIcon />,
+    },
+    { name: "Servicios", path: "/app/services", icon: <PostAddIcon /> },
+    { name: "Clientes", path: "/app/customers", icon: <SupportAgentIcon /> },
+    { name: "Tarifas", path: "/app/rates", icon: <ShoppingCartIcon /> },
     { name: "Orden de Servicio", path: "/app/orders", icon: <ListAltIcon /> },
     {
       name: "Ingresar Patente",

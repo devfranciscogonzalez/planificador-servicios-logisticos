@@ -14,6 +14,7 @@ import UserTable from "../../features/user/components/UserTable/UserTable";
 import useUser from "../../features/user/hooks/useUser";
 import useAsyncAction from "../../hooks/useAsyncAction";
 import useModalState from "../../hooks/useModalState";
+// import UserInfoRestrictionAlert from "../../features/user/components/UserInfoAlert/UserInfoRestrictionAlert";
 
 const a11yProps = (index) => {
   return {
@@ -58,19 +59,22 @@ const UserPage = () => {
           {isLoading ? (
             <LoadingSkeleton />
           ) : (
-            <UserTable
-              users={users}
-              onAdd={() => toggleModal("register")}
-              onEdit={(user) => {
-                setItemToAction(user);
-                toggleModal("edit");
-              }}
-              onDelete={(user) => {
-                setItemToAction(user);
-                toggleModal("delete");
-              }}
-              isSubmitting={isSubmitting}
-            />
+            <>
+              {/* <UserInfoRestrictionAlert /> */}
+              <UserTable
+                users={users}
+                onAdd={() => toggleModal("register")}
+                onEdit={(user) => {
+                  setItemToAction(user);
+                  toggleModal("edit");
+                }}
+                onDelete={(user) => {
+                  setItemToAction(user);
+                  toggleModal("delete");
+                }}
+                isSubmitting={isSubmitting}
+              />
+            </>
           )}
           <UserAddModal
             open={isRegisterOpen}

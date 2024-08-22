@@ -35,16 +35,6 @@ const router = createBrowserRouter([
       { path: "home", element: <HomePage /> },
       { path: "profile", element: <UserProfile /> },
       {
-        path: "products",
-        element: (
-          <RoleProtectedElement
-            allowedRoles={[ROLES_USER.ADMINISTRADOR, ROLES_USER.JEFE_COMERCIAL]}
-          >
-            <ProductPage />
-          </RoleProtectedElement>
-        ),
-      },
-      {
         path: "users",
         element: (
           <RoleProtectedElement
@@ -55,10 +45,28 @@ const router = createBrowserRouter([
         ),
       },
       {
+        path: "products",
+        element: (
+          <RoleProtectedElement
+            allowedRoles={[
+              ROLES_USER.ADMINISTRADOR,
+              ROLES_USER.JEFE_COMERCIAL,
+              ROLES_USER.CUSTOMER_SERVICE,
+            ]}
+          >
+            <ProductPage />
+          </RoleProtectedElement>
+        ),
+      },
+      {
         path: "customers",
         element: (
           <RoleProtectedElement
-            allowedRoles={[ROLES_USER.ADMINISTRADOR, ROLES_USER.JEFE_COMERCIAL]}
+            allowedRoles={[
+              ROLES_USER.ADMINISTRADOR,
+              ROLES_USER.JEFE_COMERCIAL,
+              ROLES_USER.CUSTOMER_SERVICE,
+            ]}
           >
             <CustomerPage />
           </RoleProtectedElement>
@@ -68,7 +76,11 @@ const router = createBrowserRouter([
         path: "services",
         element: (
           <RoleProtectedElement
-            allowedRoles={[ROLES_USER.ADMINISTRADOR, ROLES_USER.JEFE_COMERCIAL]}
+            allowedRoles={[
+              ROLES_USER.ADMINISTRADOR,
+              ROLES_USER.JEFE_COMERCIAL,
+              ROLES_USER.CUSTOMER_SERVICE,
+            ]}
           >
             <ServicePage />
           </RoleProtectedElement>
@@ -78,7 +90,11 @@ const router = createBrowserRouter([
         path: "rates",
         element: (
           <RoleProtectedElement
-            allowedRoles={[ROLES_USER.ADMINISTRADOR, ROLES_USER.JEFE_COMERCIAL]}
+            allowedRoles={[
+              ROLES_USER.ADMINISTRADOR,
+              ROLES_USER.JEFE_COMERCIAL,
+              ROLES_USER.CUSTOMER_SERVICE,
+            ]}
           >
             <RatePage />
           </RoleProtectedElement>
