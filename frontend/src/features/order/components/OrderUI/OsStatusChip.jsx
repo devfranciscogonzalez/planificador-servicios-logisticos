@@ -4,7 +4,7 @@ import { Chip } from "@mui/material";
 
 const OsStatusChip = ({ enabled, sx }) => {
   const chipColor = enabled ? "success" : "default";
-  const label = enabled ? "Confirmarmado" : "Rechazado";
+  const label = enabled ? "Confirmado" : "Rechazado";
   const icon = enabled ? <ThumbUpOffAltIcon /> : <ThumbDownOffAltIcon />;
   return (
     <Chip
