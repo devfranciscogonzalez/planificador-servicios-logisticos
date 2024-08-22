@@ -37,7 +37,7 @@ class RoleSeeder extends Seeder
             ],
             [
                 'name' => 'Administrador',
-                'description' => 'Gestiona integralmente los sistemas de TI de la empresa, incluyendo la administración de usuarios, productos, servicios, clientes y tarifas en la plataforma. Asegura el correcto funcionamiento y optimización de las soluciones tecnológicas, facilitando la operatividad y eficiencia de la empresa.'
+                'description' => 'Gestiona integralmente los sistemas de TI de la empresa, incluyendo la administración de usuarios, productos, servicios, clientes y tarifas en la plataforma.'
             ],
         ];
 
