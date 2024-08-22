@@ -58,7 +58,7 @@ const HomePage = () => {
           ) : (
             <>
               <Typography variant="h6" sx={{ marginTop: 2 }} gutterBottom>
-                Roles y funcionalidades:
+                Roles y funcionalidades
               </Typography>
               <Typography variant="body1" gutterBottom>
                 ¿Alguna vez te has preguntado qué funciones realiza cada miembro
