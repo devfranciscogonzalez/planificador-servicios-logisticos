@@ -43,9 +43,10 @@ const UserInfoRestrictionAlert = () => {
         <AlertTitle>Restricción en la Demo</AlertTitle>
         {open && (
           <Typography variant="subtitle1">
-            Las funcionalidades de edición y eliminación de usuarios están
-            desactivadas en esta demo. Para probar la funcionalidad completa,
-            por favor regístrate con un nuevo usuario.
+            Las funciones de edición y eliminación de usuarios están
+            desactivadas en esta demo para las cuentas predeterminadas. Si
+            deseas probar estas funcionalidades, puedes registrar un nuevo
+            usuario.
           </Typography>
         )}
       </Alert>

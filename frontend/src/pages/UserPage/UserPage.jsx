@@ -14,7 +14,7 @@ import UserTable from "../../features/user/components/UserTable/UserTable";
 import useUser from "../../features/user/hooks/useUser";
 import useAsyncAction from "../../hooks/useAsyncAction";
 import useModalState from "../../hooks/useModalState";
-// import UserInfoRestrictionAlert from "../../features/user/components/UserInfoAlert/UserInfoRestrictionAlert";
+import UserInfoRestrictionAlert from "../../features/user/components/UserInfoAlert/UserInfoRestrictionAlert";
 
 const a11yProps = (index) => {
   return {
@@ -60,7 +60,7 @@ const UserPage = () => {
             <LoadingSkeleton />
           ) : (
             <>
-              {/* <UserInfoRestrictionAlert /> */}
+              <UserInfoRestrictionAlert />
               <UserTable
                 users={users}
                 onAdd={() => toggleModal("register")}
