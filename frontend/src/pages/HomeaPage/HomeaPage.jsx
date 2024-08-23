@@ -33,6 +33,8 @@ import {
   ROLEFEATURES,
 } from "../../features/user/constants/userRoles";
 import useRoles from "../../features/user/hooks/useRoles";
+import LiteYouTubeEmbed from "react-lite-youtube-embed";
+import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
 
 const HomePage = () => {
   const { user } = useAuth();
@@ -160,38 +162,69 @@ const HomePage = () => {
                   secondary="En el apartado OS Salida, se registra la salida del camión de las instalaciones."
                 />
               </List>
-              <Box
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                  maxWidth: "md",
-                  padding: 1,
-                  margin: "auto",
-                  border: 1,
-                  borderColor: "primary.main",
-                }}
-              >
-                <Typography
-                  variant="h6"
-                  gutterBottom
+              <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
+                <Box
                   sx={{
-                    textAlign: "center",
-                    color: "primary.main",
-                    textDecoration: "underline",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    maxWidth: "md",
+                    padding: 1,
+                    margin: "auto",
+                    border: 1,
+                    borderColor: "primary.main",
                   }}
                 >
-                  Flujo principal
-                </Typography>
-                <img
-                  src={flujoPrincipal}
-                  alt="Flujo principal de la aplicacion"
-                  style={{
+                  <Typography
+                    variant="h6"
+                    gutterBottom
+                    sx={{
+                      textAlign: "center",
+                      color: "primary.main",
+                      textDecoration: "underline",
+                    }}
+                  >
+                    Flujo principal
+                  </Typography>
+                  <img
+                    src={flujoPrincipal}
+                    alt="Flujo principal de la aplicacion"
+                    style={{
+                      width: "100%",
+                      height: "auto",
+                      objectFit: "contain",
+                    }}
+                  />
+                </Box>
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    maxWidth: "md",
                     width: "100%",
-                    height: "auto",
-                    objectFit: "contain",
+                    padding: 1,
+                    margin: "auto",
+                    border: 1,
+                    borderColor: "red",
                   }}
-                />
+                >
+                  <Typography
+                    variant="h6"
+                    gutterBottom
+                    sx={{
+                      textAlign: "center",
+                      color: "red",
+                      textDecoration: "underline",
+                    }}
+                  >
+                    Flujo principal - Video
+                  </Typography>
+                  <LiteYouTubeEmbed
+                    id="yEZx7CkEmbE"
+                    title="What’s new in Material Design for the web (Chrome Dev Summit 2019)"
+                  />
+                </Box>
               </Box>
             </>
           )}
