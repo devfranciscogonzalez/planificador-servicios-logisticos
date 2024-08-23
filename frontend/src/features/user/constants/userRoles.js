@@ -19,9 +19,9 @@ export const ROLES_USER = {
 export const ROLE_COLORS = {
   1: purple[500], // ID para JEFE_COMERCIAL
   2: green[500], // ID para CUSTOMER_SERVICE
-  3: amber[500], // ID para ROMANA
-  4: orange[500], // ID para SUPERVISOR
-  5: indigo[500], // ID para PORTERO
+  3: amber[500], // ID para SUPERVISOR
+  4: orange[500], // ID para PORTERO
+  5: indigo[500], // ID para ROMANA
   6: red[500], // ID para ADMINISTRADOR
 };
 
