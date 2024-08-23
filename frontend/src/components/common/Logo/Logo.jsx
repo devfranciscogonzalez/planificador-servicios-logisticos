@@ -6,7 +6,7 @@ const COLORS = {
   AZUL: "azul",
 };
 const Logo = ({ color }) => (
-  <Box sx={{ display: "flex", alignItems: "center" }}>
+  <Box sx={{ display: "flex", alignItems: "center", height: "51px" }}>
     <Link to="/" style={{ height: "44px" }}>
       <img
         src={color === COLORS.AZUL ? logoAzul : logoBlanco}
