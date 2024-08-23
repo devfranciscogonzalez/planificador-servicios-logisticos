@@ -41,6 +41,10 @@ export const ROLEFEATURES = {
     "Registrar salida del camión a las instalaciones.",
   ],
   "Customer Service": [
+    "Agregar, visualizar, actualizar o eliminar productos, visualizar los diferentes tipos de negocios.",
+    "Agregar, visualizar, actualizar o eliminar servicios, visualizar los diferentes tipos de servicios.",
+    "Registrar, actualizar o eliminar clientes, visualizar los diferentes clientes y cambiar su estado (habilitado o deshabilitado).",
+    "Agregar una nueva tarifa, visualizar y cambiar el estado a inactiva de las tarifas vigentes, visualizar las tarifas inactivas.",
     "Crear orden de servicio en base a una tarifa vigente, visualizar las órdenes de servicio vigentes, reprogramarlas o marcarlas como finalizadas, y visualizar las órdenes de servicio reprogramadas y finalizadas.",
     "Ingresar patente de camión.",
   ],
