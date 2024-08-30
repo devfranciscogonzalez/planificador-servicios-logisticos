@@ -222,7 +222,7 @@ const HomePage = () => {
                   </Typography>
                   <LiteYouTubeEmbed
                     id="yEZx7CkEmbE"
-                    title="What’s new in Material Design for the web (Chrome Dev Summit 2019)"
+                    title="Demostración Completa del Sistema Web Planificador de Servicios Logísticos"
                   />
                 </Box>
               </Box>
