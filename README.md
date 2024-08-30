@@ -2,11 +2,11 @@
 
 [![proyecto-camanchaca-DVg7-DINd.webp](https://i.postimg.cc/MTYsG0bN/proyecto-camanchaca-DVg7-DINd.webp)](https://planificador-servicios-logisticos.vercel.app/)
 
-<p align="center">
-  <a href="https://planificador-servicios-logisticos.vercel.app/" style="border: 2px solid #007BFF; color: #007BFF; padding: 10px; margin: 5px; text-decoration: none; display: inline-block;  border-radius: 5px;">
-   🌐 Demo
-  </a>
-  <a href="https://www.youtube.com/watch?v=yEZx7CkEmbE" style="border: 2px solid #007BFF; color: #007BFF; padding: 10px; margin: 5px; text-decoration: none; display: inline-block; border-radius: 5px;">
+  <a href="https://planificador-servicios-logisticos.vercel.app/" target="_blank">
+   🌐 Demo  
+  </a> 
+  <span> | </span>
+  <a href="https://www.youtube.com/watch?v=yEZx7CkEmbE" target="_blank">
    🎥 Video
   </a>
 </p>
